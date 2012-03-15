@@ -1,0 +1,52 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectPath>$(SPOCLIENT)\Solutions\DK_LM3S9B96\DeviceCode\BlockStorage_HAL\dotNetMF.proj</ProjectPath>
+    <AssemblyName>BlockStorage_HAL_DK_LM3S9B96</AssemblyName>
+    <Size>
+    </Size>
+    <ProjectGuid>{A1DF0C9E-714E-4FC3-87D3-A9EA7E57F852}</ProjectGuid>
+    <Description>DK_LM3S9B96 block storage driver</Description>
+    <Level>HAL</Level>
+    <LibraryFile>BlockStorage_HAL_DK_LM3S9B96.$(LIB_EXT)</LibraryFile>
+    <ManifestFile>BlockStorage_HAL_DK_LM3S9B96.$(LIB_EXT).manifest</ManifestFile>
+    <Groups>BlockStorage</Groups>
+    <Documentation>
+    </Documentation>
+    <PlatformIndependent>False</PlatformIndependent>
+    <CustomFilter>
+    </CustomFilter>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <IsDK_LM3S9B96>True</IsDK_LM3S9B96>
+    <IsSolutionWizardVisible>True</IsSolutionWizardVisible>
+    <HasLibraryCategory>True</HasLibraryCategory>
+    <LibraryCategory>
+      <MFComponent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="BlockStorage_HAL" Guid="{B87F1565-3D64-4531-A84B-2F9C2B221D1E}" ProjectPath="$(SPOCLIENT)\Framework\Features\BlockStorage_HAL.libcatproj" Conditional="" xmlns="">
+        <VersionDependency xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <Major>4</Major>
+          <Minor>0</Minor>
+          <Revision>0</Revision>
+          <Build>0</Build>
+          <Extra />
+          <Date>2009-06-27</Date>
+          <Author>Microsoft</Author>
+        </VersionDependency>
+        <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">LibraryCategory</ComponentType>
+      </MFComponent>
+    </LibraryCategory>
+    <Directory>Solutions\DK_LM3S9B96\DeviceCode\BlockStorage_HAL</Directory>
+    <OutputType>Library</OutputType>
+    <PlatformIndependentBuild>false</PlatformIndependentBuild>
+    <Version>4.0.0.0</Version>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup />
+  <ItemGroup>
+    <IncludePaths Include="\DeviceCode\StellarisMCU" />
+    <HFiles Include="BlockStorgeDriver_DK_LM3S9B96.h" />
+    <Compile Include="BlockStorageDriver_DK_LM3S9B96.cpp" /> 
+    <Compile Include="ssiflash.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>

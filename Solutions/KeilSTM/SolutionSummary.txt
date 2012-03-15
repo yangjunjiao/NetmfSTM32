@@ -1,0 +1,234 @@
+The .NET Micro Framework Solution Wizard will create the 'KeilSTM' solution in the directory:
+
+	C:\MicroFrameworkPK_v4_2\\Solutions\KeilSTM
+
+The following is a description of the components of this solution.  Each solution consists of a set of projects which in turn have a set of features and libraries.
+
+    Solution:                          	 KeilSTM
+    Author:                            	 
+    Description:                       	 
+    Processor:                         	 STM32
+    Debugger Port:                     	 USB1
+
+
+Project Tinybooter
+    Description:                       	 
+    Path:                              	 Solutions\KeilSTM\TinyBooter
+
+Libraries:
+    TinybooterLib:                     	 TinyBooter core library
+    Crypto:                            	 Cryptography library
+    cpu_prestackinit_stubs:            	 Pre stack initialization stub driver
+    STM32_bootstrap:                   	 STM32 bootstrap driver
+    cpu_cache_stubs:                   	 Cache stub library
+    cpu_ebiu_stubs:                    	 EBIU stub library
+    STM32_GPIO:                        	 STM32 GPIO driver
+    STM32_INTC:                        	 STM32 interrupt controller driver
+    cpu_mmu_stubs:                     	 Memory management unit stub library
+    STM32_Power:                       	 STM32 power driver
+    STM32_time:                        	 STM32 time driver
+    STM32_SPI:                         	 STM32 SPI driver
+    STM32_USART:                       	 STM32 USART driver
+    STM32_USB:                         	 STM32 USB driver
+    cpu_watchdog_stubs:                	 Watchdog driver
+    system_initialization_hal_loader:  	 System initialization (for boot loaders)
+    Watchdog_pal_stubs:                	 Watchdog stub
+    asyncproccall_pal:                 	 Asynchronous procedure call library
+    blockstorage_pal:                  	 Block storage library
+    Buttons_pal:                       	 Buttons library
+    COM_pal:                           	 Communication port director
+    DebuggerPort_SSL_Config_stubs:     	 DebuggerPort SSL Config stub
+    i2c_pal_stubs:                     	 I2C stub library
+    usart_pal:                         	 USART driver
+    usb_pal:                           	 USB driver
+    config_pal_loader:                 	 System configuration boot loader library
+    SimpleHeap:                        	 SimpleHeap unmanaged heap
+    SimpleHeap_config:                 	 Simple unmanaged heap
+    heap_pal:                          	 Managed heap size and location configuration
+    piezo_pal_stubs:                   	 Piezo stub driver
+    tinycrt_pal_loader:                	 CRT functionality (for boot loaders)
+    CRC:                               	 CRC library
+    WireProtocol:                      	 Device communication protocol
+    fs_pal_stubs:                      	 File System stub library
+    FS_Config_stubs:                   	 File system config stub
+    Ink_pal_stubs:                     	 Ink set of methods used by Ink, Ink
+    Gesture_pal_stubs:                 	 Gesture set of methods used by Gesture, Ink
+    palevent_pal_stubs:                	 palevent set of methods used by Gesture, Ink
+    Time_pal:                          	 Time set of methods used by Time, Time
+    TimeService_pal_stubs:             	 TimeService set of methods used by TimeService, TimeService
+    backlight_hal_stubs:               	 Backlight HAL stub library
+    batterycharger_hal_stubs:          	 Battery charger stub library
+    batterymeasurement_hal_stubs:      	 Battery measurement stub library
+    lcd_hal_stubs:                     	 Stub display driver
+    cpu_LCD_stubs:                     	 Display controller stub library
+    STM32_Flash:                       	 STM32 internal flash block storage driver
+    events_pal:                        	 System event library
+    sockets_pal_stubs:                 	 Network socket stub driver
+    diagnostics_pal:                   	 Diagnostics library
+    cpu_analog_stubs:                  	 Analog stub library
+    GlobalLock_hal_stubs:              	 Global lock stub library
+    cpu_pwm_stubs:                     	 PWM stub library
+    TinyHal_loader:                    	 Core HAL library (for boot loaders)
+    BS_WearLeveling:                   	 Wear Leveling driver for block storage
+    STM32_blconfig_KeilSTM:            	 Block storage configuration for KeilSTM
+    BlockStorage_AddDevices_KeilSTM:   	 Block storage add device driver for KeilSTM
+    IO_Init_KeilSTM:                   	 IO port initialization for KeilSTM solution
+    usb_pal_config_KeilSTM:            	 USB PAL configuration for KeilSTM solution
+    native_double_pal:                 	 Doubles Native PAL library
+
+
+Project tinyclr
+    Description:                       	 
+    Path:                              	 Solutions\KeilSTM\TinyCLR
+
+Features:
+    Core:                              	 Core functionality (required)
+    Hardware:                          	 Core hardware component
+    NativeEventDispatcher:             	 Native event dispatching for interop
+    BlockStorage:                      	 Block storage support
+    Debugger:                          	 Visual Studio debugger support
+    Serial:                            	 Serial transport
+    SerialPort:                        	 Serial port component
+    USB:                               	 Usb Transport
+    UsbClient:                         	 Usb client component
+    I2C:                               	 I2C Support
+    SPI:                               	 SPI support
+    PWM:                               	 PWM component
+    InterruptHandler:                  	 Support for interrupt handling
+    DataStorage:                       	 Data storage (extended weak reference storage)
+    Diagnostics:                       	 Diagnostic utilities
+    SOCKET:                            	 Socket transport
+    Network (LWIP):                    	 Network core functionality for lwIP stack
+    SSL (Open):                        	 OpenSSL support for networking
+    Stream:                            	 Stream component
+    TimeService:                       	 Time Service support
+    Graphics:                          	 Core graphics functionality
+    WearLeveling:                      	 Block storage wear leveling
+    Serialization:                     	 Data serialization support
+    OneWire:                           	 OneWire feature
+    MFUpdate:                          	 Micro Framework update utilities
+    Network (RTIP):                    	 Network core functionality for RTIP
+    HTTP:                              	 Support for HTTP functionality.
+    FileSystem:                        	 File system
+    Crypto:                            	 Cryptographic functionality
+
+Libraries:
+    LargeBuffer_hal_stubs:             	 LargeBuffer stub library
+    Core:                              	 CLR core library
+    Hardware:                          	 Core hardware functionality
+    IOPort:                            	 Native event dispatcher (formerly IOPort)
+    RPC_stub:                          	 Remote procedure call stub library
+    CorLib:                            	 Subset of mscorlib
+    SPOT:                              	 Common interop library
+    SPOT_Hardware:                     	 Hardware interop library
+    virtualkey_hal_stubs:              	 Virtual key stub library
+    CLRStartup:                        	 Common CLR initialization library
+    Crypto_stub:                       	 Crypto stub library
+    cpu_prestackinit_stubs:            	 Pre stack initialization stub driver
+    STM32_bootstrap:                   	 STM32 bootstrap driver
+    batterycharger_hal_stubs:          	 Battery charger stub library
+    batterymeasurement_hal_stubs:      	 Battery measurement stub library
+    STM32_GPIO:                        	 STM32 GPIO driver
+    STM32_Power:                       	 STM32 power driver
+    STM32_time:                        	 STM32 time driver
+    cpu_watchdog_stubs:                	 Watchdog driver
+    system_initialization_hal:         	 System initialization library
+    Watchdog_pal_stubs:                	 Watchdog stub
+    asyncproccall_pal:                 	 Asynchronous procedure call library
+    blockstorage_pal:                  	 Block storage library
+    Buttons_pal:                       	 Buttons library
+    config_pal:                        	 System configuration
+    heap_pal:                          	 Managed heap size and location configuration
+    piezo_pal_stubs:                   	 Piezo stub driver
+    SimpleHeap_stubs:                  	 SimpleHeap unmanaged heap stub library
+    SimpleHeap_config_stubs:           	 SimpleHeap configuration stub library
+    tinycrt_pal:                       	 CRT functionality
+    CRC:                               	 CRC library
+    WireProtocol:                      	 Device communication protocol
+    Ink_pal_stubs:                     	 Ink set of methods used by Ink, Ink
+    Gesture_pal_stubs:                 	 Gesture set of methods used by Gesture, Ink
+    palevent_pal:                      	 palevent set of methods used by Gesture, Ink
+    Time_pal:                          	 Time set of methods used by Time, Time
+    backlight_hal_stubs:               	 Backlight HAL stub library
+    cpu_cache_stubs:                   	 Cache stub library
+    STM32_Flash:                       	 STM32 internal flash block storage driver
+    STM32_SPI:                         	 STM32 SPI driver
+    STM32_I2C:                         	 STM32 I2C driver
+    STM32_USART:                       	 STM32 USART driver
+    STM32_USB:                         	 STM32 USB driver
+    STM32_INTC:                        	 STM32 interrupt controller driver
+    STM32_PWM:                         	 STM32 PWM driver
+    STM32_Analog:                      	 Analog library
+    COM_pal:                           	 Communication port director
+    DebuggerPort_SSL_Config_stubs:     	 DebuggerPort SSL Config stub
+    events_pal:                        	 System event library
+    Debugger:                          	 Visual Studio debugging support
+    Debugger_full:                     	 Full Visual Studio debugging support
+    Debugger_minimal:                  	 Minimal debug API methods
+    Diagnostics:                       	 Diagnostic functionality
+    Diagnostics_stub:                  	 Diagnostics stub library
+    usart_pal:                         	 USART driver
+    usb_pal:                           	 USB driver
+    i2c_pal:                           	 I2C drivers
+    diagnostics_pal:                   	 Diagnostics library
+    HeapPersistence:                   	 Extended weak references data storage 
+    SPOT_Messaging_stub:               	 Messaging interop stub library
+    Messaging:                         	 Core communication component
+    I2C:                               	 I2C support
+    InterruptHandler:                  	 Interrupt handler library
+    SPOT_Serialization:                	 Serialization interop library
+    Serialization:                     	 Binary serialization (proprietary format)
+    SPOT_Hardware_SerialPort:          	 SerialPort interop library
+    SPOT_Hardware_PWM:                 	 PWM interop library
+    SPOT_Hardware_Usb:                 	 
+    MFUpdate_PAL_stub:                 	 MFUpdate PAL stub component
+    ssl_pal_stubs:                     	 SSL PAL layer stub library
+    SPOT_Hardware_OneWire:             	 OneWire interop library
+    SecurityPkcs11:                    	 PKCS11
+    SPOT_Update:                       	 Common interop library
+    Graphics:                          	 Graphics subsystem library
+    TimeService_pal:                   	 Time set of methods used by Time, Time
+    SPOT_Net:                          	 Network interop library
+    SPOT_Net_Security:                 	 SSL interop library
+    Stream:                            	 Generic stream functionality
+    SPOT_IO:                           	 Stream interop library
+    SPOT_TimeService:                  	 TimeService interop library
+    SPOT_Graphics:                     	 Graphics interop library
+    BS_WearLeveling:                   	 Wear Leveling driver for block storage
+    onewire_pal_stubs:                 	 OneWire stub driver
+    fs_pal:                            	 File system PAL Driver
+    TinyHal:                           	 Core HAL library
+    graphics_pal:                      	 Graphics library
+    FS_FAT:                            	 FAT file system 
+    Graphics_Jpeg:                     	 JPEG library for graphics subsystem
+    Graphics_Bmp:                      	 Bitmap support for graphics subsystem
+    Graphics_Gif:                      	 GIF library for graphics subsystem
+    CryptoConfig_KeilSTM:              	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\CryptoConfig
+    EBIU_HAL_KeilSTM:                  	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\EBIU_HAL
+    FileSystem_Config_PAL_KeilSTM:     	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\FileSystem_Config_PAL
+    GlobalLock_hal:                    	 Global lock (native threading control)
+    LCD_HAL_KeilSTM:                   	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\LCD_HAL
+    MMU_HAL_KeilSTM:                   	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\MMU_HAL
+    OpenSSL_PKCS11_Crypto:             	 PKCS11 OpenSSL Crypto
+    sockets_pal_lwip:                  	 Network sockets driver for lwIP stack
+    TimeService_HAL_KeilSTM:           	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\TimeService_HAL
+    PKCS11_Storage_PAL_KeilSTM:        	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\PKCS11_Storage_PAL
+    PerformanceCounter_HAL_KeilSTM:    	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\PerformanceCounter_HAL
+    sockets_hal_sockets_lwIP:          	 Network async abstraction layer
+    sockets_hal_TCP_LWIP:              	 LWIP TCP layer
+    sockets_hal_udp_lwIP:              	 LWIP UDP netowrk layer
+    sockets_hal_dhcp_lwIP:             	 LWIP DHCP Driver
+    sockets_lwIP_pal:                  	 lwIP network driver
+    Ethernet_enc28j60_lwip:            	 ENC28J60 Ethernet Driver
+    Ethernet_loopback_lwip:            	 Loopback Ethernet Driver
+    LCDController_HAL_KeilSTM:         	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\LCDController_HAL
+    sockets_hal_async_LWIP:            	 Network async abstraction layer
+    Network_Config_HAL_KeilSTM:        	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\Network_Config_HAL
+    ENC28J60_Config_LWIP_HAL_KeilSTM:  	 Generates template code in your solution's DeviceCode directory for the given Library Category.The project will be generated in Solutions\KeilSTM\DeviceCode\ENC28J60_Config_LWIP_HAL
+    STM32_blconfig_KeilSTM:            	 Block storage configuration for KeilSTM
+    BlockStorage_AddDevices_KeilSTM:   	 Block storage add device driver for KeilSTM
+    IO_Init_KeilSTM:                   	 IO port initialization for KeilSTM solution
+    usb_pal_config_KeilSTM:            	 USB PAL configuration for KeilSTM solution
+    ARM9_bootstrap:                    	 ARM9 core bootstrap
+    onewire_pal:                       	 Maxim Dallas 1-Wire and iButton driver
+    native_double_pal:                 	 Doubles Native PAL library

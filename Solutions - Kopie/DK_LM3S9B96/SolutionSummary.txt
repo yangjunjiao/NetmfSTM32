@@ -1,0 +1,106 @@
+The .NET Micro Framework Solution Wizard will create the 'DK_LM3S9B96' solution in the directory:
+
+	D:\MicroFrameworkPK_v4_1\\Solutions\DK_LM3S9B96
+
+The following is a description of the components of this solution.  Each solution consists of a set of projects which in turn have a set of features and libraries.
+
+    Solution:                          	 DK_LM3S9B96
+    Author:                            	 
+    Description:                       	 
+    Processor:                         	 CortexM3
+    Debugger Port:                     	 COM1
+
+
+Project tinyclr
+    Description:                       	 
+    Path:                              	 Solutions\DK_LM3S9B96\TinyCLR
+
+Features:
+    NativeEventDispatcher:             	 Native event dispatching for interop
+    Core:                              	 Core functionality (required)
+    Hardware:                          	 Core hardware component
+    Serial:                            	 Serial transport
+    Debugger:                          	 Visual Studio debugger support
+    DataStorage:                       	 Data storage (extended weak reference storage)
+    Diagnostics:                       	 Diagnostic utilities
+    InterruptHandler:                  	 Support for interrupt handling
+    BlockStorage:                      	 Block storage support
+    SerialPort:                        	 Serial port component
+
+Libraries:
+    Core:                              	 CLR core library
+    CLRStartup:                        	 Common CLR initialization library
+    CorLib:                            	 Subset of mscorlib
+    SPOT:                              	 Common interop library
+    Debugger:                          	 Visual Studio debugging support
+    batterycharger_hal_stubs:          	 Battery charger stub library
+    batterymeasurement_hal_stubs:      	 Battery measurement stub library
+    blockstorage_pal:                  	 Block storage library
+    usart_pal:                         	 USART driver
+    usb_pal_stubs:                     	 USB stub driver
+    CRC:                               	 CRC library
+    I2C_stub:                          	 I2C stub library
+    SPOT_Crypto_stub:                  	 Crypto stub library
+    TinyHal:                           	 Core HAL library
+    WireProtocol:                      	 Device communication protocol
+    BlockStorageAddDevices_HAL_DK_LM3S9B96:	 Block storage add device DK_LM3S9B96 driver
+    USART_HAL_DK_LM3S9B96:             	 USART CortexM3 library
+    cpu_spi_stubs:                     	 SPI stub library
+    i2c_pal_stubs:                     	 I2C stub library
+    COM_pal:                           	 Communication port director
+    cpu_usb_stubs:                     	 USB stub library
+    sockets_pal_stubs:                 	 Network socket stub driver
+    asyncproccall_pal:                 	 Asynchronous procedure call library
+    BlockStorage_HAL_DK_LM3S9B96:      	 DK_LM3S9B96 block storage driver
+    Bootstrap_HAL_DK_LM3S9B96:         	 Processor bootstrap CortexM3 library
+    cpu_cache_stubs:                   	 Cache stub library
+    config_pal:                        	 System configuration
+    cpu_ebiu_stubs:                    	 EBIU stub library
+    events_pal:                        	 System event library
+    GlobalLock_hal:                    	 Global lock (native threading control)
+    cpu_gpio_stubs:                    	 GPIO stub library
+    system_initialization_hal:         	 System initialization library
+    fs_pal_stubs:                      	 File System stub library
+    backlight_hal_stubs:               	 Backlight HAL stub library
+    FS_Config_stubs:                   	 File system config stub
+    InterruptController_HAL_DK_LM3S9B96:	 Interrupt controller CortexM3 library
+    cpu_mmu_stubs:                     	 Memory management unit stub library
+    Power_HAL_DK_LM3S9B96:             	 CPU power CortexM3 library
+    cpu_prestackinit_stubs:            	 Pre stack initialization stub driver
+    Time_HAL_DK_LM3S9B96:              	 Time CortexM3 library
+    Time_pal:                          	 Time set of methods used by Time, Time
+    Hardware:                          	 Core hardware functionality
+    heap_pal:                          	 Managed heap size and location configuration
+    Messaging:                         	 Core communication component
+    cpu_watchdog_stubs:                	 Watchdog driver
+    Watchdog_pal_stubs:                	 Watchdog stub
+    Buttons_pal_stubs:                 	 Buttons stub library
+    tinycrt_pal:                       	 CRT functionality
+    palevent_pal:                      	 palevent set of methods used by Gesture, Ink
+    SimpleHeap_config:                 	 Simple unmanaged heap
+    SimpleHeap:                        	 SimpleHeap unmanaged heap
+    Debugger_full:                     	 Full Visual Studio debugging support
+    SPOT_Hardware:                     	 Hardware interop library
+    cpu_i2c_stubs:                     	 I2C stub library
+    virtualkey_hal_stubs:              	 Virtual key stub library
+    SPOT_InteropSample:                	 Inter-op Sample
+    IOPort:                            	 Native event dispatcher (formerly IOPort)
+    TimeService_pal_stubs:             	 TimeService set of methods used by TimeService, TimeService
+    LargeBuffer_hal_stubs:             	 LargeBuffer stub library
+    Gesture_pal_stubs:                 	 Gesture set of methods used by Gesture, Ink
+    RPC_stub:                          	 Remote procedure call stub library
+    Diagnostics:                       	 Diagnostic functionality
+    diagnostics_pal:                   	 Diagnostics library
+    piezo_pal_stubs:                   	 Piezo stub driver
+    cpu_performancecounter_stubs:      	 Performance counter stub library
+    Crypto_stub:                       	 Crypto stub library
+    HeapPersistence:                   	 Extended weak references data storage 
+    Serialization_stub:                	 Binary serialization stub library
+    SPOT_Serialization_stub:           	 Serialization interop stub library
+    InterruptHandler:                  	 Interrupt handler library
+    SPOT_Messaging_stub:               	 Messaging interop stub library
+    Ink_pal_stubs:                     	 Ink set of methods used by Ink, Ink
+    SPOT_Hardware_SerialPort:          	 SerialPort interop library
+    lcd_hal_stubs:                     	 Stub display driver
+    Graphics_stub:                     	 Graphics stub library
+    cpu_LCD_stubs:                     	 Display controller stub library

@@ -1,0 +1,48 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>Bootstrap_HAL_DK_LM3S9B96</AssemblyName>
+    <ProjectGuid>{C26C6DD2-AF82-4069-A950-D9F3273AA9CA}</ProjectGuid>
+    <Size>
+    </Size>
+    <Description>Processor bootstrap CortexM3 library</Description>
+    <Level>HAL</Level>
+    <LibraryFile>Bootstrap_HAL_DK_LM3S9B96.$(LIB_EXT)</LibraryFile>
+    <ProjectPath>$(SPOCLIENT)\Solutions\DK_LM3S9B96\DeviceCode\Bootstrap_HAL\dotNetMF.proj</ProjectPath>
+    <ManifestFile>Bootstrap_HAL_DK_LM3S9B96.$(LIB_EXT).manifest</ManifestFile>
+    <Groups>Processor\CortexM3</Groups>
+    <LibraryCategory>
+      <MFComponent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Bootstrap_HAL" Guid="{15AB3FEB-4D7A-40AD-B1A0-4BF663A6EF93}" ProjectPath="" Conditional="" xmlns="">
+        <VersionDependency xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <Major>4</Major>
+          <Minor>0</Minor>
+          <Revision>0</Revision>
+          <Build>0</Build>
+          <Extra />
+          <Date>2009-04-30</Date>
+        </VersionDependency>
+        <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">LibraryCategory</ComponentType>
+      </MFComponent>
+    </LibraryCategory>
+    <Documentation>
+    </Documentation>
+    <PlatformIndependent>False</PlatformIndependent>
+    <CustomFilter>
+    </CustomFilter>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <IsCortexM3>True</IsCortexM3>
+    <Directory>Solutions\DK_LM3S9B96\DeviceCode\Bootstrap_HAL</Directory>
+    <OutputType>Library</OutputType>
+    <PlatformIndependentBuild>false</PlatformIndependentBuild>
+    <Version>4.0.0.0</Version>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup />
+  <ItemGroup>
+    <IncludePaths Include="\DeviceCode\StellarisMCU" />
+    <Compile Include="set_pinout.cpp" />
+    <Compile Include="CortexM3_functions_bootstrap.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>

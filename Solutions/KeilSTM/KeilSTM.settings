@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Author />
+    <Description />
+    <Documentation />
+    <PlatformGuid>{f9afb198-a679-4f5e-96bc-762a9df30269}</PlatformGuid>
+    <INSTRUCTION_SET>THUMB2</INSTRUCTION_SET>
+    <TARGETPLATFORM>KeilSTM</TARGETPLATFORM>
+    <PLATFORM>KeilSTM</PLATFORM>
+    <IsSolutionWizardVisible>True</IsSolutionWizardVisible>
+    <ENDIANNESS>le</ENDIANNESS>
+    <NO_BOOTLOADER_COMPRESSION>true</NO_BOOTLOADER_COMPRESSION>
+  </PropertyGroup>
+  <ItemGroup>
+    <IncludePaths Include="Solutions\KeilSTM" />
+    <TinyCLR_Defines Include="PLATFORM_NO_CLR_TRACE=1" />
+    <TinyCLR_Defines Include="TINYCLR_NO_IL_INLINE=1" />
+  </ItemGroup>
+  <Import Project="$(SPOCLIENT)\devicecode\Targets\Native\STM32\STM32.settings" />
+</Project>
