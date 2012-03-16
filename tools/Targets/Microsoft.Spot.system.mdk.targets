@@ -63,6 +63,7 @@
 
     <CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='RTM'"         >$(CC_CPP_TARGETTYPE_FLAGS) $(SWTC)no_debug $(SWTC)dwarf2 $(SWTC)no_debug_macros -O3  $(SWTC)inline -Otime $(SWTC)no_autoinline</CC_CPP_TARGETTYPE_FLAGS>
     <CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='Debug'"       >$(CC_CPP_TARGETTYPE_FLAGS) $(SWTC)debug    $(SWTC)dwarf2 $(SWTC)debug_macros    -O0         $(SWTC)inline </CC_CPP_TARGETTYPE_FLAGS>
+	<CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='DebugOpt'"    >$(CC_CPP_TARGETTYPE_FLAGS) $(SWTC)debug    $(SWTC)dwarf2 $(SWTC)debug_macros    -O1         $(SWTC)inline </CC_CPP_TARGETTYPE_FLAGS>
     <CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='Instrumented'">$(CC_CPP_TARGETTYPE_FLAGS) $(SWTC)debug    $(SWTC)dwarf2 $(SWTC)debug_macros    -O0         $(SWTC)inline </CC_CPP_TARGETTYPE_FLAGS>
     <CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='Release'"     >$(CC_CPP_TARGETTYPE_FLAGS) $(SWTC)no_debug $(SWTC)dwarf2 $(SWTC)no_debug_macros -O2 -Ospace $(SWTC)inline -Otime $(SWTC)no_autoinline</CC_CPP_TARGETTYPE_FLAGS>
 
@@ -97,7 +98,10 @@
     <AS_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='Release'"     >$(AS_TARGETTYPE_FLAGS) $(SWTC)PD "BUILD_RTM SETS \"0\""</AS_TARGETTYPE_FLAGS>
     <AS_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='Instrumented'">$(AS_TARGETTYPE_FLAGS) $(SWTC)PD "BUILD_RTM SETS \"0\"" -g</AS_TARGETTYPE_FLAGS>
     <AS_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='Debug'"       >$(AS_TARGETTYPE_FLAGS) $(SWTC)PD "BUILD_RTM SETS \"0\"" -g</AS_TARGETTYPE_FLAGS>
-
+	<AS_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='DebugOpt'"       >$(AS_TARGETTYPE_FLAGS) $(SWTC)PD "BUILD_RTM SETS \"0\"" -g</AS_TARGETTYPE_FLAGS>
+	
+	
+	
     <!-- Adjust the compiler/assembler flags according to the settings -->
     <AS_FLAGS Condition="'$(FLAVOR)'=='Instrumented'">$(AS_FLAGS) $(SWTC)PD "PROFILE_BUILD SETS \"1\""</AS_FLAGS>
     <AS_FLAGS Condition="'$(sampleprof)'=='true'"    >$(AS_FLAGS) $(SWTC)PD "FIQ_SAMPLING_PROFILER SETS \"1\""</AS_FLAGS>
@@ -130,6 +134,7 @@
     <!-- CPP/CC flags depands on the target build -->
     <CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='RTM'"         >$(CC_CPP_TARGETTYPE_FLAGS) -DBUILD_RTM</CC_CPP_TARGETTYPE_FLAGS>
     <CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='Debug'"       >$(CC_CPP_TARGETTYPE_FLAGS) -DDEBUG -D_DEBUG</CC_CPP_TARGETTYPE_FLAGS>
+	<CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='DebugOpt'"       >$(CC_CPP_TARGETTYPE_FLAGS) -DDEBUG -D_DEBUG</CC_CPP_TARGETTYPE_FLAGS>
     <CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='Instrumented'">$(CC_CPP_TARGETTYPE_FLAGS) -DDEBUG -D_DEBUG</CC_CPP_TARGETTYPE_FLAGS>
     <CC_CPP_TARGETTYPE_FLAGS Condition="'$(FLAVOR)'=='Release'"     >$(CC_CPP_TARGETTYPE_FLAGS) -DNDEBUG</CC_CPP_TARGETTYPE_FLAGS>
 

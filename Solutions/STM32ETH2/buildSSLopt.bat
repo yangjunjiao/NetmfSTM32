@@ -1,0 +1,1 @@
+msbuild dotNetMF.proj /t:build /p:flavor=debugopt;TCP_IP_STACK=LWIP;memory=FLASH;platform=STM32ETH2;SSL=OPEN_SSL

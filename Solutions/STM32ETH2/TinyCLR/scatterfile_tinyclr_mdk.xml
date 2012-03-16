@@ -7,32 +7,56 @@
 
     <!-- ################################################################################ -->
 
-    <!--<Set Name="RAM_Start"      Value="0x20000000"/>-->
-	<Set Name="RAM_Start"      Value="0x68000000"/>
+   
 
     <!-- Custom heap used for interrupt handler table only -->
     <!--
 		original configuration
+		
+	<Set Name="RAM_Start"      Value="0x20000000"/>
+	
 	<Set Name="Custom_Heap_Begin"       Value="0x2000C000"/>
     <Set Name="Custom_Heap_End"         Value="0x2000C1F8"/>
 
 	
     <Set Name="Stack_Bottom"            Value="0x2000C200"/>
     <Set Name="Stack_Top"               Value="0x2000FFF8"/>
+	
+	<Set Name="Heap_Begin"              Value="0x68000000"/>
+    <Set Name="Heap_End"                Value="0x680FFFF8"/>
 	-->
+	
+	<Set Name="RAM_Start"      Value="0x20000000"/>
+	
 	<Set Name="Custom_Heap_Begin"       Value="0x20014000"/>
     <Set Name="Custom_Heap_End"         Value="0x200141F8"/>
 	
 	<Set Name="Stack_Bottom"            Value="0x20014200"/>
     <Set Name="Stack_Top"               Value="0x20017FF8"/>
+
+    <Set Name="Heap_Begin"              Value="0x68000000"/>
+    <Set Name="Heap_End"                Value="0x680FFFF8"/>
+	
+	
+	<!--<Set Name="Stack_Bottom"            Value="0x20016200"/>
+    <Set Name="Stack_Top"               Value="0x20017FF8"/>-->
+	
+	<!--<Set Name="Custom_Heap_Begin"       Value="0x20014000"/>
+    <Set Name="Custom_Heap_End"         Value="0x200141F8"/>
+	
+	-->
 <!--
 	<Set Name="Heap_Begin"              Value="0x2000E000"/>
     <Set Name="Heap_End"                Value="0x20013FF8"/>
 	-->	
+	<!--<Set Name="RAM_Start"      Value="0x68000000"/>-->
 	
+	<!-- 
+	<Set Name="Stack_Bottom"            Value="0x68000000"/>
+    <Set Name="Stack_Top"               Value="0x68031FF8"/>
 	<Set Name="Heap_Begin"              Value="0x68032000"/>
-    <!--<Set Name="Heap_Begin"              Value="0x68000000"/>-->
-    <Set Name="Heap_End"                Value="0x680FFFF8"/>
+   <Set Name="Heap_Begin"              Value="0x68000000"/>
+    <Set Name="Heap_End"                Value="0x680FFFF8"/>-->
 
 
     <IfDefined Name="PROFILE_BUILD">

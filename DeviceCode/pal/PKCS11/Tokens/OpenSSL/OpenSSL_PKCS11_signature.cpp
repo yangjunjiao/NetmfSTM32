@@ -86,7 +86,7 @@ CK_RV PKCS11_Signature_OpenSSL::GetDigestFromMech(CK_MECHANISM_PTR pMechanism, c
                 }
                 else pDigest = EVP_sha256();
                 break;
-
+#ifndef OPENSSL_NO_SHA512
             case CKM_SHA384:
                 if(fSignHash)
                 {
@@ -104,7 +104,7 @@ CK_RV PKCS11_Signature_OpenSSL::GetDigestFromMech(CK_MECHANISM_PTR pMechanism, c
                 }
                 else pDigest = EVP_sha512();
                 break;
-
+#endif
             case CKM_MD5:
                 if(fSignHash)
                 {

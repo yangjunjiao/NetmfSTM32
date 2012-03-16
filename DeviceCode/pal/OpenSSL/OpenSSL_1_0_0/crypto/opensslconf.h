@@ -24,6 +24,13 @@
 #define OPENSSL_IMPLEMENTS_strncasecmp
 #define NO_SYS_TYPES_H //no sys/types.h
 #define OPENSSL_NO_POSIX_IO // no sys/stat.h
+
+//SK
+#define OPENSSL_NO_CAMELLIA
+#define OPENSSL_NO_IDEA
+#define OPENSSL_NO_SHA512
+#define OPENSSL_NO_ERR
+
 //#define OPENSSL_NO_STDIO
 #endif
 #endif

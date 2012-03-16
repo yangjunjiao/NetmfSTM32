@@ -1,0 +1,20 @@
+possible build flags
+SSL=OPEN_SSL
+TCP_IP_STACK=LWIP
+flavor=debug
+flavor=release
+flavor=debugopt with optimization and insturmentation
+
+
+
+SET_MDK_VARS
+setenv_MDK4.12 C:\Programme\Keil\ARM
+
+Build der Build Umgebung
+msbuild build.dirproj
+
+
+msbuild dotNetMF.proj /t:build /p:flavor=debug;memory=FLASH;platform=STM32Stamp
+msbuild dotNetMF.proj /t:build /p:flavor=debug;memory=FLASH;platform=MCBSTM32E
+msbuild dotNetMF.proj /t:build /p:flavor=debug;TCP_IP_STACK=LWIP;memory=FLASH;platform=STM32ETH2
+msbuild dotNetMF.proj /t:build /p:flavor=debug;TCP_IP_STACK=LWIP;memory=FLASH;platform=STM32ETH2;SSL=OPEN_SSL

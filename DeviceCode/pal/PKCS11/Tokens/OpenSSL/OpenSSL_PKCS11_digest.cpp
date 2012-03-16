@@ -31,13 +31,14 @@ CK_RV PKCS11_Digest_OpenSSL::DigestInit(Cryptoki_Session_Context* pSessionCtx, C
         case CKM_SHA256:
             pDigest = EVP_sha256();
             break;
+#ifndef OPENSSL_NO_SHA512
         case CKM_SHA384:
             pDigest = EVP_sha384();
             break;
         case CKM_SHA512:
             pDigest = EVP_sha512();
             break;
-
+#endif
         case CKM_MD5:
             pDigest = EVP_md5();
             break;
@@ -60,7 +61,7 @@ CK_RV PKCS11_Digest_OpenSSL::DigestInit(Cryptoki_Session_Context* pSessionCtx, C
             pDigest = EVP_sha256();
             isHMAC = true;
             break;
-
+#ifndef OPENSSL_NO_SHA512
         case CKM_SHA384_HMAC:
             pDigest = EVP_sha384();
             isHMAC = true;
@@ -70,7 +71,7 @@ CK_RV PKCS11_Digest_OpenSSL::DigestInit(Cryptoki_Session_Context* pSessionCtx, C
             pDigest = EVP_sha512();
             isHMAC = true;
             break;
-
+#endif
         case CKM_RIPEMD160_HMAC:
             pDigest = EVP_ripemd160();
             isHMAC = true;

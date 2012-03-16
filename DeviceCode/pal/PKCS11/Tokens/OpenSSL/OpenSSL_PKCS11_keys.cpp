@@ -420,11 +420,11 @@ CK_RV PKCS11_Keys_OpenSSL::DeriveKey(Cryptoki_Session_Context* pSessionCtx, CK_M
                     case CKM_SHA256_KEY_DERIVATION:
                         pDigest = EVP_sha256();
                         break;
-                        
+#ifndef OPENSSL_NO_SHA512            
                     case CKM_SHA512_KEY_DERIVATION:
                         pDigest = EVP_sha512();
                         break;
-
+#endif
                     case CKM_MD5_KEY_DERIVATION:
                         pDigest = EVP_md5();
                         break;                            
