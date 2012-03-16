@@ -516,6 +516,17 @@
     <DriverLibs Include="Network_config_STM32ETH2.$(LIB_EXT)" />
   </ItemGroup>
 
+  <!-- stubs if TCP is not selected -->
+   <ItemGroup  Condition="'$(TCP_IP_STACK)'!='LWIP'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\PAL\COM\Sockets\stubs\dotNetMF.proj" />
+    <DriverLibs Include="sockets_pal_stubs.$(LIB_EXT)" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TCP_IP_STACK)'!='LWIP'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\PAL\COM\Sockets\ssl\stubs\dotNetMF.proj" />
+    <DriverLibs Include="ssl_pal_stubs.$(LIB_EXT)" />
+  </ItemGroup>  
+  
+  
     <!-- lwIP Stack Libraries -->
   <ItemGroup Condition="'$(TCP_IP_STACK)'=='LWIP'">
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\PAL\COM\Sockets_lwip\dotNetMF.proj" />

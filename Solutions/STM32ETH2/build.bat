@@ -1,0 +1,1 @@
+msbuild dotNetMF.proj /t:build /p:flavor=debug;memory=FLASH;platform=STM32ETH2

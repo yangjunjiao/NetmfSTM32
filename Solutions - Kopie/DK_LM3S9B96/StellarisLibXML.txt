@@ -1,8 +1,0 @@
-<ItemGroup>
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\StellarisMCU\driverlib\dotNetMF.proj" />
-    <DriverLibs Include="Stellaris_CPU_hal.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\StellarisMCU\grlib\dotNetMF.proj" />
-    <DriverLibs Include="Stellaris_grlib_hal.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\StellarisMCU\grlib\fonts\dotNetMF.proj" />
-    <DriverLibs Include="Stellaris_grlib_fonts.$(LIB_EXT)" />
-  </ItemGroup>
