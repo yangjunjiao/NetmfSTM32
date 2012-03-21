@@ -26,6 +26,8 @@
     <Set Name="Heap_End"                Value="0x680FFFF8"/>
 	-->
 	
+	<!-- std conf-->
+	<!--
 	<Set Name="RAM_Start"      Value="0x20000000"/>
 	
 	<Set Name="Custom_Heap_Begin"       Value="0x20014000"/>
@@ -35,6 +37,19 @@
     <Set Name="Stack_Top"               Value="0x20017FF8"/>
 
     <Set Name="Heap_Begin"              Value="0x68000000"/>
+    <Set Name="Heap_End"                Value="0x680FFFF8"/>
+	-->
+	
+	<!-- RAM extern -->
+	<Set Name="RAM_Start"      Value="0x68000000"/>
+	
+	<Set Name="Custom_Heap_Begin"       Value="0x20000000"/>
+    <Set Name="Custom_Heap_End"         Value="0x200001F8"/>
+	
+	<Set Name="Stack_Bottom"            Value="0x20000200"/>
+    <Set Name="Stack_Top"               Value="0x20017FF8"/>
+
+    <Set Name="Heap_Begin"              Value="0x68032000"/>
     <Set Name="Heap_End"                Value="0x680FFFF8"/>
 	
 	
