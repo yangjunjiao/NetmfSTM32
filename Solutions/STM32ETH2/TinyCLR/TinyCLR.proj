@@ -330,8 +330,8 @@
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Drivers\stubs\processor\stubs_lcd\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32_Flash.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_Flash\dotNetMF.proj" />
+    <DriverLibs Include="STM32_FlashXL.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_FlashXL\dotNetMF.proj" />
   </ItemGroup>
     <ItemGroup>
     <RequiredProjects Include="$(SPOCLIENT)\Solutions\STM32ETH2\DeviceCode\M25P64\dotNetMF.proj" />

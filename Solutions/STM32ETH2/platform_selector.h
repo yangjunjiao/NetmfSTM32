@@ -22,7 +22,8 @@
 #if defined(PLATFORM_ARM_STM32ETH2)
 #define HAL_SYSTEM_NAME                     "STM32ETH2"
 
-#define STM32F10X_HD  // STM32F103ZE cpu
+//#define STM32F10X_HD  // STM32F103ZE cpu
+#define STM32F10X_XL
 #define PLATFORM_ARM_STM32
 
 //#define USB_ALLOW_CONFIGURATION_OVERRIDE  1
@@ -30,7 +31,7 @@
 
 #if 1 //defined(iMXS_net_open_SOCKETS_ENABLED)
 
-#define NETWORK_INTERFACE_COUNT             1
+#define NETWORK_INTERFACE_COUNT             2
 
 #define PLATFORM_DEPENDENT__SOCKETS_MAX_SEND_LENGTH 8192
 
@@ -40,6 +41,7 @@
 #include <pal\net\Network_Defines_lwip.h>
 
 #define NETWORK_USE_LOOPBACK                1
+#define deine LWIP_HAVE_LOOPIF 1
 //#define NETWORK_USE_DHCP                    1 //SK only for rtip???
 
 //--//
@@ -91,8 +93,8 @@
 #define USART_DEFAULT_PORT              COM2
 #define USART_DEFAULT_BAUDRATE          115200
 
-#define DEBUG_TEXT_PORT    USB1
-#define STDIO              USB1
+#define DEBUG_TEXT_PORT    USART_DEFAULT_PORT //USB1
+#define STDIO              USART_DEFAULT_PORT //USB1
 #define DEBUGGER_PORT      USB1
 #define MESSAGING_PORT     USB1
 

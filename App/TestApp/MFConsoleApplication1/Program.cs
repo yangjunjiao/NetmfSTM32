@@ -35,6 +35,7 @@
             SerialPortExt uart = new SerialPortExt("COM2", 115200);
             int counter = 0;
             uart.Open();
+            uart.WriteLine(Resources.StringResources.String1.ToString());
 
             Thread threadToggleLed = new Thread(ToggleThread);
             threadToggleLed.Start();
@@ -49,13 +50,17 @@
 
             Ds1624 tempSens = new Ds1624();
             tempSens.Init();
-            tempSens.TemperatureEvent += temperature => uart.WriteLine("temperature: " + temperature.ToString());
+            tempSens.TemperatureEvent +=
+                delegate(double temperature)
+                    {                       
+                        uart.WriteLine("temperature: " + temperature.ToString());
+                    };
             tempSens.StartConversion();
 
-            SocketServer socketServer = new SocketServer(new HtmlTempDataProvider(tempSens));
+           // SocketServer socketServer = new SocketServer(new HtmlTempDataProvider(tempSens));
 
 
-            new Thread(MyHttpClient.Run).Start();
+            //new Thread(MyHttpClient.Run).Start();
             
             while (true)
             {

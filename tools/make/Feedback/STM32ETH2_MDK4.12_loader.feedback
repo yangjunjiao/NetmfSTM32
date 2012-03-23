@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Fri Mar 16 14:14:00 2012
+;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Fri Mar 23 19:16:49 2012
 ;VERSION 0.2
 ;FILE Aborts.obj
 HARD_Breakpoint_Handler <= USED 0
@@ -22,6 +22,7 @@ _ZN13Loader_Engine15SendTextMessageEPci <= USED 0
 ;FILE Compression.obj
 ;FILE ConfigHelper.obj
 _Z16GetHalSystemInfoR13HalSystemInfo <= USED 0
+_ZN16HAL_CONFIG_BLOCK11ApplyConfigEPKcPvjPS2_ <= USED 0
 _ZN16HAL_CONFIG_BLOCK11UpdateBlockERK29HAL_CONFIG_BLOCK_STORAGE_DATAPKvPKS_PvjS4_j <= USED 0
 _ZN16HAL_CONFIG_BLOCK12CompactBlockER29HAL_CONFIG_BLOCK_STORAGE_DATAPK19ConfigurationSectorPKS_ <= USED 0
 _ZN16HAL_CONFIG_BLOCK22GetConfigSectorAddressER29HAL_CONFIG_BLOCK_STORAGE_DATA <= USED 0

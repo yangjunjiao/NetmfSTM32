@@ -58,6 +58,19 @@
 
 //--//
 
+//512k internal app
+/*const BlockRange g_STM32_BlockRange[] =
+{
+    { BlockRange::BLOCKTYPE_BOOTSTRAP ,    0,  21 },  // 08000000 bootloader   44k
+    { BlockRange::BLOCKTYPE_CODE      ,   22, 243 },  // 0800B000 CLR         454k
+	{ BlockRange::BLOCKTYPE_DEPLOYMENT,  244, 505 },  // 0807A000 deployment  512k
+    { BlockRange::BLOCKTYPE_CONFIG    ,  506, 507 },  // 080FD000 config        4k
+    { BlockRange::BLOCKTYPE_STORAGE_A ,  508, 509 },  // 080FE000 storage A     4k
+    { BlockRange::BLOCKTYPE_STORAGE_B ,  510, 511 },  // 080FF000 storage B     4k
+};*/
+
+
+// big clr, extern deployment
 
 const BlockRange g_STM32_BlockRange[] =
 {

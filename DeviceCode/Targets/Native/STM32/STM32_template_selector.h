@@ -22,7 +22,8 @@
 #if defined(PLATFORM_ARM_<TEMPLATE>)
 #define HAL_SYSTEM_NAME             "<TEMPLATE>"
 
-#define STM32F10X_HD  // STM32F103RET cpu
+//#define STM32F10X_HD  // STM32F103RET cpu
+#define STM32F10X_XL //Has to be placed in global tempalte
 #define PLATFORM_ARM_STM32
 
 //#define USB_ALLOW_CONFIGURATION_OVERRIDE  1
