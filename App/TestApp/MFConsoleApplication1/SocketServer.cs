@@ -12,7 +12,7 @@ namespace MFConsoleApplication1
     using System.Text;
     using System.Threading;
     using Microsoft.SPOT;
-
+    using Microsoft.SPOT.Net.Security;
 
     /// <summary>
     /// This is a simple network server.  Given a request, it returns an HTML 

@@ -48,11 +48,13 @@ static SSL_SeedDriver g_SSL_SeedData;
 
 static void UpdateSslSeedValue(void* arg)
 {
+#if 0 //SK TODO
     if(!HAL_CONFIG_BLOCK::UpdateBlockWithName( g_SSL_SeedData.Config.GetDriverName(), &g_SSL_SeedData.Config, sizeof(g_SSL_SeedData.Config), TRUE ))
     {
         ASSERT(FALSE);
         CPU_Reset();
     }
+#endif
 }
 
 static void GenerateNewSslSeed()
@@ -523,7 +525,8 @@ HRESULT Library_spot_net_security_native_Microsoft_SPOT_Net_Security_SslNative::
 
         isFirstCall = true;
 
-#if !defined(_WIN32) && !defined(WIN32) && !defined(_WIN32_WCE)
+//#if !defined(_WIN32) && !defined(WIN32) && !defined(_WIN32_WCE)
+#if 0 //SK TODO
         int i;
 
         if(!HAL_CONFIG_BLOCK::ApplyConfig( g_SSL_SeedData.Config.GetDriverName(), &g_SSL_SeedData.Config, sizeof(g_SSL_SeedData.Config) ))

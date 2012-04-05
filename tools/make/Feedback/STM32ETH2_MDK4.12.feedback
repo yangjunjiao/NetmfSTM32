@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Fri Mar 23 19:20:13 2012
+;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Wed Apr 04 18:11:43 2012
 ;VERSION 0.2
 ;FILE Aborts.obj
 HARD_Breakpoint_Handler <= USED 0
@@ -96,6 +96,8 @@ _Z21LargeBuffer_PostEventt <= USED 0
 _Z15MFUpdate_Deletei <= USED 0
 _Z20MFUpdate_GetPropertyjPKcPhPi <= USED 0
 _Z20MFUpdate_SetPropertyjPKcPhi <= USED 0
+;FILE MatrixSSL.obj
+_Z11SSL_GetTimeP15_DATE_TIME_INFO <= USED 0
 ;FILE Messaging.obj
 _ZN13CLR_Messaging14BroadcastEventEjjPhj <= USED 0
 _ZN13CLR_Messaging21Messaging_Send__ReplyEP10WP_MessagePv <= USED 0
@@ -109,7 +111,7 @@ _ZN25CLR_RT_HeapBlock_EndPoint15ExtractInstanceER16CLR_RT_HeapBlockRPS_ <= USED 
 _ZN25CLR_RT_HeapBlock_EndPoint17ReleaseWhenDeadExEv <= USED 0
 _ZN25CLR_RT_HeapBlock_EndPoint4Port7CompareERKS0_ <= USED 0
 ;FILE STM32_AD_functions.obj
-;FILE STM32_FlashXL_driver.obj
+;FILE STM32_Flash_driver.obj
 ;FILE STM32_GPIO_functions.obj
 _Z18CPU_GPIO_PinIsBusyj <= USED 0
 ;FILE STM32_I2C_functions.obj
@@ -172,12 +174,10 @@ _Znaj <= USED 0
 _Znwj <= USED 0
 ;FILE api_lib.obj
 netconn_close <= USED 0
-netconn_disconnect <= USED 0
 netconn_join_leave_group <= USED 0
 netconn_sendto <= USED 0
 ;FILE api_msg.obj
 do_close <= USED 0
-do_disconnect <= USED 0
 do_join_leave_group <= USED 0
 ;FILE asyncproccall_fastcompile.obj
 ;FILE blockstoragelist.obj
@@ -424,6 +424,7 @@ _ZNK25CLR_GFX_FontDescriptionEx16GetAntiAliasSizeEv <= USED 0
 _Z20I2C_XAction_GetStateP15I2C_HAL_XACTION <= USED 0
 ;FILE icmp.obj
 ;FILE igmp.obj
+igmp_dump_group_list <= USED 0
 igmp_stop_timer <= USED 0
 ;FILE inet.obj
 inet_ntoa <= USED 0
@@ -486,14 +487,26 @@ _ZN19Sockets_LWIP_Driver8ShutdownEii <= USED 0
 ;FILE spot_fastcompile.obj
 ;FILE spot_hardware_usb_fastcompile.obj
 ;FILE spot_messaging_stub.obj
-;FILE ssl_pal_Stubs.obj
-_Z10SSL_Acceptii <= USED 0
-_Z11SSL_GetTimeP15_DATE_TIME_INFO <= USED 0
-_Z14SSL_ServerInitiiPKciS0_Ri <= USED 0
-_Z17SSL_DataAvailablei <= USED 0
-_Z24SSL_RegisterTimeCallbackPFvP15_DATE_TIME_INFOE <= USED 0
-_Z29SSL_ClearCertificateAuthorityi <= USED 0
-ssl_rand_seed <= USED 0
+;FILE spot_net_security_native_Microsoft_SPOT_Net_Security_SslNative.obj
+;FILE stubs.obj
+Crypto_AbortRSAOperation <= USED 0
+Crypto_Decrypt <= USED 0
+Crypto_GeneratePrivateKey <= USED 0
+Crypto_GetActivationStringFromSeed <= USED 0
+Crypto_GetFingerprint <= USED 0
+Crypto_GetHash <= USED 0
+Crypto_KeySeedFromLaser <= USED 0
+Crypto_PublicKeyFromModulus <= USED 0
+Crypto_PublicKeyFromPrivate <= USED 0
+Crypto_StartRSAOperationWithKey <= USED 0
+Crypto_StepRSAOperation <= USED 0
+GetC1Value <= USED 0
+_Z17Crypto_RSAComputeP9tagRSAKeyPhmS1_m13RSAOperations <= USED 0
+_Z17Crypto_SignBufferPhiP9tagRSAKeyS_i <= USED 0
+_Z23Crypto_LaserFromKeySeedPK10tagKeySeedPh <= USED 0
+_Z24Crypto_CreatedotNetMFKeyPhPtS0_ <= USED 0
+_Z29Crypto_DecodeActivationStringPciPhPtS1_ <= USED 0
+_Z36Crypto_GetActivationStringFromBufferPciPhi <= USED 0
 ;FILE stubs_functions_WATCHDOG.obj
 _Z15Watchdog_EnablejPFvPvES_ <= USED 0
 _Z16Watchdog_Disablev <= USED 0
@@ -537,7 +550,6 @@ _Z19Verify_RAMConstantsPv <= USED 0
 _Z24HAL_AddSoftRebootHandlerPFvvE <= USED 0
 _Z47KEEP_THE_LINKER_HAPPY_SINCE_KEEP_IS_NOT_WORKINGv <= USED 0
 ;FILE udp.obj
-udp_disconnect <= USED 0
 ;FILE usart.obj
 _Z10COM1_writePcj <= USED 0
 _Z10COM2_writePcj <= USED 0

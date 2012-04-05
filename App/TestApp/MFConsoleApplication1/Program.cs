@@ -57,10 +57,10 @@
                     };
             tempSens.StartConversion();
 
-           // SocketServer socketServer = new SocketServer(new HtmlTempDataProvider(tempSens));
+            SocketServer socketServer = new SocketServer(new HtmlTempDataProvider(tempSens));
 
 
-            //new Thread(MyHttpClient.Run).Start();
+            new Thread(MyHttpClient.Run).Start();
             
             while (true)
             {
@@ -77,6 +77,10 @@
                 {
                     uart.WriteLine(allNetworkInterface.NetworkInterfaceType.ToString());
                     uart.WriteLine(allNetworkInterface.IPAddress);
+                    /*if (allNetworkInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                    {
+                        allNetworkInterface.EnableDhcp();
+                    }*/
                 }
                 //AnalogInput analogInput = new AnalogInput(Cpu.AnalogChannel.ANALOG_4);
                 //Debug.Print("a: " + analogInput.Read().ToString());

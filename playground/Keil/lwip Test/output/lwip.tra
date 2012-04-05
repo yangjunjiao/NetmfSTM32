@@ -1,0 +1,47 @@
+*** Creating Trace Output File '.\output\lwip.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\output\main.o"'
+### List of Objects: adding '".\output\start.o"'
+### List of Objects: adding '".\output\stm32f10x_it.o"'
+### List of Objects: adding '".\STM32F10xR.LIB"'
+### List of Objects: adding '".\output\startup_stm32f10x_xl.o"'
+### List of Objects: adding '".\output\hmac.o"'
+### List of Objects: adding '".\output\md5.o"'
+### List of Objects: adding '".\output\sha1.o"'
+### List of Objects: adding '".\output\asn1.o"'
+### List of Objects: adding '".\output\base64.o"'
+### List of Objects: adding '".\output\x509.o"'
+### List of Objects: adding '".\output\pstm.o"'
+### List of Objects: adding '".\output\prng.o"'
+### List of Objects: adding '".\output\yarrow.o"'
+### List of Objects: adding '".\output\pkcs.o"'
+### List of Objects: adding '".\output\pubkey.o"'
+### List of Objects: adding '".\output\rsa.o"'
+### List of Objects: adding '".\output\aes.o"'
+### List of Objects: adding '".\output\arc4.o"'
+### List of Objects: adding '".\output\des3.o"'
+### List of Objects: adding '".\output\rc2.o"'
+### List of Objects: adding '".\output\noos.o"'
+### List of Objects: adding '".\output\ciphersuite.o"'
+### List of Objects: adding '".\output\matrixssl.o"'
+### List of Objects: adding '".\output\matrixsslapi.o"'
+### List of Objects: adding '".\output\ssldecode.o"'
+### List of Objects: adding '".\output\sslencode.o"'
+### List of Objects: adding '".\output\sslv3.o"'
+### List of Objects: adding '".\output\tls.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\output\main.o" ".\output\start.o" ".\output\stm32f10x_it.o" "C:\MicroFrameworkPK_v4_2\playground\Keil\lwip Test\STM32F10xR.LIB" ".\output\startup_stm32f10x_xl.o" ".\output\hmac.o" ".\output\md5.o" ".\output\sha1.o" ".\output\asn1.o" ".\output\base64.o" ".\output\x509.o" ".\output\pstm.o" ".\output\prng.o" ".\output\yarrow.o" ".\output\pkcs.o" ".\output\pubkey.o" ".\output\rsa.o" ".\output\aes.o" ".\output\arc4.o" ".\output\des3.o" ".\output\rc2.o" ".\output\noos.o" ".\output\ciphersuite.o" ".\output\matrixssl.o" ".\output\matrixsslapi.o" ".\output\ssldecode.o" ".\output\sslencode.o" ".\output\sslv3.o" ".\output\tls.o" --library_type=microlib --strict --scatter ".\output\lwip.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\lwip.map" -o ".\output\lwip.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\output\lwip.axf'
+### ADS-LD Command File: '.\output\lwip.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\output\lwip.lnp', Handle=0x00000C7C
+### Writing '.lnp' file
+### ADS-LD Command file '.\output\lwip.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,6 @@
+[WORKSPACE]
+  MPW_NAME=webserver-ssl
+  Project="..\..\src\driverlib.Uv2",A
+  Project="ek-lm3s6965_revc\webserver-ssl-ek-lm3s6965_revc.Uv2"
+  Project="ek-lm3s6965\webserver-ssl-ek-lm3s6965.Uv2"
+  Project="ek-lm3s8962\webserver-ssl-ek-lm3s8962.Uv2"

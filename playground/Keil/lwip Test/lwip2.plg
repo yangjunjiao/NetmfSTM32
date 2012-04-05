@@ -1,0 +1,26 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\MicroFrameworkPK_v4_2\playground\Keil\lwip Test\lwip2.uvproj
+Project File Date:  04/04/2012
+
+<h2>Output:</h2>
+Build target 'Target 1'
+Target has no object modules
+Target not created
+Build target 'Target 1'
+compiling start.c...
+start.c(85): warning:  #223-D: function "mainSSLTest" declared implicitly
+start.c(270): warning:  #1-D: last line of file ends without a newline
+linking...
+lwip2.sct(7): error: L6236E: No section matches selector - no section to be FIRST/LAST.
+"lwip2.axf" - 1 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling start.c...
+start.c(85): warning:  #223-D: function "mainSSLTest" declared implicitly
+start.c(270): warning:  #1-D: last line of file ends without a newline
+linking...
+lwip2.sct(7): error: L6236E: No section matches selector - no section to be FIRST/LAST.
+"lwip2.axf" - 1 Error(s), 2 Warning(s).

@@ -1,0 +1,4 @@
+--cpu Cortex-M3 "start.o" "C:\MicroFrameworkPK_v4_2\playground\Keil\lwip Test\STM32F10xR.LIB" --library_type=microlib --strict --scatter "lwip2.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\lwip2.map" -o "lwip2.axf"

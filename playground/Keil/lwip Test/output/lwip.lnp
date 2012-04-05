@@ -1,0 +1,4 @@
+--cpu Cortex-M3 ".\output\main.o" ".\output\start.o" ".\output\stm32f10x_it.o" "C:\MicroFrameworkPK_v4_2\playground\Keil\lwip Test\STM32F10xR.LIB" ".\output\startup_stm32f10x_xl.o" ".\output\hmac.o" ".\output\md5.o" ".\output\sha1.o" ".\output\asn1.o" ".\output\base64.o" ".\output\x509.o" ".\output\pstm.o" ".\output\prng.o" ".\output\yarrow.o" ".\output\pkcs.o" ".\output\pubkey.o" ".\output\rsa.o" ".\output\aes.o" ".\output\arc4.o" ".\output\des3.o" ".\output\rc2.o" ".\output\noos.o" ".\output\ciphersuite.o" ".\output\matrixssl.o" ".\output\matrixsslapi.o" ".\output\ssldecode.o" ".\output\sslencode.o" ".\output\sslv3.o" ".\output\tls.o" --library_type=microlib --strict --scatter ".\output\lwip.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\lwip.map" -o ".\output\lwip.axf"

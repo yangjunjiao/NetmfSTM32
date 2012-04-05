@@ -69,7 +69,7 @@
     { BlockRange::BLOCKTYPE_STORAGE_B ,  510, 511 },  // 080FF000 storage B     4k
 };*/
 
-
+/*
 // big clr, extern deployment
 
 const BlockRange g_STM32_BlockRange[] =
@@ -82,8 +82,9 @@ const BlockRange g_STM32_BlockRange[] =
 	//{ BlockRange::BLOCKTYPE_CODE,		 256, 511 },  // 08080000 code  512k
 	//{ BlockRange::BLOCKTYPE_DEPLOYMENT,  256, 511 },  // 08080000 deployment  512k
 
-};
-/*
+};*/
+
+
 const BlockRange g_STM32_BlockRange[] =
 {
     { BlockRange::BLOCKTYPE_BOOTSTRAP ,    0,  21 },  // 08000000 bootloader   44k
@@ -94,8 +95,10 @@ const BlockRange g_STM32_BlockRange[] =
 	{ BlockRange::BLOCKTYPE_CODE,		 256, 511 },  // 08080000 code  512k
 	//{ BlockRange::BLOCKTYPE_DEPLOYMENT,  256, 511 },  // 08080000 deployment  512k
    // { BlockRange::BLOCKTYPE_CODE      ,  204, 255 }   // 08066000 unused    104k
-};*/
+};
+
 /*
+//original
 const BlockRange g_STM32_BlockRange[] =
 {
     { BlockRange::BLOCKTYPE_BOOTSTRAP ,    0,  21 },  // 08000000 bootloader   44k

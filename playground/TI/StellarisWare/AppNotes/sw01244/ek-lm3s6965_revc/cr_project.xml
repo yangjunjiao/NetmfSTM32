@@ -1,0 +1,121 @@
+<!--
+Configuration file for Code Red project webserver-ssl-ek-lm3s6965_revc
+
+Copyright (c) 2008 Luminary Micro, Inc.  All rights reserved.
+Luminary Micro Confidential - For Use Under NDA Only
+-->
+
+<project chip="LM3S6965"
+         name="webserver-ssl-ek-lm3s6965_revc"
+         postBuild="arm-none-eabi-objcopy -O binary ${BuildArtifactFileName} ${BuildArtifactFileBaseName}.bin"
+         type="LMI Basic C project"
+         vendor="LMI">
+  <exclude>
+    <file>lmi-fsdata.c</file>
+  </exclude>
+  <import src=".">
+    <exclude>{(codered|ewarm|gcc|rvmdk|sourcerygxx)}</exclude>
+    <exclude>{startup_(ewarm|ewarm4|gcc|rvmdk|sourcerygxx)\.(c|S)}</exclude>
+    <exclude>{(Makefile|makedefs)}</exclude>
+    <exclude>{.*\.(ewd|ewp|eww|icf|Opt|sct|Uv2|xcl|xml|ld)}</exclude>
+    <grep filePattern="*.c"
+          pattern="\s*#\s*include\s*&quot;[\./]*"
+          replace="#include &quot;" />
+  </import>
+  <import src=".">
+    <include>*.txt</include>
+  </import>
+  <import src="../../../../MatrixSSL">
+     <grep filePattern="*.c"
+      pattern="\s*#\s*include\s*&quot;[\./]*StellarisWare/"
+      replace="#include &quot;" />
+     <exclude>matrixssl-1-8-6-open_gold</exclude>
+     <exclude>examples</exclude>
+     <exclude>linux</exclude>
+     <exclude>win</exclude>
+     <exclude>vxworks</exclude>
+  </import>
+  <import src="../../..">
+    <copy>boards/ek-lm3s6965_revc/rit128x96x4.c</copy>
+    <copy>boards/ek-lm3s6965_revc/rit128x96x4.h</copy>
+    <copy>utils/lwiplib.c</copy>
+    <copy>utils/uartstdio.c</copy>
+    <copy>utils/ustdlib.c</copy>
+    <grep filePattern="*.c"
+          pattern="\s*#\s*include\s*&quot;[\./]*"
+          replace="#include &quot;" />
+  </import>
+  <import src="../../..">
+    <copy>third_party/bget/bget.c</copy>
+    <copy>third_party/fatfs/port/mmc-ek-lm3s6965.c</copy>
+    <copy>third_party/fatfs/src/ff.c</copy>
+    <copy>third_party/fatfs/src/ff.h</copy>
+    <copy>third_party/fatfs/src/diskio.h</copy>
+    <copy>third_party/fatfs/src/integer.h</copy>
+    <grep filePattern="*.c"
+          pattern="\s*#\s*include\s*&quot;(\.\./){2,}"
+          replace="#include &quot;" />
+  </import>
+  <import src=".">
+    <include>webserver-ssl-ek-lm3s6965_revc_codered.ld</include>
+  </import>
+  <requires>
+    <value>DriverLib</value>
+    <value>third_party</value>
+    <value>utils</value>
+  </requires>
+  <setting id="assembler.def">
+    <value>codered</value>
+  </setting>
+  <setting id="compiler.def">
+    <value>__CODE_RED</value>
+    <value>codered</value>
+    <value>PART_LM3S6965</value>
+    <value>LUMINARY_MICRO</value>
+  </setting>
+  <setting id="compiler.opt"
+           buildType="Debug">
+    <value>-O2</value>
+  </setting>
+  <setting id="compiler.opt"
+           buildType="Release">
+    <value>-O2</value>
+  </setting>
+  <setting id="linker.script">
+    <value>../webserver-ssl-ek-lm3s6965_revc_codered.ld</value>
+  </setting>
+  <setting id="linker.libs">
+    <value>driver</value>
+    <value>gcc</value>
+    <value>c</value>
+  </setting>
+  <setting id="linker.paths"
+           buildType="Debug">
+    <value>${workspace_loc:/DriverLib/Debug}</value>
+  </setting>
+  <setting id="linker.paths"
+           buildType="Release">
+    <value>${workspace_loc:/DriverLib/Release}</value>
+  </setting>
+  <setting id="compiler.inc">
+    <value>${workspace_loc:/DriverLib}</value>
+    <value>${workspace_loc:/webserver-ssl-ek-lm3s6965_revc/matrixssl-1-8-6-open/src/crypto/peersec}</value>
+    <value>${workspace_loc:/webserver-ssl-ek-lm3s6965_revc/matrixssl-1-8-6-open/src/os/no_os}</value>
+    <value>${workspace_loc:/webserver-ssl-ek-lm3s6965_revc/matrixssl-1-8-6-open/src/os}</value>
+    <value>${workspace_loc:/webserver-ssl-ek-lm3s6965_revc/matrixssl-1-8-6-open/src/pki}</value>
+    <value>${workspace_loc:/webserver-ssl-ek-lm3s6965_revc/matrixssl-1-8-6-open/src/}</value>
+    <value>${workspace_loc:/webserver-ssl-ek-lm3s6965_revc/matrixssl-1-8-6-open}</value>
+    <value>${workspace_loc:/webserver-ssl-ek-lm3s6965_revc/boards/ek-lm3s6965_revc}</value>
+    <value>${workspace_loc:/DriverLib/driverlib}</value>
+    <value>${workspace_loc:/third_party/bget}</value>
+    <value>${workspace_loc:/third_party/fatfs/port}</value>
+    <value>${workspace_loc:/third_party/fatfs/src}</value>
+    <value>${workspace_loc:/third_party/lwip-1.3.0/apps/httpserver_raw}</value>
+    <value>${workspace_loc:/third_party/lwip-1.3.0/ports/stellaris/include}</value>
+    <value>${workspace_loc:/third_party/lwip-1.3.0/src/include/ipv4}</value>
+    <value>${workspace_loc:/third_party/lwip-1.3.0/src/include}</value>
+    <value>${workspace_loc:/utils}</value>
+    <value>${workspace_loc:/}</value>
+    <value>..</value>
+  </setting>
+</project>

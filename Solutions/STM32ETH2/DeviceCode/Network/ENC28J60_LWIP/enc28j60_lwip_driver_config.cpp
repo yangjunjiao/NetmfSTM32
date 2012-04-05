@@ -13,7 +13,7 @@
 #define ENC28J60_MSK_IDLE              FALSE
 #define ENC28J60_MSK_SAMPLE_EDGE       TRUE
 #define ENC28J60_16BIT_OP              FALSE
-#define ENC28J60_CLOCK_RATE_KHZ        10000
+#define ENC28J60_CLOCK_RATE_KHZ        1000
 #define ENC28J60_CS_SETUP_USEC         0
 #define ENC28J60_CS_HOLD_USEC          0
 #define ENC28J60_MODULE                1//MC9328MXL_SPI::c_SPI1

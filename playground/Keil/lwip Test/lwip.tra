@@ -1,0 +1,19 @@
+*** Creating Trace Output File 'lwip.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup_stm32f10x_xl.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 "startup_stm32f10x_xl.o" --strict --scatter "lwip.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\lwip.map" -o "lwip.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'lwip.axf'
+### ADS-LD Command File: 'lwip.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'lwip.lnp', Handle=0x00000590
+### Writing '.lnp' file
+### ADS-LD Command file 'lwip.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 1 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I.\matrixssl-3-3-open -I C:\Programme\Keil\ARM\RV31\Inc -I C:\Programme\Keil\ARM\CMSIS\Include -I C:\Programme\Keil\ARM\Inc\ST\STM32F10x -o ".\output\des3.o" --omf_browse ".\output\des3.crf" --depend ".\output\des3.d" "matrixssl-3-3-open\crypto\symmetric\des3.c"

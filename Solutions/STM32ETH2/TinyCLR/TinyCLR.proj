@@ -56,6 +56,10 @@
   <Import Project="$(SPOCLIENT)\Framework\Features\I2C.featureproj" />
   <Import  Condition="'$(SSL)'=='OPEN_SSL'" Project="$(SPOCLIENT)\Framework\Features\Crypto.featureproj" />
   <Import  Condition="'$(SSL)'=='OPEN_SSL'" Project="$(SPOCLIENT)\Framework\Features\SSL_Open.featureproj" />
+  
+  <Import  Condition="'$(SSL)'=='MATRIX_SSL2'" Project="$(SPOCLIENT)\Framework\Features\Crypto.featureproj" />
+  <Import  Condition="'$(SSL)'=='MATRIX_SSL'" Project="$(SPOCLIENT)\Framework\Features\SSL_Matrix.featureproj" />
+  
   <Import Project="$(SPOCLIENT)\Framework\Features\SPI.featureproj" />
   <Import Project="$(SPOCLIENT)\Framework\Features\PWM.featureproj" />
   <Import Project="$(SPOCLIENT)\Framework\Features\InterruptHandler.featureproj" />
@@ -65,7 +69,7 @@
   <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Interop.Settings" />
   
   
-    <ItemGroup Condition="'$(SSL)'=='OPEN_SSL'">
+  <ItemGroup Condition="'$(SSL)'=='OPEN_SSL'">
     <RequiredProjects Include="$(SPOCLIENT)\Solutions\STM32ETH2\DeviceCode\Crypto\dotnetmf.proj" />
     <DriverLibs Include="Crypto_Config_STM32ETH2.$(LIB_EXT)" />
   </ItemGroup>
@@ -100,6 +104,39 @@
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\OpenSSL\OpenSSL_1_0_0\tinyclr\dotnetmf.proj" />
     <DriverLibs Include="ssl_types.$(LIB_EXT)" />
   </ItemGroup>
+  
+  
+  <!--  MatrixSSL   -->
+  <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\COM\sockets\MatrixSSL\dotnetmf.proj" />
+    <DriverLibs Include="matrixssl_pal.$(LIB_EXT)" />
+	 </ItemGroup>
+
+    <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\Crypto\dotNetMF.proj" />
+    <DriverLibs Include="Crypto.$(LIB_EXT)" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL2'">
+    <RequiredProjects Include="$(SPOCLIENT)\Solutions\STM32ETH2\DeviceCode\Crypto\dotnetmf.proj" />
+    <DriverLibs Include="Crypto_Config_STM32ETH2.$(LIB_EXT)" />
+  </ItemGroup>
+  
+   <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL2'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\PAL\PKCS11\dotNetMF.proj" />
+    <DriverLibs Include="PKCS11_Engine.$(LIB_EXT)" />
+  </ItemGroup>
+  
+ <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL2'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\PAL\PKCS11\Tokens\Legacy\dotNetMF.proj" />
+    <DriverLibs Include="Legacy_Crypto_Token.$(LIB_EXT)" />
+  </ItemGroup>  
+  
+ <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\PAL\PKCS11\Tokens\stubs\dotNetMF.proj" />
+    <DriverLibs Include="PKCS11_Token_stub.$(LIB_EXT)" />
+  </ItemGroup>
+
+  
   
   <!--
     <ItemGroup Condition="'$(COMPILER_TOOL)'!='RVDS'">
@@ -192,11 +229,11 @@
     <PlatformIndependentLibs Include="CLRStartup.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\CLR\StartupLib\dotNetMF.proj" />
   </ItemGroup>
-  
-  <ItemGroup  Condition="'$(SSL)'!='OPEN_SSL'">
+  <!--
+  <ItemGroup  Condition="'$(SSL)'!='OPEN_SSL' and '$(SSL)'!='MATRIX_SSL'">
     <DriverLibs Include="Crypto_stub.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\Crypto\stubs\dotNetMF.proj" />
-  </ItemGroup>
+  </ItemGroup>-->
   <ItemGroup>
     <DriverLibs Include="cpu_prestackinit_stubs.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Drivers\Stubs\Processor\stubs_PreStackInit\dotNetMF.proj" />
@@ -330,9 +367,15 @@
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Drivers\stubs\processor\stubs_lcd\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
+    <DriverLibs Include="STM32_Flash.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_Flash\dotNetMF.proj" />
+  </ItemGroup>
+  <!-- TODO
+    <ItemGroup>
     <DriverLibs Include="STM32_FlashXL.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_FlashXL\dotNetMF.proj" />
   </ItemGroup>
+  -->
     <ItemGroup>
     <RequiredProjects Include="$(SPOCLIENT)\Solutions\STM32ETH2\DeviceCode\M25P64\dotNetMF.proj" />
     <DriverLibs Include="M25P64_Flash.$(LIB_EXT)" />

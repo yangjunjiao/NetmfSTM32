@@ -1,0 +1,32 @@
+;******************************************************************************
+;
+; webserver-ssl-ek-lm3s6965_revc.sct - Linker configuration file for webserver-ssl-ek-lm3s6965_revc.
+;
+; Copyright (c) 2007 Luminary Micro, Inc.  All rights reserved.
+; Luminary Micro Confidential - For Use Under NDA Only
+;
+;******************************************************************************
+
+LR_IROM 0x00000000 0x00040000
+{
+    ;
+    ; Specify the Execution Address of the code and the size.
+    ;
+    ER_IROM 0x00000000 0x00040000
+    {
+        *.o (RESET, +First)
+        * (InRoot$$Sections, +RO)
+    }
+
+    ;
+    ; Specify the Execution Address of the data area.
+    ;
+    RW_IRAM 0x20000000 0x00010000
+    {
+        ;
+        ; Uncomment the following line in order to use IntRegister().
+        ;
+        ;* (vtable, +First)
+        * (+RW, +ZI)
+    }
+}
