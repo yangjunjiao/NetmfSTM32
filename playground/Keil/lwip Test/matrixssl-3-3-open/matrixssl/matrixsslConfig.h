@@ -51,8 +51,8 @@ extern "C" {
 #define USE_TLS_RSA_WITH_AES_128_CBC_SHA
 #define USE_TLS_RSA_WITH_AES_256_CBC_SHA
  #define USE_SSL_RSA_WITH_3DES_EDE_CBC_SHA 
-/* #define USE_SSL_RSA_WITH_RC4_128_SHA */
-/* #define USE_SSL_RSA_WITH_RC4_128_MD5 */
+ #define USE_SSL_RSA_WITH_RC4_128_SHA 
+ #define USE_SSL_RSA_WITH_RC4_128_MD5 
 
 /******************************************************************************/
 /*
@@ -111,7 +111,7 @@ extern "C" {
 	SSL_SESSION_ENTRY_LIFE is in milliseconds, minimum 0
 
 */
-#define SSL_SESSION_TABLE_SIZE	32
+#define SSL_SESSION_TABLE_SIZE	8 //SK 32 -> 8
 #define SSL_SESSION_ENTRY_LIFE	86400 * 1000 /* one day */
 
 

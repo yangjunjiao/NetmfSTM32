@@ -79,7 +79,7 @@
 /*
 	Symmetric stream ciphers
 */
-/* #define USE_ARC4 */
+ #define USE_ARC4 
 /* #define USE_RC2 */ /* Only PKCS#12 parse should ever want this algorithm */
 
 /******************************************************************************/
