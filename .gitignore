@@ -31,3 +31,5 @@ doxy/
 BuildOutput/
 output/
 *.o
+
+DeviceCode/pal/MatrixSSL/matrixssl-3-3-open/matrixssl.opensdf

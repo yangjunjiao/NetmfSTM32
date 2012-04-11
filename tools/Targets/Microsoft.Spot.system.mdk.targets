@@ -72,6 +72,7 @@
 
     <CC_FLAGS  >$(CC_FLAGS) $(SWTC)c90 $(STRICT) $(SWTC)diag_suppress 2874,111,161,550,C3011 $(SWTC)diag_warning 40,187 $(SWTC)split_sections</CC_FLAGS>
     <CPP_FLAGS >$(CPP_FLAGS) $(SWTC)cpp $(STRICT) $(SWTC)diag_suppress 2874,111,161,550,C3011 $(SWTC)diag_suppress 66,161,230,1293 $(SWTC)split_sections</CPP_FLAGS>
+	<LINK_FLAGS>$(LINK_FLAGS) $(SWTC)verbose</LINK_FLAGS>
     <LINK_FLAGS>$(LINK_FLAGS) $(SWTC)no_keep_init_arrays $(SWTC)feedback $(BIN_DIR)\$(AssemblyName)_$(TARGETPLATFORM)_$(TARGETLOCATION)_$(FLAVOR)_$(COMPILER_TOOL_VERSION).feedback</LINK_FLAGS>
     <LINK_FLAGS Condition="'$(DEVICE_TYPE)'!=''">$(LINK_FLAGS) $(SWTC)device $(DEVICE_TYPE)</LINK_FLAGS>
 
@@ -203,10 +204,12 @@
     <ARFLAGS>$(ARFLAGS) $(SWTC)create -c -r</ARFLAGS>
 
     <LINK_TARGETTYPE_FLAGS>$(LINK_TARGETTYPE_FLAGS) $(SWTC)debug</LINK_TARGETTYPE_FLAGS>
+	
     <LINK_FLAGS>$(LINK_FLAGS) $(LINK_TARGETTYPE_FLAGS) $(SWTC)remove $(SWTC)unmangled $(SWTC)info sizes,totals,veneers,unused,libraries $(SWTC)map  $(SWTC)xref $(SWTC)symbols $(SWTC)callgraph</LINK_FLAGS>
 
     <LINK_FLAGS>$(LINK_FLAGS) $(SWTC)userlibpath $(LIB_DIR) $(SWTC)userlibpath $(PLATFORM_INDEPENDENT_LIB_DIR) $(SWTC)libpath $(MDK_TOOL_PATH)\RV31\LIB $(ExtraLinkFlags)</LINK_FLAGS>
 
+	
     <LINK_FLAGS Condition="'$(OutputType)'=='Executable' and '$(LINK_ENTRY_SET)'!='true'">$(LINK_FLAGS) $(SWTC)entry EntryPoint $(ExtraLinkFlags)</LINK_FLAGS>
 
     <SCATTER_FLAG Condition="'$(OutputType)'=='Executable'">$(SWTC)scatter</SCATTER_FLAG>

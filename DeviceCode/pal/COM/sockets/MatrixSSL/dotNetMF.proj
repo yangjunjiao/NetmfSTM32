@@ -39,8 +39,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MatrixSSL.cpp" />
-    <IncludePaths Include="DeviceCode\include" />
-    
+    <IncludePaths Include="devicecode\pal\com\sockets" />
+	<IncludePaths Include="devicecode\pal\com\sockets\ssl" />
+     <IncludePaths Include="DeviceCode\include" />
     <IncludePaths Include="DeviceCode\pal\lwip\lwip_1_3_2\src\include" />
     <IncludePaths Include="DeviceCode\pal\lwip\lwip_1_3_2\src\include\ipv4" />
     <IncludePaths Include="DeviceCode\pal\lwip\lwip_1_3_2\contrib\ports\arm\proj\lwIPv4lib" />
@@ -49,6 +50,12 @@
     <IncludePaths Include="DeviceCode\pal\lwip\TinyCLR" />
     <IncludePaths Include="DeviceCode\pal\COM\sockets_lwip\" />
     <IncludePaths Include="DeviceCode\pal\net\" />
+	
+	 <IncludePaths Include="DeviceCode\pal\MatrixSSL\" />
+    <IncludePaths Include="DeviceCode\pal\MatrixSSL\matrixssl-3-3-open" />
+    <IncludePaths Include="DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\core" />
+    <IncludePaths Include="DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\crypto" />
+    <IncludePaths Include="DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl" />
   </ItemGroup>
   <ItemGroup>
     <HFiles Include="$(SPOCLIENT)\devicecode\pal\com\sockets\sockets.h" />

@@ -1167,7 +1167,7 @@ ssl_init(void)
     //
     // Read the required certificates from memory.
     //
-    iRet = matrixSslReadKeysMem(&g_pSslKeys, g_pcCertSrv, g_ulCertSrvLen,
+    iRet = matrixSslLoadRsaKeysMem(&g_pSslKeys, g_pcCertSrv, g_ulCertSrvLen,
                                 g_pcPrivKeySrv, g_ulPrivKeySrvLen, NULL, 0);
     if(iRet < 0)
     {

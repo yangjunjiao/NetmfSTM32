@@ -116,6 +116,17 @@
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\Crypto\dotNetMF.proj" />
     <DriverLibs Include="Crypto.$(LIB_EXT)" />
   </ItemGroup>
+    <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\dotNetMF.proj" />
+    <DriverLibs Include="libssl_matrixssl.$(LIB_EXT)" />
+  </ItemGroup>
+
+   <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\tinyclr\dotNetMF.proj" />
+    <DriverLibs Include="ssl_types.$(LIB_EXT)" />
+  </ItemGroup>
+  
+  
   <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL2'">
     <RequiredProjects Include="$(SPOCLIENT)\Solutions\STM32ETH2\DeviceCode\Crypto\dotnetmf.proj" />
     <DriverLibs Include="Crypto_Config_STM32ETH2.$(LIB_EXT)" />

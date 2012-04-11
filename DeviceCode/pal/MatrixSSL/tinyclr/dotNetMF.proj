@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>ssl_types</AssemblyName>
+    <Size>
+    </Size>
+    <ProjectGuid>{BED0DED1-F4A8-487B-899D-1D7EAD1F6EEB}</ProjectGuid>
+    <Description>Crypto Library from Matrix</Description>
+    <Level>PAL</Level>
+    <LibraryFile>ssl_types.$(LIB_EXT)</LibraryFile>
+    <ProjectPath>$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\tinyclr\dotNetMF.proj</ProjectPath>
+    <ManifestFile>ssl_types.$(LIB_EXT).manifest</ManifestFile>
+    <Groups>System</Groups>
+    <LibraryCategory>
+      <MFComponent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Sockets_ssl_PAL" Guid="{E34A68CD-2676-422B-BE70-419E3306039D}" ProjectPath="" Conditional="" xmlns="">
+        <VersionDependency xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <Major>4</Major>
+          <Minor>0</Minor>
+          <Revision>0</Revision>
+          <Build>0</Build>
+          <Extra />
+          <Date>2012-04-05</Date>
+        </VersionDependency>
+        <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">LibraryCategory</ComponentType>
+      </MFComponent>
+    </LibraryCategory>
+    <Documentation>
+    </Documentation>
+    <PlatformIndependent>False</PlatformIndependent>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <IsStub>False</IsStub>
+    <Directory>DeviceCode\pal\MatrixSSL\tinyclr</Directory>
+    <OutputType>Library</OutputType>
+    <Version>4.0.0.0</Version>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup />
+  <ItemGroup>
+    <IncludePaths Include="DeviceCode\PAL" />
+    <IncludePaths Include="DeviceCode\PAL\MatixSSL" />
+    <compile Include="legacy_support.cpp" />
+	
+    <!-- <Compile Include="adapt\sslAdapt.cpp" />-->
+	<Compile Include="adapt\certSrv.cpp" />
+	<Compile Include="adapt\privkeySrv.cpp" />
+    
+	<Compile Include="ssl_accept_internal.cpp" />
+	<Compile Include="ssl_initialize_internal.cpp" />
+    <Compile Include="ssl_uninitialize_internal.cpp" />
+	<Compile Include="ssl_exit_context_internal.cpp" />
+	<Compile Include="ssl_generic_init_internal.cpp" />
+	<!-- <Compile Include="ssl_types.cpp" />
+    <Compile Include="ssl_connect_internal.cpp" />
+    <Compile Include="file.cpp" />
+    <Compile Include="ssl_parse_certificate_internal.cpp" />
+    <Compile Include="ssl_connect_internal.cpp" />
+    <Compile Include="ssl_accept_internal.cpp" />
+    <Compile Include="ssl_read_internal.cpp" />
+    <Compile Include="ssl_write_internal.cpp" />
+    <Compile Include="ssl_closesocket_internal.cpp" />
+    <Compile Include="ssl_pending_internal.cpp" />
+    <Compile Include="ssl_exit_context_internal.cpp" />
+    <Compile Include="ssl_generic_init_internal.cpp" />
+    <Compile Include="ssl_initialize_internal.cpp" />
+    <Compile Include="ssl_uninitialize_internal.cpp" />
+    <Compile Include="ssl_clear_cert_auth_internal.cpp" />
+    <Compile Include="ssl_add_cert_auth_internal.cpp" /> -->
+    <IncludePaths Include="DeviceCode\include" />
+    <IncludePaths Include="DeviceCode\pal\MatrixSSL\" />
+    <IncludePaths Include="DeviceCode\pal\MatrixSSL\matrixssl-3-3-open" />
+    <IncludePaths Include="DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\core" />
+    <IncludePaths Include="DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\crypto" />
+    <IncludePaths Include="DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl" />
+    <IncludePaths Include="DeviceCode\pal\lwip\lwip_1_3_2\src\include" />
+    <IncludePaths Include="DeviceCode\pal\lwip\lwip_1_3_2\src\include\ipv4" />
+    <IncludePaths Include="DeviceCode\pal\lwip\lwip_1_3_2\contrib\ports\arm\proj\lwIPv4lib" />
+    <IncludePaths Include="DeviceCode\pal\lwip\lwip_1_3_2\contrib\ports\arm\include" />
+    <IncludePaths Include="DeviceCode\pal\lwip\SocketsDriver" />
+    <IncludePaths Include="DeviceCode\pal\lwip\TinyCLR" />
+    <IncludePaths Include="DeviceCode\pal\COM\sockets_lwip\" />
+    <IncludePaths Include="DeviceCode\pal\net\" />
+    <IncludePaths Include="DeviceCode\pal\COM\sockets\matrixssl" />
+	<IncludePaths Include="DeviceCode\pal\COM\sockets\ssl" />
+	<IncludePaths Include="DeviceCode\pal\COM\sockets" />
+  </ItemGroup>
+  <ItemGroup>
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\dotNetMF.proj" />
+	<RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\COM\Sockets\MatrixSSL\dotNetMF.proj" />
+  </ItemGroup>
+  <ItemGroup>
+    <HFiles Include="$(SPOCLIENT)\devicecode\include\tinyclr_endian.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\com\sockets\openssl\openssl.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\com\sockets\sockets.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\com\sockets_lwip\sockets_lwip.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\contrib\ports\arm\include\arch\cc.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\contrib\ports\arm\include\arch\sys_arch.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\ipv4\lwip\autoip.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\ipv4\lwip\icmp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\ipv4\lwip\igmp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\ipv4\lwip\inet.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\ipv4\lwip\ip.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\ipv4\lwip\ip_addr.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\api.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\api_msg.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\arch.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\debug.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\def.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\dhcp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\err.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\mem.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\netbuf.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\netif.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\netifapi.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\opt.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\pbuf.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\sys.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\tcp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\tcpip.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\lwip\udp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\src\include\netif\etharp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\net\network_defines_lwip.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\net\net_decl_lwip.h" />
+
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\keyformat\asn1.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\coreApi.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\coreConfig.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\cryptoApi.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\cryptoConfig.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\cryptolib.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\digest\digest.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixsslApi.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixsslConfig.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixssllib.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\osdep.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\psmalloc.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\math\pstm.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\prng\prng.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\pubkey\pubkey.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\symmetric\symmetric.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\list.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\keyformat\x509.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\pkcs11\cryptoki.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\pkcs11\cryptokipal.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\pkcs11\pkcs11.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\pkcs11\pkcs11f.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\pkcs11\pkcs11t.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\pkcs11\tokens\openssl\openssl_pkcs11.h" />
+    <HFiles Include="ssl_functions.h" />
+    <HFiles Include="ssl_types.h" />
+  </ItemGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>

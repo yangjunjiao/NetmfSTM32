@@ -38,7 +38,7 @@
 ### ADS-LD Output File: '.\output\lwip.axf'
 ### ADS-LD Command File: '.\output\lwip.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\output\lwip.lnp', Handle=0x00000C7C
+### Creating CmdFile '.\output\lwip.lnp', Handle=0x00000C54
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\output\lwip.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

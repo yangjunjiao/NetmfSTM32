@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>msbuild dotNetMF.proj /t:build /p:flavor=debug%3bTCP_IP_STACK=LWIP%3bmemory=FLASH%3bplatform=STM32ETH2%3bSSL=MATRIX_SSL</NMakeBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>msbuild dotNetMF.proj /t:build /p:flavor=debug%3bTCP_IP_STACK=LWIP%3bmemory=FLASH%3bplatform=STM32ETH2%3bSSL=MATRIX_SSL</NMakeBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="_resharper.netmfpk4.2\PersistenIdIndex.bin" />
+    <None Include="_resharper.netmfpk4.2\SymbolCache.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.4.0.0.0.contracts.xml\0DED0883.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.4.0.0.0.interfaces.nullness.generated.xml\620DC5CB.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.4.0.0.0.nullness.generated.xml\772ECBB3.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.4.0.0.0.pure.xml\6572C670.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.i18n.xml\366D6FC8.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.nullness.manual.xml\A029C282.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.valueflow.xml\4E59B0BF.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.xml\05998BE8.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.xml\743ADB6C.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.4.0.0.0.contracts.xml\7458FC03.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.4.0.0.0.nullness.generated.xml\5304AF33.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.4.0.0.0.pure.xml\403889F0.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.configuration.4.0.0.0.contracts.xml\8AA99CC3.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.configuration.4.0.0.0.nullness.generated.xml\5C04A9F3.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.configuration.4.0.0.0.pure.xml\A30FD330.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.configuration.xml\092A1070.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.4.0.0.0.contracts.xml\9A69C6A3.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.4.0.0.0.nullness.generated.xml\8E5F4293.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.4.0.0.0.pure.xml\D7464B10.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.linqtunnel.xml\63F26974.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.nullness.manual.xml\31BDD0E2.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.xml\11686E5B.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.data.sqlxml.4.0.0.0.nullness.generated.xml\B9F432D3.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.data.sqlxml.xml\48CF6F29.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.i18n.xml\E767B348.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.nullness.manual.xml\AC02D602.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.numerics.4.0.0.0.nullness.generated.xml\0D729213.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.numerics.xml\F65D6778.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.security.4.0.0.0.contracts.xml\203E41A3.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.security.4.0.0.0.nullness.generated.xml\F66E1D93.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.security.4.0.0.0.pure.xml\3CA1E610.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.security.xml\55841E76.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.4.0.0.0.contracts.xml\53D95363.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.4.0.0.0.nullness.generated.xml\DD97C153.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.4.0.0.0.pure.xml\5A1C7B50.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.attributes.xml\09EED2C9.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.i18n.xml\8B551FA8.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.xml\48B5EA79.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml\74BB9F68.bin" />
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml\C3B3EEEE.bin" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

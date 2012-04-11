@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>libssl_matrixssl</AssemblyName>
+    <Size>
+    </Size>
+    <ProjectGuid>{E6F6D3D0-0D8D-4260-B785-780D7D0BC201}</ProjectGuid>
+    <Description>MatrixSSL</Description>
+    <Level>PAL</Level>
+    <LibraryFile>libssl_matrixssl.$(LIB_EXT)</LibraryFile>
+    <ProjectPath>$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\crypto\dotnetmf.proj</ProjectPath>
+    <ManifestFile>libssl_matrixssl.$(LIB_EXT).manifest</ManifestFile>
+    <Groups>System</Groups>
+    <Documentation>
+    </Documentation>
+    <PlatformIndependent>False</PlatformIndependent>
+    <CustomFilter>MatrixSSL</CustomFilter>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <IsStub>False</IsStub>
+    <Directory>DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\crypto</Directory>
+    <PlatformIndependentBuild>false</PlatformIndependentBuild>
+    <Version>4.0.0.0</Version>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+  
+    <Compile Include="crypto\symmetric\aes.c" />
+    <Compile Include="crypto\symmetric\arc4.c" />
+    <Compile Include="crypto\keyformat\asn1.c" />
+    <Compile Include="crypto\keyformat\base64.c" />
+    <Compile Include="crypto\symmetric\rc2.c" />
+    <Compile Include="matrixssl\cipherSuite.c" />
+    <!-- <Compile Include="core\corelib.c" />-->
+    <Compile Include="crypto\symmetric\des3.c" />
+    <Compile Include="crypto\digest\hmac.c" />
+    <Compile Include="matrixssl\matrixssl.c" />
+    <Compile Include="matrixssl\matrixsslApi.c" />
+    <Compile Include="crypto\digest\md5.c" />
+    <Compile Include="core\noos\noos.c" />
+    <Compile Include="crypto\prng\prng.c" />
+    <Compile Include="crypto\prng\yarrow.c" />
+    <Compile Include="crypto\pubkey\pkcs.c" />
+    <Compile Include="crypto\math\pstm.c" />
+    <Compile Include="crypto\pubkey\pubkey.c" />
+    <Compile Include="crypto\pubkey\rsa.c" />
+    <Compile Include="crypto\digest\sha1.c" />
+    <Compile Include="matrixssl\sslDecode.c" />
+    <Compile Include="matrixssl\sslEncode.c" />
+    <Compile Include="matrixssl\sslv3.c" />
+    <Compile Include="matrixssl\tls.c" />
+    <Compile Include="crypto\keyformat\x509.c" />
+	
+	<HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\keyformat\asn1.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\coreApi.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\coreConfig.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\cryptoApi.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\cryptoConfig.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\cryptolib.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\digest\digest.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixsslApi.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixsslConfig.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixssllib.h" />
+    <!--<HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\osdep.h" />-->
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\psmalloc.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\math\pstm.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\prng\prng.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\pubkey\pubkey.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\symmetric\symmetric.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\core\list.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\MatrixSSL\matrixssl-3-3-open\crypto\keyformat\x509.h" />
+
+
+  </ItemGroup>
+
+  <Import Project="$(SPOCLIENT)\Framework\Features\Network_Config_HAL.libcatproj" />
+  <Import Project="$(SPOCLIENT)\Framework\Features\EthernetDriver_HAL.libcatproj" />
+  <Import Project="$(SPOCLIENT)\Framework\Features\EthernetLoopback_HAL.libcatproj" />
+  <Import Project="$(SPOCLIENT)\Framework\Features\Sockets_async_PAL.libcatproj" />
+  <Import Project="$(SPOCLIENT)\Framework\Features\Sockets_dhcp_PAL.libcatproj" />
+  <Import Project="$(SPOCLIENT)\Framework\Features\Sockets_tcp_PAL.libcatproj" />
+  <Import Project="$(SPOCLIENT)\Framework\Features\Sockets_udp_PAL.libcatproj" />
+  <Import Project="$(SPOCLIENT)\Framework\Features\SocketDriver_LWIP_PAL.libcatproj" />
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>

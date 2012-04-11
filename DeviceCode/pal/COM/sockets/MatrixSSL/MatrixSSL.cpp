@@ -3,12 +3,23 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//#include <tinyclr/ssl_functions.h>
+#include <tinyclr/ssl_functions.h>
 //#include <objects/objects.h>
 
+#include "..\Ssl\ssl.h"
 #include "tinyhal.h"
 
+
+#if defined(ADS_LINKER_BUG__NOT_ALL_UNUSED_VARIABLES_ARE_REMOVED)
+#pragma arm section zidata = "g_SSL_Driver"
+#endif
+
+SSL_Driver g_SSL_Driver;
+
 //--//
+// Flag to postpone init until after heap has been cleared
+// in tinyhal.cpp
+static BOOL s_init_done = FALSE;
 
 extern "C"
 {
@@ -20,25 +31,42 @@ void ssl_rand_seed(const void *seed, int length)
 BOOL SSL_Initialize()
 {
     NATIVE_PROFILE_PAL_COM();
-    return FALSE;
+	memset(&g_SSL_Driver, 0, sizeof(g_SSL_Driver));
+    return TRUE;// moved to InitGeneric ssl_initialize_internal();
 }
 
 BOOL SSL_Uninitialize()
 {
     NATIVE_PROFILE_PAL_COM();
-    return TRUE;
+    BOOL retval = ssl_uninitialize_internal();
+    s_init_done = FALSE;
+    return retval;
 }
+
+static BOOL SSL_GenericInit( INT32 sslMode, INT32 sslVerify, const char* certificate, INT32 cert_len, const char* pwd, INT32& sslContextHandle, BOOL isServer )
+{
+    if (!s_init_done) s_init_done=ssl_initialize_internal();
+    return ssl_generic_init_internal( sslMode, sslVerify, certificate, cert_len, pwd, sslContextHandle, isServer );
+}
+
 BOOL SSL_ServerInit( INT32 sslMode, INT32 sslVerify, const char* certificate, INT32 cert_len, const char* szCertPwd, INT32& sslContextHandle )
 { 
     NATIVE_PROFILE_PAL_COM();
-    return TRUE; 
+    return SSL_GenericInit( sslMode, sslVerify, certificate, cert_len, szCertPwd, sslContextHandle, TRUE );
 }
 
 BOOL SSL_ClientInit( INT32 sslMode, INT32 sslVerify, const char* certificate, INT32 cert_len, const char* szCertPwd, INT32& sslContextHandle )
 { 
     NATIVE_PROFILE_PAL_COM();
-    return TRUE; 
+    return SSL_GenericInit( sslMode, sslVerify, certificate, cert_len, szCertPwd, sslContextHandle, FALSE );
 }
+
+INT32 SSL_Connect( SOCK_SOCKET socket, const char* szTargetHost, INT32 sslContextHandle )
+{
+    NATIVE_PROFILE_PAL_COM();
+    return 0; //ssl_connect_internal(socket, szTargetHost, sslContextHandle);;
+}
+
 
 BOOL SSL_AddCertificateAuthority( int sslContextHandle, const char* certificate, int cert_len, const char* szCertPwd )
 {
@@ -60,14 +88,10 @@ BOOL SSL_ExitContext( INT32 sslContextHandle )
 INT32 SSL_Accept( SOCK_SOCKET socket, INT32 sslContextHandle )
 { 
     NATIVE_PROFILE_PAL_COM();
-    return 0; 
+    return ssl_accept_internal(socket, sslContextHandle);
 }
 
-INT32 SSL_Connect( SOCK_SOCKET socket, const char* szTargetHost, INT32 sslContextHandle )
-{ 
-    NATIVE_PROFILE_PAL_COM();
-    return 0; 
-}
+
 
 INT32 SSL_Write( SOCK_SOCKET socket, const char* Data, size_t size )
 { 

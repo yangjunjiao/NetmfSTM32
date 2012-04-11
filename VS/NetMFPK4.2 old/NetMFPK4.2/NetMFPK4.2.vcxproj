@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1936E64B-B7BE-4A39-9522-43A21501F10E}</ProjectGuid>
+    <RootNamespace>NetMFPK42</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\CLR\Core\AVLTree.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Cache.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Cache_Win32.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Checks.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_DblLinkedList.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_Array.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_ArrayList.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_BinaryBlob.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_Delegate.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_Delegate_List.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_Finalizer.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_Lock.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_LockRequest.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_Node.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_Queue.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_Stack.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_String.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_Timer.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapBlock_WaitForObject.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_HeapCluster.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_Interop.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_Memory.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_MemoryRange.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_ObjectToEvent_Destination.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_ObjectToEvent_Source.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_RuntimeMemory.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_StackFrame.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_SystemAssembliesTable.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\CLR_RT_UnicodeHelper.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Core.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Core_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Execution.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\FileStore_Win32.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\GarbageCollector.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\GarbageCollector_Compaction.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\GarbageCollector_ComputeReachabilityGraph.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\GarbageCollector_Info.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Hardware\Hardware.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Hardware\Hardware_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Hardware\InterruptHandler\InterruptHandler.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Hardware\InterruptHandler\InterruptHandler_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\HeapPersistence\Heap_Persistence.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\HeapPersistence\Heap_Persistence_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\I2C\CLR_RT_HeapBlock_I2CXAction.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\I2C\i2c_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Interpreter.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\IOPort\CLR_RT_HeapBlock_IOPort.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\IOPort\IOPort_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Jitter.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Jitter_ARM.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Jitter_ARM_Emulation.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Jitter_ARM_Opcodes.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Jitter_EvalStack.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Jitter_Execution.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Jitter_Helper.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Jitter_Opcode.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Jitter_Support.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\ParseOptions_Win32.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Random.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\RPC\CLR_RT_HeapBlock_EndPoint.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\RPC\RPC_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Serialization\BinaryFormatter.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Serialization\BinaryFormatter_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Streams.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Stream\FileStream.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Stream\Stream_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\StringTable.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Thread.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\TypeSystem.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\TypeSystemLookup.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Various.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\XmlUtil.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlCharRef.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlCharType.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlNameTable.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlReader.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_BetweenElements.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_InAttribute.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_InAttributeValue.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_InEndElement.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_InName.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_InProcessingInstruction.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_InStartElement.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_InValue.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_InXmlDeclaration.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_NewTag.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\XmlState_Start.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\Xml_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Core\Xml\Xml_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Debugger\Debugger.cpp" />
+    <ClCompile Include="..\..\..\CLR\Debugger\Debugger_extended.cpp" />
+    <ClCompile Include="..\..\..\CLR\Debugger\Debugger_full.cpp" />
+    <ClCompile Include="..\..\..\CLR\Debugger\Debugger_minimal.cpp" />
+    <ClCompile Include="..\..\..\CLR\Debugger\Debugger_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Diagnostics\Diagnostics_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Diagnostics\Diagnostics_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Diagnostics\Info.cpp" />
+    <ClCompile Include="..\..\..\CLR\Diagnostics\Info_Win32.cpp" />
+    <ClCompile Include="..\..\..\CLR\Diagnostics\ManagedElementTypes_Win32.cpp" />
+    <ClCompile Include="..\..\..\CLR\Diagnostics\Profile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Diagnostics\Profiler.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Bitmap_Win32.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Bmp\Bitmap.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Bmp\Bitmap_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Bmp\Graphics_Bmp.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Font.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Font_Win32.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Gif\Gif.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Gif\Gif_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Gif\Graphics_Gif.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Gif\lzwread.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Graphics.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Graphics_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\graphics_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\Graphics_Jpeg.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jbytearraydatasrc.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcapimin.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcapistd.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jccoefct.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jccolor.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcdctmgr.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jchuff.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcinit.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcmainct.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcmarker.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcmaster.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcomapi.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcparam.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcphuff.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcprepct.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jcsample.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jctrans.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdapimin.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdapistd.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdcoefct.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdcolor.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jddctmgr.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdhuff.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdinput.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdmainct.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdmarker.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdmaster.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdmerge.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdphuff.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdpostct.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdsample.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jdtrans.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jerror.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jfdctflt.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jfdctfst.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jfdctint.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jidctflt.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jidctfst.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jidctint.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jidctred.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jmemmgr.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jmemtinyclr.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\Jpeg.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\Jpeg_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jquant1.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jquant2.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\jutils.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\mcbcr.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\mfint.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\miint.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\pfint.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\piint.c" />
+    <ClCompile Include="..\..\..\CLR\Graphics\Jpeg\transupp.c" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_AppDomain.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Array.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Attribute.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Collections_ArrayList.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Collections_Queue.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Collections_Stack.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_DateTime.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Delegate.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Diagnostics_Debugger.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Double.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Enum.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Exception.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_GC.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Globalization_CultureInfo.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Globalization_DateTimeFormat.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Globalization_DaylightTime.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_MarshalByRefObject.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Math.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_MulticastDelegate.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Number.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Object.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Random.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Reflection_Assembly.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Reflection_Binder.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Reflection_ConstructorInfo.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Reflection_FieldInfo.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Reflection_MemberInfo.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Reflection_MethodBase.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Reflection_PropertyInfo.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Reflection_RuntimeFieldInfo.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Reflection_RuntimeMethodInfo.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Resources_ResourceManager.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_RuntimeType.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Runtime_CompilerServices_RuntimeHelpers.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Runtime_Remoting_RemotingServices.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_String.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_SystemException.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Text_UTF8Decoder.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Text_UTF8Encoding.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Threading_AutoResetEvent.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Threading_Interlocked.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Threading_ManualResetEvent.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Threading_Monitor.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Threading_Thread.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Threading_ThreadAbortException.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Threading_Timer.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Threading_WaitHandle.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_TimeSpan.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_TimeZone.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_Type.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_ValueType.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\CorLib\corlib_native_System_WeakReference.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_Cryptoki.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_CryptokiDigest.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_CryptokiObject.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_CryptokiRNG.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_CryptokiSign.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_CryptokiVerify.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_Decryptor.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_Encryptor.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_FindObjectEnum.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_Session.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_Microsoft_SPOT_Cryptoki_Slot.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native_System_Security_Cryptography_CryptoKey.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\SPOT_Messaging\spot_messaging_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\SPOT_Messaging\spot_Messaging_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\SPOT_Messaging\spot_native_Microsoft_SPOT_Messaging_EndPoint.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\SPOT_Messaging\spot_native_Microsoft_SPOT_Messaging_Message.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\SPOT_Messaging\spot_native_Microsoft_SPOT_Messaging_Message__RemotedException.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_Debug.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_ExecutionConstraint.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_ExtendedTimer.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_ExtendedWeakReference.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_Hardware_SystemInfo.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_Hardware_SystemInfo__SystemID.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_Hardware_Utility.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_Math.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_Reflection.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_ResourceUtility.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_SerializationHintsAttribute.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_UnknownTypeException.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_Microsoft_SPOT_WeakDelegate.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\spot_native_System_Security_Cryptography_X509Certificates_X509Certificate.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\SPOT_Serialization\spot_native_Microsoft_SPOT_Serialization.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT\SPOT_Serialization\spot_serialization_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Graphics\spot_graphics_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Graphics\spot_graphics_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Graphics\spot_graphics_native_Microsoft_SPOT_Bitmap.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Graphics\spot_graphics_native_Microsoft_SPOT_Font.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Graphics\spot_graphics_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_microsoft_spot_eventsink.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_AnalogInput.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_Battery.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_Battery__ChargerModel.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_Cpu.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_HardwareProvider.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_I2CDevice.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_I2CDevice__Configuration.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_InputPort.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_InterruptPort.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_LargeBuffer.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_NativeEventDispatcher_mshl.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_OutputPort.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_Port.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_PowerState.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_SPI.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_SPI__Configuration.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_TristatePort.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native_Microsoft_SPOT_Hardware_Watchdog.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_OneWire\spot_hardware_onewire_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_OneWire\spot_hardware_onewire_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_OneWire\spot_hardware_onewire_native_Microsoft_SPOT_Hardware_OneWire.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_OneWire\spot_hardware_onewire_native_Microsoft_SPOT_Hardware_OneWire_mshl.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_OneWire\spot_hardware_onewire_native_Microsoft_SPOT_Hardware_OneWire_stubs.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_PWM\spot_hardware_pwm_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_PWM\spot_hardware_pwm_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_PWM\spot_hardware_pwm_native_Microsoft_SPOT_Hardware_PWM.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_PWM\spot_hardware_pwm_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Serial\spot_hardware_serial_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Serial\spot_hardware_serial_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Serial\spot_hardware_serial_native_Microsoft_SPOT_Hardware_SerialPort_Events.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Serial\spot_hardware_serial_native_System_IO_Ports_SerialPort.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Serial\spot_hardware_serial_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Usb\spot_hardware_usb_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Usb\spot_hardware_usb_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Usb\spot_hardware_usb_native_Microsoft_SPOT_Hardware_UsbClient_UsbController.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Usb\spot_hardware_usb_native_Microsoft_SPOT_Hardware_UsbClient_UsbStream.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Usb\spot_hardware_usb_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io_native_Microsoft_SPOT_IO_NativeFileStream.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io_native_Microsoft_SPOT_IO_NativeFindFile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io_native_Microsoft_SPOT_IO_NativeIO.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io_native_Microsoft_SPOT_IO_RemovableMedia.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io_native_Microsoft_SPOT_IO_VolumeInfo.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Net\spot_net_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Net\spot_net_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Net\spot_net_native_Microsoft_SPOT_Net_NetworkInformation_NetworkInterface.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Net\spot_net_native_Microsoft_SPOT_Net_NetworkInformation_Wireless80211.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Net\spot_net_native_Microsoft_SPOT_Net_SocketNative.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Net\spot_net_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Net_Security\spot_net_security_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Net_Security\spot_net_security_native_Microsoft_SPOT_Net_Security_SslNative.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Net_Security\spot_net_security_native_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_TimeService\spot_time_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_TimeService\spot_Time_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_TimeService\spot_Time_native_Microsoft_SPOT_Time_TimeService.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_TimeService\spot_Time_native_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Touch\spot_touch_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Touch\spot_touch_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Touch\spot_touch_native_Microsoft_SPOT_Touch_Ink.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Touch\spot_touch_native_Microsoft_SPOT_Touch_TouchCollectorConfiguration.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Touch\spot_touch_native_Microsoft_SPOT_Touch_TouchEventProcessor.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Touch\spot_touch_native_Microsoft_SPOT_Touch_TouchPanel.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Touch\spot_touch_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Update\spot_update_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Update\spot_update_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\SPOT_Update\spot_update_native_Microsoft_SPOT_MFUpdate_MFNativeUpdate.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\System_Xml\system_xml_fastcompile.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\System_Xml\system_xml_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\System_Xml\system_xml_native_System_Xml_XmlNameTable.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\System_Xml\system_xml_native_System_Xml_XmlReader.cpp" />
+    <ClCompile Include="..\..\..\CLR\Libraries\System_Xml\system_xml_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\Messaging\Messaging.cpp" />
+    <ClCompile Include="..\..\..\CLR\Messaging\Messaging_stub.cpp" />
+    <ClCompile Include="..\..\..\CLR\StartupLib\CLRStartup.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\BuildHelper\BuildHelper.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\CorHelper\corhlpr.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\CorHelper\stdafx.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Include\Include.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\MetaDataProcessor\KeyGen.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\MetaDataProcessor\MetaDataProcessor.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Parser\AssemblyParser.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Parser\AssemblyParserDump.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Parser\AssemblyReparser.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Parser\ByteCodeParser.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Parser\ByteCodeParser_Load.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Parser\ByteCodeParser_Save.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Parser\Linker.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Parser\stdafx.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\Parser\Support.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\StubWinHal\corlib_native.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\StubWinHal\minheap.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\StubWinHal\mintime.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\StubWinHal\StubWinHal.cpp" />
+    <ClCompile Include="..\..\..\CLR\Tools\TFConvert\TFConvert.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\CLR\Core\Core.h" />
+    <ClInclude Include="..\..\..\CLR\Core\corhdr_private.h" />
+    <ClInclude Include="..\..\..\CLR\Diagnostics\Diagnostics.h" />
+    <ClInclude Include="..\..\..\CLR\Diagnostics\ManagedElementTypes_Win32.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Bmp\Bmp.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Gif\gif.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Gif\giffile.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Gif\lzw.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Gif\lzwread.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Gif\lzwutil.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Graphics.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jchuff.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jconfig.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jdct.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jdhuff.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jerror.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jinclude.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jmemsys.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jmorecfg.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jpegint.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jpeglib.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\jversion.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\mcbcr.h" />
+    <ClInclude Include="..\..\..\CLR\Graphics\Jpeg\transupp.h" />
+    <ClInclude Include="..\..\..\CLR\Include\CLR_Defines.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Application.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Checks.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Debugging.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Diagnostics.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_ErrorCodes.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Graphics.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Handler.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Hardware.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Interop.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Jitter.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Jitter_ARM.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Jitter_ARM_Emulation.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Messaging.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_ParseOptions.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_PlatformDef.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Profiling.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Runtime.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Runtime__HeapBlock.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Runtime__Serialization.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Stream.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Types.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Version.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Win32.h" />
+    <ClInclude Include="..\..\..\CLR\Include\TinyCLR_Xml.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\CorLib\CorLib.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\CorLib\corlib_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SecurityPkcs11\security_pkcs11_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT\SPOT.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT\SPOT_Messaging\SPOT_Messaging.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT\spot_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT\spot_native_System_Security_Cryptography_X509Certificates_X509Certificate.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT\SPOT_Serialization\SPOT_Serialization.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Graphics\SPOT_Graphics.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Graphics\spot_graphics_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\spot_hardware_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_OneWire\spot_hardware_onewire_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_OneWire\spot_hardware_onewire_native_Microsoft_SPOT_Hardware_OneWire.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_PWM\spot_hardware_pwm.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_PWM\spot_hardware_pwm_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Serial\spot_hardware_serial.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Serial\spot_hardware_serial_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Usb\spot_hardware_usb.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Hardware\SPOT_Usb\spot_hardware_usb_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_IO\spot_io_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Net\SPOT_Net.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Net\spot_net_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Net_Security\SPOT_Net_Security.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Net_Security\spot_net_security_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_TimeService\spot_time.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_TimeService\spot_Time_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Touch\spot_touch.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Touch\spot_touch_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Update\SPOT_Update.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\SPOT_Update\spot_update_native.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\System_Xml\system_xml.h" />
+    <ClInclude Include="..\..\..\CLR\Libraries\System_Xml\system_xml_native.h" />
+    <ClInclude Include="..\..\..\CLR\StartupLib\CLRStartup.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\BuildHelper\stdafx.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\CorHelper\stdafx.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Include\AssemblyParser.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Include\AssemblyReparser.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Include\cor.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Include\CorError.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Include\CorHdr.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Include\corhlpr.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Include\corsym.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Include\HAL_Windows.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Include\WatchAssemblyBuilder.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\MetaDataProcessor\KeyGen.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\MetaDataProcessor\stdafx.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\Parser\stdafx.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\StubWinHal\stdafx.h" />
+    <ClInclude Include="..\..\..\CLR\Tools\TFConvert\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\CLR\Include\opcode.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

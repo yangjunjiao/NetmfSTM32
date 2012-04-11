@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_resharper.netmfpk4.2\PersistenIdIndex.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\SymbolCache.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.4.0.0.0.contracts.xml\0DED0883.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.4.0.0.0.interfaces.nullness.generated.xml\620DC5CB.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.4.0.0.0.nullness.generated.xml\772ECBB3.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.4.0.0.0.pure.xml\6572C670.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.i18n.xml\366D6FC8.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.nullness.manual.xml\A029C282.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.valueflow.xml\4E59B0BF.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.xml\05998BE8.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\mscorlib.xml\743ADB6C.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.4.0.0.0.contracts.xml\7458FC03.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.4.0.0.0.nullness.generated.xml\5304AF33.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.4.0.0.0.pure.xml\403889F0.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.configuration.4.0.0.0.contracts.xml\8AA99CC3.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.configuration.4.0.0.0.nullness.generated.xml\5C04A9F3.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.configuration.4.0.0.0.pure.xml\A30FD330.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.configuration.xml\092A1070.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.4.0.0.0.contracts.xml\9A69C6A3.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.4.0.0.0.nullness.generated.xml\8E5F4293.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.4.0.0.0.pure.xml\D7464B10.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.linqtunnel.xml\63F26974.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.nullness.manual.xml\31BDD0E2.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.core.xml\11686E5B.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.data.sqlxml.4.0.0.0.nullness.generated.xml\B9F432D3.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.data.sqlxml.xml\48CF6F29.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.i18n.xml\E767B348.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.nullness.manual.xml\AC02D602.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.numerics.4.0.0.0.nullness.generated.xml\0D729213.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.numerics.xml\F65D6778.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.security.4.0.0.0.contracts.xml\203E41A3.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.security.4.0.0.0.nullness.generated.xml\F66E1D93.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.security.4.0.0.0.pure.xml\3CA1E610.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.security.xml\55841E76.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml\74BB9F68.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml\C3B3EEEE.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.4.0.0.0.contracts.xml\53D95363.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.4.0.0.0.nullness.generated.xml\DD97C153.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.4.0.0.0.pure.xml\5A1C7B50.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.attributes.xml\09EED2C9.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.i18n.xml\8B551FA8.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_resharper.netmfpk4.2\xmlindex\system.xml.xml\48B5EA79.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
