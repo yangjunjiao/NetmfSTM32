@@ -1609,7 +1609,7 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * messages are written.
  */
 #ifndef LWIP_DBG_MIN_LEVEL
-#define LWIP_DBG_MIN_LEVEL              LWIP_DBG_LEVEL_SERIOUS
+#define LWIP_DBG_MIN_LEVEL              LWIP_DBG_LEVEL_SERIOUS //SK LWIP_DBG_LEVEL_SERIOUS
 #endif
 
 /**
@@ -1673,7 +1673,7 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * IGMP_DEBUG: Enable debugging in igmp.c.
  */
 #ifndef IGMP_DEBUG
-#define IGMP_DEBUG                      LWIP_DBG_ON
+#define IGMP_DEBUG                      LWIP_DBG_OFF
 #endif
 
 /**
@@ -1687,7 +1687,7 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * IP_DEBUG: Enable debugging for IP.
  */
 #ifndef IP_DEBUG
-#define IP_DEBUG                        LWIP_DBG_ON
+#define IP_DEBUG                        LWIP_DBG_OFF
 #endif
 
 /**
@@ -1701,28 +1701,28 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * RAW_DEBUG: Enable debugging in raw.c.
  */
 #ifndef RAW_DEBUG
-#define RAW_DEBUG                       LWIP_DBG_ON
+#define RAW_DEBUG                       LWIP_DBG_OFF
 #endif
 
 /**
  * MEM_DEBUG: Enable debugging in mem.c.
  */
 #ifndef MEM_DEBUG
-#define MEM_DEBUG                       LWIP_DBG_ON
+#define MEM_DEBUG                       LWIP_DBG_OFF
 #endif
 
 /**
  * MEMP_DEBUG: Enable debugging in memp.c.
  */
 #ifndef MEMP_DEBUG
-#define MEMP_DEBUG                      LWIP_DBG_ON
+#define MEMP_DEBUG                      LWIP_DBG_OFF
 #endif
 
 /**
  * SYS_DEBUG: Enable debugging in sys.c.
  */
 #ifndef SYS_DEBUG
-#define SYS_DEBUG                       LWIP_DBG_ON
+#define SYS_DEBUG                       LWIP_DBG_OFF
 #endif
 
 /**
@@ -1800,7 +1800,7 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * TCPIP_DEBUG: Enable debugging in tcpip.c.
  */
 #ifndef TCPIP_DEBUG
-#define TCPIP_DEBUG                     LWIP_DBG_ON
+#define TCPIP_DEBUG                     LWIP_DBG_OFF
 #endif
 
 /**

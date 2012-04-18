@@ -68,19 +68,21 @@
                 LED.Write(false);
                 Thread.Sleep(500);
                 LED.Write(true);
-
-                uart.WriteLine("Count: " + counter.ToString() + "\r\n");
-                counter++;
-
-                NetworkInterface[] allNetworkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
-                foreach (var allNetworkInterface in allNetworkInterfaces)
+                if (counter < 2)
                 {
-                    uart.WriteLine(allNetworkInterface.NetworkInterfaceType.ToString());
-                    uart.WriteLine(allNetworkInterface.IPAddress);
-                    /*if (allNetworkInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                    uart.WriteLine("Count: " + counter.ToString() + "\r\n");
+                    counter++;
+                
+                    NetworkInterface[] allNetworkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+                    foreach (var allNetworkInterface in allNetworkInterfaces)
                     {
-                        allNetworkInterface.EnableDhcp();
-                    }*/
+                        uart.WriteLine(allNetworkInterface.NetworkInterfaceType.ToString());
+                        uart.WriteLine(allNetworkInterface.IPAddress);
+                        /*if (allNetworkInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                        {
+                            allNetworkInterface.EnableDhcp();
+                        }*/
+                    }
                 }
                 //AnalogInput analogInput = new AnalogInput(Cpu.AnalogChannel.ANALOG_4);
                 //Debug.Print("a: " + analogInput.Read().ToString());

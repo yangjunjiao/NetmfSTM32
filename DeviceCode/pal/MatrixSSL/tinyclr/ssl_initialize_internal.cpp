@@ -6,6 +6,9 @@ extern unsigned long g_ulPrivKeySrvLen;
 extern unsigned long g_ulCertSrvLen;
 extern unsigned char g_pcCertSrv[];
 extern unsigned char g_pcPrivKeySrv[];
+extern unsigned char g_pcAcertSrv[];
+extern unsigned long g_ulAcertSrvLen;
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -27,15 +30,32 @@ BOOL ssl_initialize_internal()
         //
         // Something went wrong so kill the application with an error code.
         //
+    	TINYCLR_SSL_PRINTF("MatrixSSL library open failure.  Exiting\n");
         return(FALSE);
     }
 
+	iRet = matrixSslNewKeys(&g_pSslKeys);
 	
+	 if(iRet < 0)
+	    {
+	    	TINYCLR_SSL_PRINTF("MatrixSSL library key init failure.  Exiting\n");
+	    	matrixSslDeleteKeys(g_pSslKeys);
+	    	matrixSslClose();
+	        //
+	        // Something went wrong so kill the application with an error code.
+	        //
+	        return(FALSE);
+	    }
+
     //
     // Read the required certificates from memory.
     //
     iRet = matrixSslLoadRsaKeysMem(g_pSslKeys, g_pcCertSrv, g_ulCertSrvLen,
-                                g_pcPrivKeySrv, g_ulPrivKeySrvLen, NULL, 0);
+                                g_pcPrivKeySrv, g_ulPrivKeySrvLen, g_pcAcertSrv, g_ulAcertSrvLen);
+
+
+
+    //TODO or generate it
     if(iRet < 0)
     {
     	TINYCLR_SSL_PRINTF("No certificate material loaded.  Exiting\n");
@@ -46,8 +66,8 @@ BOOL ssl_initialize_internal()
         //
         return(FALSE);
     }
-	
-	
+
+    TINYCLR_SSL_PRINTF("ssl_initialize_internal() OK\n");
     return TRUE;
 }
 

@@ -26,6 +26,9 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
   </PropertyGroup>
+  <PropertyGroup >
+  <DefineConstants>PS_UNSUPPORTED_OS</DefineConstants>
+</PropertyGroup>
   <ItemGroup>
   
     <Compile Include="crypto\symmetric\aes.c" />

@@ -14,7 +14,7 @@ namespace MFConsoleApplication1
 
         public static void Run()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
            // PrintHttpData("http://www.google.de");
             // Test SSL connection with no certificate verification
             try
@@ -148,7 +148,7 @@ namespace MFConsoleApplication1
                         page = page + new String(charData, 0, charUsed);
 
                         // Display page download status.
-                        Debug.Print("Bytes Read Now: " + bytesRead + " Total: " + totalBytes);
+                        //Debug.Print("Bytes Read Now: " + bytesRead + " Total: " + totalBytes);
                     }
 
                     Debug.Print("Total bytes downloaded in message body : " + totalBytes);

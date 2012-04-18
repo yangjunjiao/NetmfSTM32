@@ -32,7 +32,7 @@ BOOL Crypto_GetActivationStringFromSeed(char *pString, int cbStringSize, KeySeed
 // Encrypts a buffer using a symmetric algorithm.
 BOOL Crypto_Encrypt(BYTE *Key, BYTE *IV, DWORD cbIVSize, BYTE* pPlainText, DWORD cbPlainText, BYTE *pCypherText, DWORD cbCypherText)
 {
-    return FALSE;
+    return TRUE; //SK TODO -> FALSE
 }
 
 // Decrypts a buffer using a symmetric algorithm

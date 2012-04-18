@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Wed Apr 11 15:14:23 2012
+;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Fri Apr 13 16:55:27 2012
 ;VERSION 0.2
 ;FILE Aborts.obj
 HARD_Breakpoint_Handler <= USED 0
@@ -192,10 +192,8 @@ _ZN18BlockStorageStream5WriteEPhj <= USED 0
 _ZN18BlockStorageStream8IsErasedEj <= USED 0
 _ZNK15BlockDeviceInfo23PhysicalToSectorAddressEPK15BlockRegionInfoj <= USED 0
 ;FILE cipherSuite.obj
-csRsaDecryptPriv <= USED 0
 csRsaDecryptPub <= USED 0
 csRsaEncryptPriv <= USED 0
-csRsaEncryptPub <= USED 0
 matrixSslSetCipherSuiteEnabledStatus <= USED 0
 ;FILE core_fastcompile.obj
 _Z14CLR_SoftRebootv <= USED 0
@@ -269,7 +267,6 @@ _Z37Interop_Marshal_RetrieveManagedObjectR17CLR_RT_StackFrame <= USED 0
 _Z38Interop_Marshal_UNSUPPORTED_TYPE_ByRefRK17CLR_RT_StackFramePvjRPP16CLR_RT_HeapBlock <= USED 0
 _Z41Interop_Marshal_GetField_UNSUPPORTED_TYPEP16CLR_RT_HeapBlockj <= USED 0
 _ZN10CLR_Checks12VerifyObjectER16CLR_RT_HeapBlock <= USED 0
-_ZN13CLR_RT_Memory10ReAllocateEPvj <= USED 0
 _ZN13CLR_RT_Memory18SubtractFromSystemEj <= USED 0
 _ZN13CLR_RT_Thread16CouldBeActivatedEv <= USED 0
 _ZN13UnicodeString6AssignEPKc <= USED 0
@@ -347,7 +344,6 @@ _ZN29CLR_RT_HeapBlock_MemoryStream9WriteBitsEjj <= USED 0
 _ZN29CLR_RT_HeapBlock_MemoryStream9WriteBitsEyj <= USED 0
 _ZNK18CLR_RT_MemoryRange12LimitToRangeERS_Phj <= USED 0
 _ZNK26CLR_RT_ReflectionDef_Index10GetRawDataEv <= USED 0
-private_realloc <= USED 0
 ;FILE des3.obj
 ;FILE dhcp.obj
 dhcp_inform <= USED 0
@@ -431,8 +427,6 @@ _ZNK25CLR_GFX_BitmapDescription15GetWidthInWordsEv <= USED 0
 _ZNK25CLR_GFX_FontDescriptionEx16GetAntiAliasSizeEv <= USED 0
 ;FILE heap.obj
 ;FILE hmac.obj
-psHmacMd5 <= USED 0
-psHmacSha1 <= USED 0
 ;FILE i2c.obj
 _Z20I2C_XAction_GetStateP15I2C_HAL_XACTION <= USED 0
 ;FILE icmp.obj
@@ -457,30 +451,14 @@ loop_lwip_statistics <= USED 0
 _Z26HAL_SOCK_GlobalLockContextv <= USED 0
 ;FILE lwIP__Sockets.obj
 ;FILE matrixssl.obj
-matrixRegisterSession <= USED 0
-matrixResumeSession <= USED 0
 matrixSslGetAnonStatus <= USED 0
-matrixSslGetSessionId <= USED 0
-matrixSslHandshakeIsComplete <= USED 0
-matrixSslNewKeys <= USED 0
 matrixSslSetSessionOption <= USED 0
-matrixUserCertValidator <= USED 0
-matrixValidateCerts <= USED 0
-sslCreateKeys <= USED 0
-sslSnapshotHSHash <= USED 0
 ;FILE matrixsslApi.obj
 matrixSslAddRehandshakeCredits <= USED 0
 matrixSslEncodeClosureAlert <= USED 0
 matrixSslEncodeRehandshake <= USED 0
 matrixSslEncodeToOutdata <= USED 0
-matrixSslEncodeWritebuf <= USED 0
-matrixSslGetOutdata <= USED 0
-matrixSslGetReadbuf <= USED 0
-matrixSslGetWritebuf <= USED 0
 matrixSslNewServerSession <= USED 0
-matrixSslProcessedData <= USED 0
-matrixSslReceivedData <= USED 0
-matrixSslSentData <= USED 0
 ;FILE md5.obj
 ;FILE mem.obj
 mem_calloc <= USED 0
@@ -505,12 +483,9 @@ netif_set_link_callback <= USED 0
 netif_set_status_callback <= USED 0
 ;FILE noos.obj
 SslTimerIntHandler <= USED 0
-_psTrace <= USED 0
+_psTracePtr <= USED 0
 _psTraceStr <= USED 0
 abort <= USED 0
-psBreak <= USED 0
-psCompareTime <= USED 0
-psDiffMsecs <= USED 0
 sslCloseOsdep <= USED 0
 sslOpenOsdep <= USED 0
 sslSetHardwareTimer <= USED 0
@@ -527,7 +502,6 @@ pbuf_take <= USED 0
 ;FILE piezo_stubs.obj
 _Z15Piezo_IsEnabledv <= USED 0
 ;FILE pkcs.obj
-pkcs1Pad <= USED 0
 pkcs5pbkdf1 <= USED 0
 ;FILE prng.obj
 ;FILE pstm.obj
@@ -537,8 +511,6 @@ pstm_sub_d <= USED 0
 ;FILE pubkey.obj
 ;FILE raw.obj
 ;FILE rsa.obj
-psRsaDecryptPriv <= USED 0
-psRsaEncryptPub <= USED 0
 ;FILE sha1.obj
 ;FILE sockets.obj
 lwip_read <= USED 0
@@ -552,21 +524,19 @@ _ZN19Sockets_LWIP_Driver8ShutdownEii <= USED 0
 ;FILE spot_messaging_stub.obj
 ;FILE spot_net_security_native_Microsoft_SPOT_Net_Security_SslNative.obj
 ;FILE sslDecode.obj
-matrixSslDecode <= USED 0
 ;FILE sslEncode.obj
-matrixSslEncode <= USED 0
 matrixSslEncodeHelloRequest <= USED 0
-matrixSslGetEncodedSize <= USED 0
 sslEncodeClosureAlert <= USED 0
-sslEncodeResponse <= USED 0
 ;FILE ssl_accept_internal.obj
+;FILE ssl_connect_internal.obj
 ;FILE ssl_exit_context_internal.obj
 ;FILE ssl_generic_init_internal.obj
 ;FILE ssl_initialize_internal.obj
+;FILE ssl_pending_internal.obj
+;FILE ssl_read_internal.obj
 ;FILE ssl_uninitialize_internal.obj
+;FILE ssl_write_internal.obj
 ;FILE sslv3.obj
-sslDeriveKeys <= USED 0
-sslGenerateFinishedHash <= USED 0
 ;FILE stubs.obj
 Crypto_AbortRSAOperation <= USED 0
 Crypto_Decrypt <= USED 0
@@ -632,8 +602,6 @@ _Z47KEEP_THE_LINKER_HAPPY_SINCE_KEEP_IS_NOT_WORKINGv <= USED 0
 matrixSslDeleteHelloExtension <= USED 0
 matrixSslLoadHelloExtension <= USED 0
 matrixSslNewHelloExtension <= USED 0
-tlsDeriveKeys <= USED 0
-tlsGenerateFinishedHash <= USED 0
 ;FILE udp.obj
 ;FILE usart.obj
 _Z10COM1_writePcj <= USED 0

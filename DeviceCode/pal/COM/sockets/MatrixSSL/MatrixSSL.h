@@ -2,19 +2,23 @@
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _SOCKETS_OPENSSL_H_
-#define _SOCKETS_OPENSSL_H_ 1
+#ifndef _SOCKETS_MATRIXSSL_H_
+#define _SOCKETS_MATRIXSSL_H_ 1
 
 //--//
 
 #include "tinyhal.h"
+
+#include "sockets_lwip.h"
+#define SOCKET_DRIVER g_Sockets_LWIP_Driver
+/*
 #ifdef TCPIP_LWIP
 #include "sockets_lwip.h"
 #define SOCKET_DRIVER g_Sockets_LWIP_Driver
 #else
 #include "../sockets.h"
 #define SOCKET_DRIVER g_Sockets_Driver
-#endif
+#endif*/
 //--//
 
 //--//

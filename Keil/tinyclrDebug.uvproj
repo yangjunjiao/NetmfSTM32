@@ -115,7 +115,7 @@
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
           <Simulator>
-            <UseSimulator>1</UseSimulator>
+            <UseSimulator>0</UseSimulator>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
@@ -126,7 +126,7 @@
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
           </Simulator>
           <Target>
-            <UseTarget>0</UseTarget>
+            <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>0</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
@@ -150,7 +150,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver></Driver>
+            <Driver>BIN\UL2CM3.DLL</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -385,6 +385,163 @@
       <Groups>
         <Group>
           <GroupName>Source Group 1</GroupName>
+          <Files>
+            <File>
+              <FileName>MatrixSSL.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\COM\sockets\MatrixSSL\MatrixSSL.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>sockets.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\COM\sockets\sockets.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\COM\sockets\Ssl\ssl.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>sockets_lwip.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\COM\sockets_lwip\sockets_lwip.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>file.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\file.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Legacy_support.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\Legacy_support.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_accept_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_accept_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_add_cert_auth_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_add_cert_auth_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_clear_cert_auth_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_clear_cert_auth_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_closesocket_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_closesocket_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_connect_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_connect_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_exit_context_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_exit_context_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_generic_init_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_generic_init_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_initialize_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_initialize_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_parse_certificate_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_parse_certificate_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_pending_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_pending_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_read_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_read_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_types.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_types.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_uninitialize_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_uninitialize_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ssl_write_internal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_write_internal.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>certSrv.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\adapt\certSrv.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>privkeySrv.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\adapt\privkeySrv.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>sslAdapt.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\tinyclr\adapt\sslAdapt.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>noOs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\core\noOs\noOs.c</FilePath>
+            </File>
+            <File>
+              <FileName>cipherSuite.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\cipherSuite.c</FilePath>
+            </File>
+            <File>
+              <FileName>matrixssl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixssl.c</FilePath>
+            </File>
+            <File>
+              <FileName>matrixsslApi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixsslApi.c</FilePath>
+            </File>
+            <File>
+              <FileName>sslDecode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\sslDecode.c</FilePath>
+            </File>
+            <File>
+              <FileName>sslEncode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\sslEncode.c</FilePath>
+            </File>
+            <File>
+              <FileName>sslv3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\sslv3.c</FilePath>
+            </File>
+            <File>
+              <FileName>tls.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\tls.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

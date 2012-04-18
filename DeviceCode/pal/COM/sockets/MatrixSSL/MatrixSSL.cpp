@@ -6,7 +6,8 @@
 #include <tinyclr/ssl_functions.h>
 //#include <objects/objects.h>
 
-#include "..\Ssl\ssl.h"
+//#include "..\Ssl\ssl.h"
+#include "MatrixSSL.h"
 #include "tinyhal.h"
 
 
@@ -64,7 +65,7 @@ BOOL SSL_ClientInit( INT32 sslMode, INT32 sslVerify, const char* certificate, IN
 INT32 SSL_Connect( SOCK_SOCKET socket, const char* szTargetHost, INT32 sslContextHandle )
 {
     NATIVE_PROFILE_PAL_COM();
-    return 0; //ssl_connect_internal(socket, szTargetHost, sslContextHandle);;
+    return ssl_connect_internal(socket, szTargetHost, sslContextHandle);
 }
 
 
@@ -96,13 +97,13 @@ INT32 SSL_Accept( SOCK_SOCKET socket, INT32 sslContextHandle )
 INT32 SSL_Write( SOCK_SOCKET socket, const char* Data, size_t size )
 { 
     NATIVE_PROFILE_PAL_COM();
-    return 0; 
+    return ssl_write_internal(socket, Data, size);
 }
 
 INT32 SSL_Read( SOCK_SOCKET socket, char* Data, size_t size )
 { 
     NATIVE_PROFILE_PAL_COM();
-    return 0; 
+    return ssl_read_internal(socket, Data, size);
 }
 
 INT32 SSL_CloseSocket( SOCK_SOCKET socket )
@@ -130,7 +131,8 @@ BOOL SSL_ParseCertificate( const char* certificate, size_t cert_length, const ch
 INT32 SSL_DataAvailable( SOCK_SOCKET socket )
 {
     NATIVE_PROFILE_PAL_COM();
-    return 0;
+    
+    return ssl_pending_internal(socket);
 }
 
 

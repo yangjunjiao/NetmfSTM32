@@ -6,9 +6,9 @@
     <ProjectGuid>{d84f00df-2ec3-4271-921c-1b55077b18b0}</ProjectGuid>
     <Description>Cryptography library</Description>
     <Level>Support</Level>
-    <LibraryFile>Crypto.$(LIB_EXT)</LibraryFile>
+    <LibraryFile>Crypto_MatrixSSL.$(LIB_EXT)</LibraryFile>
     <ProjectPath>$(SPOCLIENT)\Crypto\dotNetMF.proj</ProjectPath>
-    <ManifestFile>Crypto.$(LIB_EXT).manifest</ManifestFile>
+    <ManifestFile>Crypto_MatrixSSL.$(LIB_EXT).manifest</ManifestFile>
     <Groups>
     </Groups>
     <LibraryCategory>
@@ -58,21 +58,21 @@
 
 
   <PropertyGroup Condition="'$(INSTRUCTION_SET)'!='x86'">
-    <LibSrc                                                 >lib\$(INSTRUCTION_SET)\$(DOTNETMF_COMPILER)\crypto.$(LIB_EXT)</LibSrc>
-    <LibSrc Condition="'$(COMPILER_TOOL_VERSION)'=='GCC4.2'">lib\$(INSTRUCTION_SET)\RVDS3.1\crypto.$(LIB_EXT)</LibSrc>
+    <LibSrc                                                 >lib\$(INSTRUCTION_SET)\$(DOTNETMF_COMPILER)\Crypto_MatrixSSL.$(LIB_EXT)</LibSrc>
+    <LibSrc Condition="'$(COMPILER_TOOL_VERSION)'=='GCC4.2'">lib\$(INSTRUCTION_SET)\RVDS3.1\Crypto_MatrixSSL.$(LIB_EXT)</LibSrc>
     <LibSrc Condition="!EXISTS('$(LibSrc)')"                >$(LIB_DIR)\crypto_stub.$(LIB_EXT)</LibSrc>
-    <LibTo>crypto.$(LIB_EXT)</LibTo>
+    <LibTo>Crypto_MatrixSSL.$(LIB_EXT)</LibTo>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(INSTRUCTION_SET)'=='x86'">
-    <LibFiles Include="lib\$(INSTRUCTION_SET)\crypto.lib" Condition="EXISTS('lib\$(INSTRUCTION_SET)\crypto.lib')">
-        <DestFile>crypto.lib</DestFile>
+    <LibFiles Include="lib\$(INSTRUCTION_SET)\Crypto_MatrixSSL.lib" Condition="EXISTS('lib\$(INSTRUCTION_SET)\Crypto_MatrixSSL.lib')">
+        <DestFile>Crypto_MatrixSSL.lib</DestFile>
     </LibFiles>
-    <LibFiles Include="lib\$(INSTRUCTION_SET)\crypto.pdb" Condition="Exists('lib\$(INSTRUCTION_SET)\crypto.pdb')">
-        <DestFile>crypto.pdb</DestFile>
+    <LibFiles Include="lib\$(INSTRUCTION_SET)\Crypto_MatrixSSL.pdb" Condition="Exists('lib\$(INSTRUCTION_SET)\Crypto_MatrixSSL.pdb')">
+        <DestFile>Crypto_MatrixSSL.pdb</DestFile>
     </LibFiles>
-    <LibFiles Include="$(LIB_DIR)\crypto_stub.lib"        Condition="!Exists('lib\$(INSTRUCTION_SET)\crypto.lib')">
-        <DestFile>crypto.lib</DestFile>
+    <LibFiles Include="$(LIB_DIR)\crypto_stub.lib"        Condition="!Exists('lib\$(INSTRUCTION_SET)\Crypto_MatrixSSL.lib')">
+        <DestFile>Crypto_MatrixSSL.lib</DestFile>
     </LibFiles>
   </ItemGroup>
 

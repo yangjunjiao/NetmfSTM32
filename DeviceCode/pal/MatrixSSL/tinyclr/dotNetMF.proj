@@ -50,6 +50,10 @@
     <Compile Include="ssl_uninitialize_internal.cpp" />
 	<Compile Include="ssl_exit_context_internal.cpp" />
 	<Compile Include="ssl_generic_init_internal.cpp" />
+	<Compile Include="ssl_connect_internal.cpp" />
+	<Compile Include="ssl_write_internal.cpp" />
+	<Compile Include="ssl_read_internal.cpp" />
+	<Compile Include="ssl_pending_internal.cpp" />
 	<!-- <Compile Include="ssl_types.cpp" />
     <Compile Include="ssl_connect_internal.cpp" />
     <Compile Include="file.cpp" />
@@ -91,7 +95,7 @@
   <ItemGroup>
     <HFiles Include="$(SPOCLIENT)\devicecode\include\tinyclr_endian.h" />
     <HFiles Include="$(SPOCLIENT)\devicecode\pal\com\sockets\openssl\openssl.h" />
-    <HFiles Include="$(SPOCLIENT)\devicecode\pal\com\sockets\sockets.h" />
+    <!--<HFiles Include="$(SPOCLIENT)\devicecode\pal\com\sockets\sockets.h" />-->
     <HFiles Include="$(SPOCLIENT)\devicecode\pal\com\sockets_lwip\sockets_lwip.h" />
     <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\contrib\ports\arm\include\arch\cc.h" />
     <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\lwip_1_3_2\contrib\ports\arm\include\arch\sys_arch.h" />

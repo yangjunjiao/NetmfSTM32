@@ -40,6 +40,8 @@
 extern "C" {
 #endif
 
+#define USE_SSL_INFORMATIONAL_TRACE
+
 /******************************************************************************/
 /*
 	Recommended cipher suites:

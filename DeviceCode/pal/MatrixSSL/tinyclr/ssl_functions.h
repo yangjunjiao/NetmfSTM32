@@ -2,10 +2,13 @@
 #define SSL_FUNCTIONS_H
 
 #include <tinyhal.h>
-#include "ssl.h"
+#include "Matrixssl.h"
 #include "matrixsslApi.h"
 #include "ssl_types.h"
+#include "sockets_lwip.h"
 
+
+#define SOCKET_DRIVER g_Sockets_LWIP_Driver
 
 #define TINYCLR_SSL_MODE_TLS1 0x10
 #define TINYCLR_SSL_MODE_SSL3 0x08

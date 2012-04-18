@@ -35,6 +35,8 @@
 #ifndef _h_PS_CORECONFIG
 #define _h_PS_CORECONFIG
 
+#define PS_UNSUPPORTED_OS
+
 /******************************************************************************/
 /* Configurable features */
 /******************************************************************************/
@@ -48,7 +50,7 @@
 /*
 	Turn on the psTraceCore set of APIs for log trace of the core module
 */
-/* #define USE_CORE_TRACE */
+ #define USE_CORE_TRACE
 
 
 /******************************************************************************/

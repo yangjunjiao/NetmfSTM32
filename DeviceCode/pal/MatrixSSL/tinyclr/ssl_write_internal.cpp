@@ -1,39 +1,33 @@
-#include <tinyclr/ssl_functions.h>
-#include <openssl/ssl.h>
-#include <openssl.h>
+#include "ssl_functions.h"
+#include "adapt/adapt.h"
 
-static const int  c_MaxSslDataSize = 1460; 
+static const int c_MaxSslDataSize = 1460;
 
-int ssl_write_internal( int sd, const char* data, size_t size )
-{
-    SSL *ssl = (SSL*)SOCKET_DRIVER.GetSocketSslData(sd);
+int ssl_write_internal(int sd, const char* data, size_t size) {
+	unsigned char *sslData;
 
-    if(ssl == NULL || ssl == (void*)SSL_SOCKET_ATTEMPTED_CONNECT)
-    {
-        return SOCK_SOCKET_ERROR;
-    }
-    
-    if(size > c_MaxSslDataSize)
-    {
-        size = c_MaxSslDataSize;
-    }
-    
-    int sent = SSL_write( ssl, data, size ); 
+	SSL* ssl = (SSL*) g_SSL_Driver.m_sslContextArray[0].SslContext;
+	if (ssl == NULL) {
+		return SOCK_SOCKET_ERROR;
+	}
 
-    int err = SSL_get_error(ssl,sent);
+	int available = 0, requested = size, sent = 0;
+	if ((available = matrixSslGetWritebuf(ssl, &sslData, size)) < 0) {
+		return SOCK_SOCKET_ERROR;
+	}
+	requested = min(requested, available);
+	TINYCLR_SSL_MEMCPY(sslData, data, requested);
+	if (matrixSslEncodeWritebuf(ssl, requested) < 0) {
+		return SOCK_SOCKET_ERROR;
+	}
+	int len = matrixSslGetOutdata(ssl, &sslData);
 
-    if(err == SSL_ERROR_WANT_WRITE)
-    {
-#ifndef TCPIP_LWIP
-        SOCKET_DRIVER.ClearStatusBitsForSocket( sd, TRUE );
-        return 0;
-#endif
-    }
+	sent = SOCK_send(sd, (const char *) sslData, len, 0);
+	int rc = matrixSslSentData(ssl, sent);
+	if (rc == MATRIXSSL_SUCCESS) {
+		return sent;
+	}
 
-#ifndef TCPIP_LWIP
-    SOCKET_DRIVER.ClearStatusBitsForSocket( sd, TRUE );
-#endif
-
-    return sent;
+	return SOCK_SOCKET_ERROR;
 }
 

@@ -1,7 +1,6 @@
 
 #include "../matrixos.h"
 
-
 //*****************************************************************************
 //
 // Multi-threading cannot be supported in the absence of an OS so catch
@@ -19,7 +18,6 @@
 // heap is aligned on a word boundary. This is vital!
 //
 //*****************************************************************************
-
 
 //*****************************************************************************
 //
@@ -67,10 +65,8 @@ static unsigned long g_ulRandRegister;
 //!     The seed value for the random number generator.
 //!
 //*****************************************************************************
-static void
-SeedRandom(unsigned long ulSeed)
-{
-    g_ulRandRegister = ulSeed;
+static void SeedRandom(unsigned long ulSeed) {
+	g_ulRandRegister = ulSeed;
 }
 
 //*****************************************************************************
@@ -80,19 +76,14 @@ SeedRandom(unsigned long ulSeed)
 //!     Returns a value between 0 and MAX_RAND.
 //!
 //*****************************************************************************
-static unsigned long
-GetRandom(void)
-{
-    if(g_ulRandRegister & 1)
-    {
-        g_ulRandRegister = (g_ulRandRegister >> 1) | 0x80000000;
-        g_ulRandRegister ^= LSFR_PATTERN;
-    }
-    else
-    {
-        g_ulRandRegister = g_ulRandRegister >> 1;
-    }
-    return(g_ulRandRegister);
+static unsigned long GetRandom(void) {
+	if (g_ulRandRegister & 1) {
+		g_ulRandRegister = (g_ulRandRegister >> 1) | 0x80000000;
+		g_ulRandRegister ^= LSFR_PATTERN;
+	} else {
+		g_ulRandRegister = g_ulRandRegister >> 1;
+	}
+	return (g_ulRandRegister);
 }
 
 //*****************************************************************************
@@ -107,18 +98,16 @@ GetRandom(void)
 //! \Returns None.
 //
 //*****************************************************************************
-void
-SslTimerIntHandler(void)
-{
-    //
-    // Clear all pending interrupts from our timer
-    //
-    //TimerIntClear(g_ulSslTimerBase, TimerIntStatus(g_ulSslTimerBase, true));
+void SslTimerIntHandler(void) {
+	//
+	// Clear all pending interrupts from our timer
+	//
+	//TimerIntClear(g_ulSslTimerBase, TimerIntStatus(g_ulSslTimerBase, true));
 
-    //
-    // Increment our elapsed second counter.
-    //
-    //g_ulSeconds+;
+	//
+	// Increment our elapsed second counter.
+	//
+	//g_ulSeconds+;
 }
 
 //*****************************************************************************
@@ -136,11 +125,9 @@ SslTimerIntHandler(void)
 //! \return Does not return.
 //
 //*****************************************************************************
-void abort(void)
-{
-    while(1)
-    {
-    }
+void abort(void) {
+	while (1) {
+	}
 }
 
 //*****************************************************************************
@@ -160,17 +147,14 @@ void abort(void)
 //! timer. The same value is also returned in *pTime if pTime is not NULL.
 //
 //*****************************************************************************
-time_t
-NoOSTime(time_t *pTime)
-{
-    unsigned long ulSeconds = g_ulSeconds;
+time_t NoOSTime(time_t *pTime) {
+	unsigned long ulSeconds = g_ulSeconds;
 
-    if(pTime)
-    {
-        *pTime = ulSeconds;
-    }
+	if (pTime) {
+		*pTime = ulSeconds;
+	}
 
-    return(ulSeconds);
+	return (ulSeconds);
 }
 
 //*****************************************************************************
@@ -180,8 +164,6 @@ NoOSTime(time_t *pTime)
 // its APIs.
 //
 //*****************************************************************************
-
-
 
 //*****************************************************************************
 //
@@ -203,9 +185,8 @@ NoOSTime(time_t *pTime)
 //! \Returns None.
 //
 //*****************************************************************************
-void sslSetHardwareTimer(unsigned long ulTimerBase)
-{
-   
+void sslSetHardwareTimer(unsigned long ulTimerBase) {
+
 }
 
 //*****************************************************************************
@@ -226,36 +207,34 @@ void sslSetHardwareTimer(unsigned long ulTimerBase)
 //! \return Returns 0 on success or a negative number on failure.
 //
 //*****************************************************************************
-int32 sslOpenOsdep(void)
-{
-    
+int32 sslOpenOsdep(void) {
+
 //    g_bSslTimerInitialized = true;
 
-    //
-    // Seed the "random" number generator with something that is board specific
-    // like, for example, the MAC address. This is typically stored in the
-    // flash user registers.
+	//
+	// Seed the "random" number generator with something that is board specific
+	// like, for example, the MAC address. This is typically stored in the
+	// flash user registers.
 
-    SeedRandom(5567);
+	SeedRandom(5567);
 
-    //
-    // Tell the caller all is well.
-    //
-    return(0);
+	//
+	// Tell the caller all is well.
+	//
+	return (0);
 }
 
-int32 sslCloseOsdep(void)
-{
-    //
-    // Stop our timer and unregister its interrupt.
-    //
+int32 sslCloseOsdep(void) {
+	//
+	// Stop our timer and unregister its interrupt.
+	//
 
- //   g_bSslTimerInitialized = false;
+	//   g_bSslTimerInitialized = false;
 
-    //
-    // Let the caller know everything went as planned.
-    //
-    return 0;
+	//
+	// Let the caller know everything went as planned.
+	//
+	return 0;
 }
 
 //*****************************************************************************
@@ -278,128 +257,121 @@ int32 sslCloseOsdep(void)
 //! written to buffer "bytes" if successful.
 //
 //*****************************************************************************
-int32 sslGetEntropy(unsigned char *bytes, uint32 size)
-{
-    int32 iLoop;
-    unsigned long ulRand;
+int32 sslGetEntropy(unsigned char *bytes, uint32 size) {
+	int32 iLoop;
+	unsigned long ulRand;
 
-    for (iLoop = 0; iLoop < size; iLoop++)
-    {
-        //
-        // Get 4 bytes of random data.
-        //
-        ulRand = GetRandom();
+	for (iLoop = 0; iLoop < size; iLoop++) {
+		//
+		// Get 4 bytes of random data.
+		//
+		ulRand = GetRandom();
 
-        //
-        // Save one byte of the random unsigned long value into the output
-        // buffer.
-        //
-        bytes[iLoop] = (unsigned char)(ulRand & 0xFF);
-    }
+		//
+		// Save one byte of the random unsigned long value into the output
+		// buffer.
+		//
+		bytes[iLoop] = (unsigned char) (ulRand & 0xFF);
+	}
 
-    //
-    // Tell the caller how many bytes of "random" data we generated.
-    //
-    return(size);
+	//
+	// Tell the caller how many bytes of "random" data we generated.
+	//
+	return (size);
+}
+
+
+
+void psBreak(void) {
+	// ASSERT(0);
+}
+
+int32 psGetTime(psTime_t *t) {
+	NoOSTime((time_t *) &(t->sec));
+	return 0;
+}
+
+/*
+ Return the delta in milliseconds between two time values
+ */
+int32 psDiffMsecs(psTime_t then, psTime_t now) {
+	long lSeconds;
+	long lExtraMilliseconds;
+
+	//
+	// Consider first the easiest case when the two times are within the
+	// same second. This, of course, assimes that then and now are correctly
+	// ordered with now later than then.
+	//
+	if (now.sec == then.sec) {
+		return ((now.usec - then.usec) / 1000);
+	} else {
+		//
+		// The times are in different seconds so consider the seconds and
+		// microseconds separately.
+		//
+		lSeconds = (now.sec - then.sec) - 1;
+		lExtraMilliseconds = ((1000000 - then.usec) + now.usec) / 1000;
+
+		//
+		// Guard against overflow. If the time difference is too large to
+		// hold in a long, send back the largest value allowable rather than
+		// wrapping and sending something completely bogus.
+		//
+		if (lSeconds > (MAX_OVERFLOW_FREE_SECONDS - lExtraMilliseconds)) {
+			//
+			// Calculation would overflow so return the largest different we
+			// can represent in a single (signed) long.
+			//
+			return (0x7FFFFFFF);
+		} else {
+			//
+			// No overflow worries so calculate the number of milliseconds
+			// by multiplying seconds by 1000 and adding the extra bit.
+			//
+			return ((lSeconds * 1000) + lExtraMilliseconds);
+		}
+	}
+}
+
+int32 psCompareTime(psTime_t a, psTime_t b) {
+	if ((a.sec > b.sec) || ((a.sec == b.sec) && (a.usec > b.usec))) {
+		return (0);
+	} else {
+		return (1);
+	}
+}
+
+int32 psCoreOpen(void) {
+	return 0;
+}
+void psCoreClose(void) {
 }
 
 void _psTrace(char *msg)
 {
-    //printf(msg);
+	ssl_printf(msg);
 }
 
 /* message should contain one %s, unless value is NULL */
 void _psTraceStr(char *message, char *value)
 {
     if (value) {
-       // printf(message, value);
+    	ssl_printf(message, value);
     } else {
-       // printf(message);
+    	ssl_printf(message);
     }
 }
 
-void psBreak(void)
+/* message should contain one %d */
+void _psTraceInt(char *message, int32 value)
 {
-   // ASSERT(0);
+	ssl_printf(message, value);
 }
 
-
-
- int32		psGetTime(psTime_t *t)
- {
-    NoOSTime((time_t *)&(t->sec));
-    return 0;
- }
-
- /*
-    Return the delta in milliseconds between two time values
-*/
- int32		psDiffMsecs(psTime_t then, psTime_t now)
+/* message should contain one %p */
+void _psTracePtr( char *message, void *value)
 {
-    long lSeconds;
-    long lExtraMilliseconds;
-
-    //
-    // Consider first the easiest case when the two times are within the
-    // same second. This, of course, assimes that then and now are correctly
-    // ordered with now later than then.
-    //
-    if(now.sec == then.sec)
-    {
-        return((now.usec - then.usec)/1000);
-    }
-    else
-    {
-        //
-        // The times are in different seconds so consider the seconds and
-        // microseconds separately.
-        //
-        lSeconds = (now.sec - then.sec) - 1;
-        lExtraMilliseconds = ((1000000 - then.usec) + now.usec)/1000;
-
-        //
-        // Guard against overflow. If the time difference is too large to
-        // hold in a long, send back the largest value allowable rather than
-        // wrapping and sending something completely bogus.
-        //
-        if(lSeconds > (MAX_OVERFLOW_FREE_SECONDS - lExtraMilliseconds))
-        {
-            //
-            // Calculation would overflow so return the largest different we
-            // can represent in a single (signed) long.
-            //
-            return(0x7FFFFFFF);
-        }
-        else
-        {
-            //
-            // No overflow worries so calculate the number of milliseconds
-            // by multiplying seconds by 1000 and adding the extra bit.
-            //
-            return((lSeconds * 1000) + lExtraMilliseconds);
-        }
-    }
+	ssl_printf(message, value);
 }
 
-
-
-
- int32		psCompareTime(psTime_t a, psTime_t b)
- {
- if((a.sec > b.sec) || ((a.sec == b.sec) && (a.usec > b.usec)))
-    {
-        return(0);
-    }
-    else
-    {
-        return(1);
-    }
- }
-
- 
-int32		psCoreOpen(void)
-{
-}
-void		psCoreClose(void)
-{
-}
