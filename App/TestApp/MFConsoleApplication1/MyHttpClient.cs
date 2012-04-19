@@ -20,7 +20,9 @@ namespace MFConsoleApplication1
             try
             {
                 //PrintHttpData("https://www.google.de");
-                PrintHttpData("https://banking.dkb.de/dkb/-?$part=Welcome.login");
+                //PrintHttpData("https://banking.dkb.de/dkb/-?$part=Welcome.login");
+                //PrintHttpData("https://epetitionen.bundestag.de/");
+                PrintHttpData("https://www.elster.de/eon_home.php");
             }
             catch (Exception exception)
             {

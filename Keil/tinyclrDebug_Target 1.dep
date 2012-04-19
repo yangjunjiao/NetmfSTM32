@@ -15,7 +15,7 @@ F (..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_generic_init_internal.cpp)(0x4F8E8803
 F (..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_initialize_internal.cpp)(0x4F86C7C9)()
 F (..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_parse_certificate_internal.cpp)(0x4E2F8D48)()
 F (..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_pending_internal.cpp)(0x4F8ED8C4)()
-F (..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_read_internal.cpp)(0x4F8EDF57)()
+F (..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_read_internal.cpp)(0x4F8FEF4B)()
 F (..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_types.cpp)(0x4E571A3A)()
 F (..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_uninitialize_internal.cpp)(0x4F833C99)()
 F (..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_write_internal.cpp)(0x4F8E98FF)()

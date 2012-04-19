@@ -99,6 +99,7 @@ int ssl_read_internal(int socket, char* data, size_t size) {
 		}
 		return SOCK_SOCKET_ERROR;
 	}
+	else
 	if (rc == MATRIXSSL_REQUEST_SEND) {
 		int len = matrixSslGetOutdata(ssl, &sslData);
 
@@ -110,7 +111,7 @@ int ssl_read_internal(int socket, char* data, size_t size) {
 		}
 		return 0;
 	}
-	if (rc == MATRIXSSL_APP_DATA) {
+	else if (rc == MATRIXSSL_APP_DATA) {
 		TINYCLR_SSL_MEMCPY(data, sslData, cpylen);
 #ifdef USE_BUFFER
 		if (cpylen < len) {
@@ -118,17 +119,26 @@ int ssl_read_internal(int socket, char* data, size_t size) {
 			ssl_oldDataLength = len - cpylen;
 			ssl_oldDataBase = sslData;
 			ssl_oldDataLengthBase = len;
+			debug_printf("ssl_read_internal() Bytes rec: %i, returend %i\n", len,
+							cpylen);
 		} else {
 			rc = matrixSslProcessedData(ssl, &sslData, (uint32*) &len);
 			PRINT_RETURN_VALUE(rc);
+			if(rc == MATRIXSSL_APP_DATA)
+			{
+				ssl_oldData = sslData;
+				ssl_oldDataLength = len;
+				ssl_oldDataBase = sslData;
+				ssl_oldDataLengthBase = len;
+				debug_printf("ssl_read_internal() oldData count: %i,\n", len);
+			}
 		}
 #else
 		rc = matrixSslProcessedData(ssl, &sslData, (uint32*) &cpylen);
 		PRINT_RETURN_VALUE(rc);
 #endif
 
-		debug_printf("ssl_read_internal() Bytes rec: %i, returend %i\n", len,
-				cpylen);
+
 
 	} else {
 		return SSL_RESULT__WOULD_BLOCK;
