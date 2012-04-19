@@ -9,7 +9,7 @@
     <ProjectGuid>{F6AACC82-4C51-4640-A601-A0250365F7B4}</ProjectGuid>
     <NoWarn>,1668</NoWarn>
   </PropertyGroup>
-  <Import Project="$(SPOCLIENT)\tools\Targets\Microsoft.SPOT.Test.CSharp.Targets" />
+  <Import Project="C:\MicroFrameworkPK_v4_2\tools\Targets\Microsoft.SPOT.Test.CSharp.Targets" />
   <ItemGroup>
     <Compile Include="Master.cs" />
     <Compile Include="FeatureTests.cs" />

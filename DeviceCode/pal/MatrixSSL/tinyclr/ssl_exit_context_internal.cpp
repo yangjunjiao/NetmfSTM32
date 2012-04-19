@@ -4,18 +4,20 @@
 
 BOOL ssl_exit_context_internal(int sslContextHandle )
 {
-    if((sslContextHandle >= ARRAYSIZE(g_SSL_Driver.m_sslContextArray)) || (sslContextHandle < 0) || (g_SSL_Driver.m_sslContextArray[sslContextHandle].SslContext == NULL))
-    {
-        return FALSE;
-    }
+	MATRIXSSL_PDEBUG("sslContext: %i\n", sslContextHandle);
 
-    SSL *ssl = (SSL*)g_SSL_Driver.m_sslContextArray[sslContextHandle].SslContext;
-    
+	SSL *ssl = NULL;
+	SSL_Conext* sslContext = g_SSL_Driver.GetSSLContextBySslIndex(sslContextHandle);
+	if (sslContext != NULL && sslContext->SslContext != NULL) {
+			ssl = (SSL*) sslContext->SslContext;
+		} else {
+			MATRIXSSL_PERROR("Context not valid\n");
+			return FALSE;
+		}
+
     matrixSslDeleteSession(ssl);
-
-    TINYCLR_SSL_MEMSET(&g_SSL_Driver.m_sslContextArray[sslContextHandle], 0, sizeof(g_SSL_Driver.m_sslContextArray[sslContextHandle]));
-
-    g_SSL_Driver.m_sslContextCount --;
+    g_SSL_Driver.DeleteSslContext(sslContextHandle);
+    
 
     return TRUE;
 }

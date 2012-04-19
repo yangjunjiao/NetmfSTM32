@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Thu Apr 19 13:11:40 2012
+;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Thu Apr 19 18:07:34 2012
 ;VERSION 0.2
 ;FILE Aborts.obj
 HARD_Breakpoint_Handler <= USED 0
@@ -455,7 +455,6 @@ matrixSslGetAnonStatus <= USED 0
 matrixSslSetSessionOption <= USED 0
 ;FILE matrixsslApi.obj
 matrixSslAddRehandshakeCredits <= USED 0
-matrixSslEncodeClosureAlert <= USED 0
 matrixSslEncodeRehandshake <= USED 0
 matrixSslEncodeToOutdata <= USED 0
 matrixSslNewServerSession <= USED 0
@@ -527,8 +526,8 @@ _ZN19Sockets_LWIP_Driver8ShutdownEii <= USED 0
 ;FILE sslDecode.obj
 ;FILE sslEncode.obj
 matrixSslEncodeHelloRequest <= USED 0
-sslEncodeClosureAlert <= USED 0
 ;FILE ssl_accept_internal.obj
+;FILE ssl_closesocket_internal.obj
 ;FILE ssl_connect_internal.obj
 ;FILE ssl_exit_context_internal.obj
 ;FILE ssl_generic_init_internal.obj

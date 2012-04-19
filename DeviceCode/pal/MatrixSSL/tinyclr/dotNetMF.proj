@@ -54,6 +54,7 @@
 	<Compile Include="ssl_write_internal.cpp" />
 	<Compile Include="ssl_read_internal.cpp" />
 	<Compile Include="ssl_pending_internal.cpp" />
+	<Compile Include="ssl_closesocket_internal.cpp" />
 	<!-- <Compile Include="ssl_types.cpp" />
     <Compile Include="ssl_connect_internal.cpp" />
     <Compile Include="file.cpp" />

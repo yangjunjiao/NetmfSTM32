@@ -1,24 +1,72 @@
 #include "ssl_functions.h"
 #include "adapt/adapt.h"
 
-
 #define USE_BUFFER
 
+int handleBufferdData(SSL_Conext* sslContext, char* data, size_t size) {
+	if (sslContext->SslBuffer.DataAvailable()) {
+		MATRIXSSL_PDEBUG("oldData: %i\n", sslContext->SslBuffer.Count);
+		int cpylen = sslContext->SslBuffer.Read((unsigned char*) data, size);
+		if (sslContext->SslBuffer.DataAvailable() == false) {
+			//everything copied
+			int rc = matrixSslProcessedData(sslContext->SslContext,
+					&sslContext->SslBuffer.BaseBuffer,
+					(uint32*) &sslContext->SslBuffer.Length);
+			PRINT_RETURN_VALUE(rc);
+			//MATRIXSSL_PDEBUG(" oldData processed: %i\n", cpylen);
+			if (rc == MATRIXSSL_APP_DATA) {
+				MATRIXSSL_PDEBUG("oldData processed, still data available\n");
+				sslContext->SslBuffer.Update();
+			}
+		}
+		//MATRIXSSL_PDEBUG("oldData returned: %i\n", cpylen);
+		if (cpylen != 0) {
+			//ssl_pending_internal(socket); //just to jeck wether new data is available
+			return cpylen;
+		}
+	}
+	return 0;
+}
 
+int handleAppData(size_t size, int len, char* data, unsigned char* sslData,
+		SSL_Conext* sslContext) {
+	int rc;
+	int cpylen = min(size, len);
+	TINYCLR_SSL_MEMCPY(data, sslData, cpylen);
+	if (cpylen < len) {
+		sslContext->SslBuffer.ReadBuffer = &sslData[cpylen];
+		sslContext->SslBuffer.Count = len - cpylen;
+		sslContext->SslBuffer.BaseBuffer = sslData;
+		sslContext->SslBuffer.Length = len;
+		debug_printf("ssl_read_internal() Bytes rec: %i, returend %i\n", len,
+				cpylen);
+	} else {
+		rc = matrixSslProcessedData(sslContext->SslContext, &sslData,
+				(uint32*) &len);
+		PRINT_RETURN_VALUE(rc);
+		if (rc == MATRIXSSL_APP_DATA) {
+			sslContext->SslBuffer.Init(sslData, len);
+			debug_printf("ssl_read_internal() oldData count: %i,\n", len);
+		}
+	}
+	return cpylen;
+}
 
-#ifdef USE_BUFFER
-unsigned char* ssl_oldData = NULL;
-int ssl_oldDataLength = 0;
-unsigned char* ssl_oldDataBase = NULL;
-int ssl_oldDataLengthBase = 0;
-#endif
+int handleRequestSend(SSL* ssl, unsigned char*& sslData,
+		SSL_Conext*& sslContext, int rc) {
+	int len = matrixSslGetOutdata(ssl, &sslData);
+	int sent = SOCK_send(sslContext->SocketHandle, (const char*) (sslData), len,
+			0);
+	rc = matrixSslSentData(sslContext->SslContext, sent);
+	PRINT_RETURN_VALUE(rc);
+	return rc;
+}
 
 int ssl_read_internal(int socket, char* data, size_t size) {
 
 	int rc = 0;
 	debug_printf("\nssl_read_internal() size: %i\n", size);
 	unsigned char *sslData;
-	//SSL* ssl = (SSL*) g_SSL_Driver.m_sslContextArray[0].SslContext;
 	SSL* ssl = NULL;
 	SSL_Conext* sslContext = g_SSL_Driver.GetSSLContextBySocketHandle(socket);
 	if (sslContext != NULL && sslContext->SslContext != NULL) {
@@ -26,53 +74,22 @@ int ssl_read_internal(int socket, char* data, size_t size) {
 	} else {
 		return SOCK_SOCKET_ERROR;
 	}
-#ifdef USE_BUFFER
-	if (ssl_oldDataLength != 0) {
-		debug_printf("ssl_read_internal() oldData: %i\n", ssl_oldDataLength);
-		int cpylen = min(size, ssl_oldDataLength);
-		TINYCLR_SSL_MEMCPY(data, ssl_oldData, cpylen);
-		if (cpylen == ssl_oldDataLength) {
-			//everything copied
-			ssl_oldDataLength = 0;
-			ssl_oldData = NULL;
-			rc = matrixSslProcessedData(ssl, &ssl_oldDataBase,
-					(uint32*) &ssl_oldDataLengthBase);
-			PRINT_RETURN_VALUE(rc);
-			debug_printf("ssl_read_internal() oldData processed: %i\n", cpylen);
-			if(rc == MATRIXSSL_APP_DATA)
-			{
-				debug_printf("ssl_read_internal() oldData processed: still data available\n");
-				ssl_oldData = ssl_oldDataBase;
-				ssl_oldDataLength = ssl_oldDataLengthBase;
-			}
-		} else {
-			ssl_oldData = &ssl_oldData[cpylen];
-			ssl_oldDataLength = ssl_oldDataLength - cpylen;
-		}
-		debug_printf("ssl_read_internal() oldData returned: %i\n", cpylen);
-		if (cpylen != 0)
-			return cpylen;
-	}
-#endif
-	if (ssl == NULL) {
-		return SOCK_SOCKET_ERROR;
+	rc = handleBufferdData(sslContext, data, size);
+	if (rc > 0) {
+		//if data was buffered, return it and wait for next call to get new data from socket
+		return rc;
 	}
 
 	int len = 0;
 
-	len = matrixSslGetReadbuf(ssl, &sslData);
-#ifdef 0
-	len = min (len, size);
+	len = matrixSslGetReadbuf(sslContext->SslContext, &sslData);
 
-	if (len < 10)
-		len = 100;
-#endif
-	int rec = SOCK_recv(socket, (char*) sslData, len, 0);
+	int rec = SOCK_recv(sslContext->SocketHandle, (char*) sslData, len, 0);
 	debug_printf("ssl_read_internal() SOCK_recv: %i\n", rec);
 	if (rec == 0) {
 		return rec;
 	}
-	rc = matrixSslReceivedData(ssl, (int32) rec, &sslData, (uint32*) &len);
+	rc = matrixSslReceivedData(sslContext->SslContext, (int32) rec, &sslData, (uint32*) &len);
 	PRINT_RETURN_VALUE(rc);
 	if (rc < 0) {
 		return SOCK_SOCKET_ERROR;
@@ -83,66 +100,30 @@ int ssl_read_internal(int socket, char* data, size_t size) {
 		return SOCK_SOCKET_ERROR;
 	}
 
-
-	int cpylen = min (size, len);
-	if(rc == MATRIXSSL_RECEIVED_ALERT)
-	{
-		if(len == 2)
-		{
+	if (rc == MATRIXSSL_RECEIVED_ALERT) {
+		if (len == 2) {
 			unsigned char alertLevel = sslData[0];
 			unsigned char alertDescription = sslData[1];
-			debug_printf("ssl_read_internal() Alert: Level %i, Description: %i\n", alertLevel, alertDescription);
-			if(alertDescription == SSL_ALERT_CLOSE_NOTIFY)
-			{
+			debug_printf(
+					"ssl_read_internal() Alert: Level %i, Description: %i\n",
+					alertLevel, alertDescription);
+			if (alertDescription == SSL_ALERT_CLOSE_NOTIFY) {
 				return 0;
 			}
 		}
 		return SOCK_SOCKET_ERROR;
-	}
-	else
-	if (rc == MATRIXSSL_REQUEST_SEND) {
-		int len = matrixSslGetOutdata(ssl, &sslData);
-
-		int sent = SOCK_send(socket, (const char *) sslData, len, 0);
-		int rc = matrixSslSentData(ssl, sent);
-		PRINT_RETURN_VALUE(rc);
+	} else if (rc == MATRIXSSL_REQUEST_SEND) {
+		int rc = handleRequestSend(ssl, sslData, sslContext, rc);
 		if (rc == MATRIXSSL_SUCCESS) {
 			return 0;
 		}
-		return 0;
-	}
-	else if (rc == MATRIXSSL_APP_DATA) {
-		TINYCLR_SSL_MEMCPY(data, sslData, cpylen);
-#ifdef USE_BUFFER
-		if (cpylen < len) {
-			ssl_oldData = &sslData[cpylen];
-			ssl_oldDataLength = len - cpylen;
-			ssl_oldDataBase = sslData;
-			ssl_oldDataLengthBase = len;
-			debug_printf("ssl_read_internal() Bytes rec: %i, returend %i\n", len,
-							cpylen);
-		} else {
-			rc = matrixSslProcessedData(ssl, &sslData, (uint32*) &len);
-			PRINT_RETURN_VALUE(rc);
-			if(rc == MATRIXSSL_APP_DATA)
-			{
-				ssl_oldData = sslData;
-				ssl_oldDataLength = len;
-				ssl_oldDataBase = sslData;
-				ssl_oldDataLengthBase = len;
-				debug_printf("ssl_read_internal() oldData count: %i,\n", len);
-			}
-		}
-#else
-		rc = matrixSslProcessedData(ssl, &sslData, (uint32*) &cpylen);
-		PRINT_RETURN_VALUE(rc);
-#endif
-
-
+		return SOCK_SOCKET_ERROR;
+	} else if (rc == MATRIXSSL_APP_DATA) {
+		return handleAppData(size, len, data, sslData, sslContext);
 
 	} else {
 		return SSL_RESULT__WOULD_BLOCK;
 	}
-	return cpylen;
+	return 0;
 }
 

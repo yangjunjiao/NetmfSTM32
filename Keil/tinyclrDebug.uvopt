@@ -196,8 +196,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>34</TopLine>
+      <CurrentLine>49</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\COM\sockets\MatrixSSL\MatrixSSL.cpp</PathWithFileName>
       <FilenameWithoutPath>MatrixSSL.cpp</FilenameWithoutPath>
@@ -236,10 +236,10 @@
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>2</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>41</TopLine>
+      <CurrentLine>44</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\COM\sockets_lwip\sockets_lwip.cpp</PathWithFileName>
       <FilenameWithoutPath>sockets_lwip.cpp</FilenameWithoutPath>
@@ -378,8 +378,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>25</TopLine>
+      <CurrentLine>40</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_initialize_internal.cpp</PathWithFileName>
       <FilenameWithoutPath>ssl_initialize_internal.cpp</FilenameWithoutPath>
@@ -546,8 +546,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>362</TopLine>
+      <CurrentLine>377</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixssl.c</PathWithFileName>
       <FilenameWithoutPath>matrixssl.c</FilenameWithoutPath>

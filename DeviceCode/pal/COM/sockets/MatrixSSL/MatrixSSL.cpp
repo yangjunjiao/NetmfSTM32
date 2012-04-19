@@ -83,7 +83,7 @@ void SSL_ClearCertificateAuthority( int sslContextHandle )
 BOOL SSL_ExitContext( INT32 sslContextHandle )
 { 
     NATIVE_PROFILE_PAL_COM();
-    return TRUE; 
+    return ssl_exit_context_internal(sslContextHandle);
 }
 
 INT32 SSL_Accept( SOCK_SOCKET socket, INT32 sslContextHandle )
@@ -109,7 +109,7 @@ INT32 SSL_Read( SOCK_SOCKET socket, char* Data, size_t size )
 INT32 SSL_CloseSocket( SOCK_SOCKET socket )
 {
     NATIVE_PROFILE_PAL_COM();
-    return 0;
+    return ssl_closesocket_internal(socket);
 }
 
 void SSL_GetTime(DATE_TIME_INFO* pdt)

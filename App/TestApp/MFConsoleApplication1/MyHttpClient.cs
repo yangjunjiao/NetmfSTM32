@@ -19,10 +19,10 @@ namespace MFConsoleApplication1
             // Test SSL connection with no certificate verification
             try
             {
-                //PrintHttpData("https://www.google.de");
+                PrintHttpData("https://www.google.de");
                 //PrintHttpData("https://banking.dkb.de/dkb/-?$part=Welcome.login");
                 //PrintHttpData("https://epetitionen.bundestag.de/");
-                PrintHttpData("https://www.elster.de/eon_home.php");
+                //PrintHttpData("https://www.elster.de/eon_home.php");
             }
             catch (Exception exception)
             {
@@ -158,7 +158,7 @@ namespace MFConsoleApplication1
                 }
 
                 // Display the page results.
-                Debug.Print(page);
+                //Debug.Print(page);
 
                 // Close the response stream.  For Keep-Alive streams, the 
                 // stream will remain open and will be pushed into the unused 

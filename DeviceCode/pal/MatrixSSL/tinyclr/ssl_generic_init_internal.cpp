@@ -101,14 +101,6 @@ BOOL ssl_generic_init_internal(int sslMode, int sslVerify,
 
 	int sslCtxIndex = g_SSL_Driver.SearchFreeSslContextIndex();
 
-	/*
-	for (int i = 0; i < ARRAYSIZE(g_SSL_Driver.m_sslContextArray); i++) {
-		if (g_SSL_Driver.m_sslContextArray[i].SslContext == NULL) {
-			sslCtxIndex = i;
-			break;
-		}
-	}*/
-
 	if (sslCtxIndex == -1)
 		return FALSE;
 
@@ -122,9 +114,7 @@ BOOL ssl_generic_init_internal(int sslMode, int sslVerify,
 			return FALSE;
 		}
 
-		//g_SSL_Driver.m_sslContextArray[sslCtxIndex].SslContext = ssl;
-		//g_SSL_Driver.m_sslContextCount++;
-		g_SSL_Driver.AddSslContext(sslCtxIndex, ssl);
+		g_SSL_Driver.CreateSslContext(sslCtxIndex, ssl);
 		g_SSL_Driver.AddSslSessionId(sslCtxIndex, sslSessionId);
 
 		sslContextHandle = sslCtxIndex;
