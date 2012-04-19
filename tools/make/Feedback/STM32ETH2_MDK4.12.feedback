@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Fri Apr 13 16:55:27 2012
+;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Wed Apr 18 17:36:29 2012
 ;VERSION 0.2
 ;FILE Aborts.obj
 HARD_Breakpoint_Handler <= USED 0
@@ -523,6 +523,7 @@ _ZN19Sockets_LWIP_Driver8ShutdownEii <= USED 0
 ;FILE spot_hardware_usb_fastcompile.obj
 ;FILE spot_messaging_stub.obj
 ;FILE spot_net_security_native_Microsoft_SPOT_Net_Security_SslNative.obj
+;FILE sslAdapt.obj
 ;FILE sslDecode.obj
 ;FILE sslEncode.obj
 matrixSslEncodeHelloRequest <= USED 0

@@ -1,5 +1,6 @@
 #include "ssl_functions.h"
 #include "adapt/adapt.h"
+extern int ssl_oldDataLength;
 
 int ssl_pending_internal(int socket) {
 	SSL* ssl = (SSL*) g_SSL_Driver.m_sslContextArray[0].SslContext;
@@ -14,9 +15,9 @@ int ssl_pending_internal(int socket) {
 	int ret = SOCK_ioctl(socket, fionread, &len);
 	if (ret == 0)
 	{
-		debug_printf("ssl_pending_internal() Bytes to read: %i\n", len);
+		debug_printf("ssl_pending_internal() Bytes in ETH Buffer: %i, in SSL-Buffer: %i\n", len, ssl_oldDataLength);
 		//return (len > 0);
-		return (len);
+		return (len + ssl_oldDataLength);
 	}
 	return 0;
 }

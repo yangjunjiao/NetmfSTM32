@@ -236,7 +236,7 @@ extern int hal_fprintf_ssl(OPENSSL_TYPE__FILE* x, const char* format, ... );
 //#define ARM_EMULATION_MODE
 //--//
 
-#if !defined(OPENSSL_SYS_WINDOWS)
+
 #define TINYCLR_SSL_STRCAT              strcat
 #define TINYCLR_SSL_STRCPY(a,b)         hal_strcpy_s(a,hal_strlen_s(b)+1,b)
 #define TINYCLR_SSL_STRLEN              hal_strlen_s
@@ -283,54 +283,7 @@ extern int hal_fprintf_ssl(OPENSSL_TYPE__FILE* x, const char* format, ... );
 #define TINYCLR_SSL_FREE                private_free
 #define TINYCLR_SSL_REALLOC             private_realloc
 #define TINYCLR_SSL_GETENV(x)           (NULL)
-#else
-#define TINYCLR_SSL_STRCAT              strcat
-#define TINYCLR_SSL_STRCPY              strcpy
-#define TINYCLR_SSL_STRLEN              strlen
-#define TINYCLR_SSL_STRNCPY             strncpy
-#define TINYCLR_SSL_STRNCMP             strncmp
-#define TINYCLR_SSL_STRCMP              strcmp
-#define TINYCLR_SSL_STRNCASECMP         strncasecmp
-#define TINYCLR_SSL_STRCASECMP          strcasecmp
-#define TINYCLR_SSL_FPRINTF             fprintf
-#define TINYCLR_SSL_SNPRINTF            _snprintf
-#define TINYCLR_SSL_PRINTF              printf
-#define TINYCLR_SSL_STAT                stat 
-#define TINYCLR_SSL_PERROR              perror
 
-#define TINYCLR_SSL_MEMCPY              memcpy
-#define TINYCLR_SSL_MEMSET              memset
-#define TINYCLR_SSL_MEMCMP              memcmp
-#define TINYCLR_SSL_MEMCHR              memchr
-#define TINYCLR_SSL_MEMMOVE             memmove
-
-#define TINYCLR_SSL_TIME                time
-#define TINYCLR_SSL_LOCALTIME           localtime
-#define TINYCLR_SSL_GMTIME              gmtime
-#define TINYCLR_SSL_MKTIME              mktime
-
-#define OPENSSL_TYPE__FILE_STDERR       stderr
-#define OPENSSL_TYPE__FILE_STDOUT       stdout
-#define OPENSSL_TYPE__FILE_STDIN        stdin
-
-#define TINYCLR_SSL_TOUPPER             toupper
-#define TINYCLR_SSL_TOLOWER             tolower
-#define TINYCLR_SSL_LSEEK               lseek
-#define TINYCLR_SSL_CHMOD               chmod
-#define TINYCLR_SSL_FWRITE              fwrite
-#define TINYCLR_SSL_GETTIMEOFDAY        gettimeofday
-#define TINYCLR_SSL_GETPID              getpid
-#define TINYCLR_SSL_FILE                FILE
-
-#define TINYCLR_SSL_ASSERT(x)           ASSERT(x)
-#define TINYCLR_SSL_QSORT               qsort
-#define TINYCLR_SSL_EXIT                exit 
-#define TINYCLR_SSL_ABORT               abort
-#define TINYCLR_SSL_MALLOC              malloc 
-#define TINYCLR_SSL_FREE                free
-#define TINYCLR_SSL_REALLOC             realloc
-#define TINYCLR_SSL_GETENV              getenv
-#endif
 
 OPENSSL_TYPE__FILE* tinyclr_fopen(const char * filename, const char * mode);
 char* tinyclr_fgets(char * str, int num, OPENSSL_TYPE__FILE * stream);

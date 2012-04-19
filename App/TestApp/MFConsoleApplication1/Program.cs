@@ -55,7 +55,7 @@
                     {                       
                         uart.WriteLine("temperature: " + temperature.ToString());
                     };
-            tempSens.StartConversion();
+            //tempSens.StartConversion();
 
             SocketServer socketServer = new SocketServer(new HtmlTempDataProvider(tempSens));
 

@@ -2,13 +2,17 @@
 #define SSL_FUNCTIONS_H
 
 #include <tinyhal.h>
-#include "Matrixssl.h"
+
 #include "matrixsslApi.h"
 #include "ssl_types.h"
-#include "sockets_lwip.h"
+#include "Matrixssl.h"
 
 
-#define SOCKET_DRIVER g_Sockets_LWIP_Driver
+extern const char * GetReturnValues(int returnValue);
+
+#define PRINT_RETURN_VALUE(returnValue) MATRIXSSL_PRINTF("%s, line: %i, return: %s\n", __FUNCTION__, __LINE__, GetReturnValues(returnValue))
+
+
 
 #define TINYCLR_SSL_MODE_TLS1 0x10
 #define TINYCLR_SSL_MODE_SSL3 0x08

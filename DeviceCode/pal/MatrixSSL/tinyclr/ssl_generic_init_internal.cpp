@@ -1,11 +1,12 @@
 #include "ssl_functions.h"
 #include "adapt/adapt.h"
 
-//extern CK_RV Cryptoki_GetSlotIDFromSession(CK_SESSION_HANDLE session, CK_SLOT_ID_PTR pSlotID, CryptokiSession** ppSession);
+
 
 sslSessionId_t sid; //TODO per session
 
 extern sslKeys_t *g_pSslKeys; //TODO
+
 
 #define ALLOW_ANON_CONNECTIONS	1 //TODO
 /*
@@ -95,22 +96,25 @@ BOOL ssl_generic_init_internal(int sslMode, int sslVerify,
 		int& sslContextHandle, BOOL isServer) {
 	//TODO  sslMode, sslVerify, certificate, cert_len, pwd, sslContextHandle
 	SSL* ssl = NULL;
+	sslSessionId_t* sslSessionId = (sslSessionId_t*)TINYCLR_SSL_MALLOC(sizeof(sslSessionId));
 	int32 rc;
 
-	int sslCtxIndex = -1;
+	int sslCtxIndex = g_SSL_Driver.SearchFreeSslContextIndex();
 
+	/*
 	for (int i = 0; i < ARRAYSIZE(g_SSL_Driver.m_sslContextArray); i++) {
 		if (g_SSL_Driver.m_sslContextArray[i].SslContext == NULL) {
 			sslCtxIndex = i;
 			break;
 		}
-	}
+	}*/
 
 	if (sslCtxIndex == -1)
 		return FALSE;
 
 	if (isServer == FALSE) {
-		matrixSslInitSessionId(sid);
+		matrixSslInitSessionId((*sslSessionId));
+		//TODO Use session ID
 		rc = matrixSslNewClientSession(&ssl, g_pSslKeys, NULL, 0, certCb, NULL,
 				NULL);
 		if (rc != MATRIXSSL_REQUEST_SEND) {
@@ -118,11 +122,17 @@ BOOL ssl_generic_init_internal(int sslMode, int sslVerify,
 			return FALSE;
 		}
 
-		g_SSL_Driver.m_sslContextArray[sslCtxIndex].SslContext = ssl;
-		g_SSL_Driver.m_sslContextCount++;
+		//g_SSL_Driver.m_sslContextArray[sslCtxIndex].SslContext = ssl;
+		//g_SSL_Driver.m_sslContextCount++;
+		g_SSL_Driver.AddSslContext(sslCtxIndex, ssl);
+		g_SSL_Driver.AddSslSessionId(sslCtxIndex, sslSessionId);
 
 		sslContextHandle = sslCtxIndex;
 		return TRUE;
+	}
+	else
+	{
+		//TODO Server
 	}
 	return FALSE;
 }

@@ -19,7 +19,8 @@ namespace MFConsoleApplication1
             // Test SSL connection with no certificate verification
             try
             {
-                PrintHttpData("https://www.google.de");
+                //PrintHttpData("https://www.google.de");
+                PrintHttpData("https://banking.dkb.de/dkb/-?$part=Welcome.login");
             }
             catch (Exception exception)
             {
@@ -38,7 +39,7 @@ namespace MFConsoleApplication1
             //request.HttpsAuthentCerts = caCerts;
 
             // Set request.KeepAlive to use a persistent connection. 
-            request.KeepAlive = true;
+           // request.KeepAlive = true;
 
             // Get a response from the server.
             WebResponse resp = null;
@@ -57,8 +58,8 @@ namespace MFConsoleApplication1
             {
                 Stream respStream = resp.GetResponseStream();
                 string page = null;
-                byte[] byteData = new byte[4096];
-                char[] charData = new char[4096];
+                byte[] byteData = new byte[8192];
+                char[] charData = new char[8192];
                 int bytesRead = 0;
                 Decoder UTF8decoder = System.Text.Encoding.UTF8.GetDecoder();
                 int totalBytes = 0;
@@ -116,7 +117,7 @@ namespace MFConsoleApplication1
                         // connection isn't terminated.
                         try
                         {
-                            Thread.Sleep(500);
+                            Thread.Sleep(100);
                             bytesRead = respStream.Read(byteData, 0, byteData.Length);
                         }
                         catch (Exception)
@@ -160,7 +161,9 @@ namespace MFConsoleApplication1
                 // Close the response stream.  For Keep-Alive streams, the 
                 // stream will remain open and will be pushed into the unused 
                 // stream list.
+                respStream.Close();
                 resp.Close();
+                
             }
         }
         /*

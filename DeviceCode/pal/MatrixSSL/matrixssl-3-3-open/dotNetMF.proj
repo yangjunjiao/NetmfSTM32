@@ -79,13 +79,13 @@
 
   </ItemGroup>
 
-  <Import Project="$(SPOCLIENT)\Framework\Features\Network_Config_HAL.libcatproj" />
+  <!--<Import Project="$(SPOCLIENT)\Framework\Features\Network_Config_HAL.libcatproj" />
   <Import Project="$(SPOCLIENT)\Framework\Features\EthernetDriver_HAL.libcatproj" />
   <Import Project="$(SPOCLIENT)\Framework\Features\EthernetLoopback_HAL.libcatproj" />
   <Import Project="$(SPOCLIENT)\Framework\Features\Sockets_async_PAL.libcatproj" />
   <Import Project="$(SPOCLIENT)\Framework\Features\Sockets_dhcp_PAL.libcatproj" />
   <Import Project="$(SPOCLIENT)\Framework\Features\Sockets_tcp_PAL.libcatproj" />
   <Import Project="$(SPOCLIENT)\Framework\Features\Sockets_udp_PAL.libcatproj" />
-  <Import Project="$(SPOCLIENT)\Framework\Features\SocketDriver_LWIP_PAL.libcatproj" />
+  <Import Project="$(SPOCLIENT)\Framework\Features\SocketDriver_LWIP_PAL.libcatproj" />-->
   <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
 </Project>

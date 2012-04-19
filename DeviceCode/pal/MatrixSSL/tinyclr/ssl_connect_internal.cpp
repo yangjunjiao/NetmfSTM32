@@ -16,21 +16,28 @@ int ssl_connect_internal(int socket, const char* szTargetHost, int sslContextHan
     int done = 0;
 
     // Retrieve SSL struct from g_SSL_Driver    
-    if((sslContextHandle >= ARRAYSIZE(g_SSL_Driver.m_sslContextArray)) || (sslContextHandle < 0))
+    /*if((sslContextHandle >= ARRAYSIZE(g_SSL_Driver.m_sslContextArray)) || (sslContextHandle < 0))
     {
         goto error;
-    }
+    }*/
     
+
     // sd should already have been created
     // Now do the SSL negotiation   
-    ssl = (SSL*)g_SSL_Driver.m_sslContextArray[sslContextHandle].SslContext;
+    SSL_Conext* sslContext =g_SSL_Driver.GetSSLContextBySslIndex(sslContextHandle);
+    if(sslContext != NULL && sslContext->SslContext != NULL)
+    {
+    	ssl = (SSL*) sslContext->SslContext;
+    }
+    //ssl = (SSL*)g_SSL_Driver.m_sslContextArray[sslContextHandle].SslContext;
+
     if (ssl == NULL) goto error;
 
-    unsigned  char  *sslData; // = (unsigned char  *) SOCKET_DRIVER.GetSocketSslData(socket);
+    unsigned  char  *sslData;
 
 
 
-    //SOCK_ioctl(socket, SOCK_FIONBIO, &nonblock);
+
 
     // WARNING - SSL_Connect is asynchronous and will be called multiple times for 1 connection, therefore
         // we only want to set the CA store on the first call (when sslData == NULL)
@@ -134,7 +141,7 @@ int ssl_connect_internal(int socket, const char* szTargetHost, int sslContextHan
         //SOCKET_DRIVER.ClearStatusBitsForSocket( socket, TRUE );
 
 
-
+       g_SSL_Driver.AddSslSocketHandle(sslContextHandle, socket);
 
 error:
     return ret;

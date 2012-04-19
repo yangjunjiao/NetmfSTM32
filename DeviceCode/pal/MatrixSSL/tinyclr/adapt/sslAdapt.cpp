@@ -1,23 +1,32 @@
 
-#include "lwiplib.h"
-#include "adapt.h"
 
-//*****************************************************************************
-//
-// Globals required by SSL library.
-//
-//*****************************************************************************
-sslKeys_t *g_pSslKeys;
-extern unsigned long g_ulPrivKeySrvLen;
-extern unsigned long g_ulCertSrvLen;
-extern unsigned char g_pcCertSrv[];
-extern unsigned char g_pcPrivKeySrv[];
+
+
 
 //****************************************************************************
 //
 // Public API functions
 //
 //****************************************************************************
+
+const char* c_returnValues[] =
+                           {
+                           		"MATRIXSSL_ERROR", //actually -1
+                           		"MATRIXSSL_SUCCESS",
+                           		"MATRIXSSL_REQUEST_SEND",
+                           		"MATRIXSSL_REQUEST_RECV",
+                           		"MATRIXSSL_REQUEST_CLOSE",
+                           		"MATRIXSSL_APP_DATA",
+                           		"MATRIXSSL_HANDSHAKE_COMPLETE",
+                           		"MATRIXSSL_RECEIVED_ALERT"
+                           };
+
+const char * GetReturnValues(int returnValue)
+{
+		return c_returnValues[returnValue + 1];
+}
+
+/*
 err_t
 ssl_init(void)
 {
@@ -51,4 +60,4 @@ ssl_init(void)
     }
 
     return(ERR_OK);
-}
+}*/
