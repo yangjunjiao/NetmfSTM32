@@ -11,23 +11,53 @@ namespace MFConsoleApplication1
 
     internal class MyHttpClient
     {
+        private string url = null;
 
-        public static void Run()
+        public string Url
+        {
+            get
+            {
+                return this.url;
+            }
+            set
+            {
+                this.url = value;
+            }
+        }
+
+        public  void Run()
         {
             Thread.Sleep(5000);
            // PrintHttpData("http://www.google.de");
             // Test SSL connection with no certificate verification
-            try
+            int counter = 0;
+            while (true)
             {
-                PrintHttpData("https://www.google.de");
-                //PrintHttpData("https://banking.dkb.de/dkb/-?$part=Welcome.login");
-                //PrintHttpData("https://epetitionen.bundestag.de/");
-                //PrintHttpData("https://www.elster.de/eon_home.php");
-            }
-            catch (Exception exception)
-            {
-                
-                throw;
+
+
+                try
+                {
+                    if (url == null)
+                    {
+                        Debug.Print(counter.ToString());
+                        PrintHttpData("https://www.google.de");
+                        //PrintHttpData("https://banking.dkb.de/dkb/-?$part=Welcome.login");
+                        //PrintHttpData("https://epetitionen.bundestag.de/");
+                        //PrintHttpData("https://www.elster.de/eon_home.php");
+                    }
+                    else
+                    {
+                        Debug.Print(url + ": counter: " + counter.ToString());
+                        PrintHttpData(url);
+                    }
+                    counter++;
+                }
+                catch (Exception exception)
+                {
+
+                    throw;
+                }
+                Thread.Sleep(500);
             }
         }
 
@@ -41,7 +71,7 @@ namespace MFConsoleApplication1
             //request.HttpsAuthentCerts = caCerts;
 
             // Set request.KeepAlive to use a persistent connection. 
-           // request.KeepAlive = true;
+            request.KeepAlive = true;
 
             // Get a response from the server.
             WebResponse resp = null;
@@ -154,7 +184,7 @@ namespace MFConsoleApplication1
                         //Debug.Print("Bytes Read Now: " + bytesRead + " Total: " + totalBytes);
                     }
 
-                    Debug.Print("Total bytes downloaded in message body : " + totalBytes);
+                    Debug.Print("--- Total bytes downloaded in message body : " + totalBytes + ", (" + url + ")");
                 }
 
                 // Display the page results.
@@ -163,7 +193,7 @@ namespace MFConsoleApplication1
                 // Close the response stream.  For Keep-Alive streams, the 
                 // stream will remain open and will be pushed into the unused 
                 // stream list.
-                respStream.Close();
+                //respStream.Close();
                 resp.Close();
                 
             }

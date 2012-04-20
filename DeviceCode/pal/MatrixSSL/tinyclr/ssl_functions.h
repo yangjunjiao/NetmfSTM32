@@ -10,8 +10,13 @@
 
 extern const char * GetReturnValues(int returnValue);
 
+#if MATRIXSSL_DEBUG_LEVEL > 1
 #define PRINT_RETURN_VALUE(returnValue) MATRIXSSL_PRINTF("%s, line: %i, return: %s\n", __FUNCTION__, __LINE__, GetReturnValues(returnValue))
+#else
+#define PRINT_RETURN_VALUE(returnValue)
+#endif
 
+#define PRINT_UNEXPECTED_RETURN_VALUE(returnValue) MATRIXSSL_PRINTF("ERROR: %s, line: %i, return: %s\n", __FUNCTION__, __LINE__, GetReturnValues(returnValue))
 
 
 #define TINYCLR_SSL_MODE_TLS1 0x10

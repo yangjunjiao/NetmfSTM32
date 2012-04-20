@@ -28,6 +28,7 @@ int ssl_write_internal(int socket, const char* data, size_t size) {
 	rc = matrixSslEncodeWritebuf(ssl, requested);
 	PRINT_RETURN_VALUE(rc);
 	if (rc < 0) {
+		PRINT_UNEXPECTED_RETURN_VALUE(rc);
 		return SOCK_SOCKET_ERROR;
 	}
 	int len = matrixSslGetOutdata(ssl, &sslData);
@@ -38,7 +39,7 @@ int ssl_write_internal(int socket, const char* data, size_t size) {
 	if (rc == MATRIXSSL_SUCCESS) {
 		return sent;
 	}
-
+	PRINT_UNEXPECTED_RETURN_VALUE(rc);
 	return SOCK_SOCKET_ERROR;
 }
 

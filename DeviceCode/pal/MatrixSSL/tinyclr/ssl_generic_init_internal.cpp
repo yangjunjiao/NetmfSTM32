@@ -96,26 +96,29 @@ BOOL ssl_generic_init_internal(int sslMode, int sslVerify,
 		int& sslContextHandle, BOOL isServer) {
 	//TODO  sslMode, sslVerify, certificate, cert_len, pwd, sslContextHandle
 	SSL* ssl = NULL;
-	sslSessionId_t* sslSessionId = (sslSessionId_t*)TINYCLR_SSL_MALLOC(sizeof(sslSessionId));
+	//sslSessionId_t* sslSessionId = (sslSessionId_t*)TINYCLR_SSL_MALLOC(sizeof(sslSessionId));
 	int32 rc;
 
 	int sslCtxIndex = g_SSL_Driver.SearchFreeSslContextIndex();
 
 	if (sslCtxIndex == -1)
+	{
+		MATRIXSSL_PERROR("No free SSL-Context");
 		return FALSE;
+	}
 
 	if (isServer == FALSE) {
-		matrixSslInitSessionId((*sslSessionId));
+		//matrixSslInitSessionId((*sslSessionId));
 		//TODO Use session ID
 		rc = matrixSslNewClientSession(&ssl, g_pSslKeys, NULL, 0, certCb, NULL,
 				NULL);
 		if (rc != MATRIXSSL_REQUEST_SEND) {
-			TINYCLR_SSL_PRINTF("New Client Session Failed: %d.  Exiting\n", rc);
+			MATRIXSSL_PERROR("New Client Session Failed: %d.  Exiting\n", rc);
 			return FALSE;
 		}
 
 		g_SSL_Driver.CreateSslContext(sslCtxIndex, ssl);
-		g_SSL_Driver.AddSslSessionId(sslCtxIndex, sslSessionId);
+		//g_SSL_Driver.AddSslSessionId(sslCtxIndex, sslSessionId);
 
 		sslContextHandle = sslCtxIndex;
 		return TRUE;

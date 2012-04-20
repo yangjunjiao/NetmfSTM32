@@ -21,6 +21,7 @@ int ssl_sendData(SSL_Conext* sslContext) {
 
 int ssl_closesocket_internal(int socket) {
 
+//	GLOBAL_LOCK_SOCKETS(x);
 	SSL* ssl = NULL;
 	SSL_Conext* sslContext = g_SSL_Driver.GetSSLContextBySocketHandle(socket);
 	if (sslContext != NULL && sslContext->SslContext != NULL) {
@@ -28,7 +29,7 @@ int ssl_closesocket_internal(int socket) {
 	} else {
 		return SOCK_SOCKET_ERROR;
 	}
-
+/*
 	int rc = matrixSslEncodeClosureAlert(ssl);
 	if (rc != MATRIXSSL_SUCCESS) {
 		MATRIXSSL_PERROR(
@@ -41,7 +42,7 @@ int ssl_closesocket_internal(int socket) {
 		MATRIXSSL_PERROR("socket close error\n");
 		return SOCK_SOCKET_ERROR;
 	}
-
+*/
 	MATRIXSSL_PDEBUG("Closing socket\n")
 	return SOCK_close(socket);
 }

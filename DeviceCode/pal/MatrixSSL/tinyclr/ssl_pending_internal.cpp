@@ -19,7 +19,7 @@ int ssl_pending_internal(int socket) {
 	int ret = SOCK_ioctl(socket, fionread, &len);
 	if (ret == 0)
 	{
-		debug_printf("ssl_pending_internal() Bytes in ETH Buffer: %i, in SSL-Buffer: %i\n", len, sslBufferCount);
+		MATRIXSSL_PDEBUG_ALL("Bytes in ETH Buffer: %i, in SSL-Buffer: %i\n", len, sslBufferCount);
 		//return (len > 0);
 		return (len + sslBufferCount);
 	}

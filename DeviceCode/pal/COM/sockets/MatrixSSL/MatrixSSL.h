@@ -15,12 +15,17 @@
 
 //--//
 #define SSL_SOCKET_ATTEMPTED_CONNECT -1
-#define MATRIXSSL_USE_SESSION_ID 1
+//#define MATRIXSSL_USE_SESSION_ID 1
 
+#define MATRIXSSL_DEBUG_LEVEL 1
 #define MATRIXSSL_PRINTF(x ...) TINYCLR_SSL_PRINTF(x)
 #define MATRIXSSL_PERROR(x ...) {MATRIXSSL_PRINTF("ERROR: %s(), line: %i\t", __FUNCTION__, __LINE__); MATRIXSSL_PRINTF(x);}
 #define MATRIXSSL_PDEBUG(x ...) {MATRIXSSL_PRINTF("%s(), line:  %i\t", __FUNCTION__, __LINE__); MATRIXSSL_PRINTF(x);}
-
+#if MATRIXSSL_DEBUG_LEVEL > 1
+#define MATRIXSSL_PDEBUG_ALL(x ...) {MATRIXSSL_PRINTF("%s(), line:  %i\t", __FUNCTION__, __LINE__); MATRIXSSL_PRINTF(x);}
+#else
+#define MATRIXSSL_PDEBUG_ALL(x ...)
+#endif
 //--//
 
 typedef unsigned char * X509Certificate;
@@ -78,7 +83,9 @@ typedef struct SSL_Buffer{
 
 typedef struct SSL_Conext {
 		ssl_t* SslContext;
+#ifdef MATRIXSSL_USE_SESSION_ID
 		sslSessionId_t* SslSessionId;
+#endif
 		INT32 SocketHandle;
 		INT32 CryptokiSession;
 		SSL_Buffer_ts SslBuffer;
@@ -146,12 +153,14 @@ struct SSL_Driver {
 	}
 
 	void AddSslSessionId(INT32 sslIndex, sslSessionId_t* sslSessionId) {
+#ifdef MATRIXSSL_USE_SESSION_ID
 		if (CheckIndex(sslIndex) == true) {
 			this->m_sslContextArray[sslIndex].SslSessionId = sslSessionId;
 		} else {
 			MATRIXSSL_PERROR(
 					"index out of bounds (sslIndex: %i)", sslIndex);
 		}
+#endif
 	}
 
 	void AddSslSocketHandle(INT32 sslIndex, INT32 socketHandle) {

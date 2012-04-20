@@ -40,7 +40,7 @@ int ssl_connect_internal(int socket, const char* szTargetHost,
 				{
 			//int len = matrixSslGetOutdata(ssl, &sslData);
 			if (len > 0) {
-				ret = RTSSL_WANT_WRITE;
+				ret = SOCK_TRY_AGAIN;
 				sent = SOCK_send(socket, (const char *) sslData, len, 0);
 				rc = matrixSslSentData(ssl, sent);
 				done = 1;
@@ -53,7 +53,7 @@ int ssl_connect_internal(int socket, const char* szTargetHost,
 			int len = 1000;
 			len = matrixSslGetReadbuf(ssl, &sslData);
 			len = SOCK_recv(socket, (char*) sslData, len, 0);
-			ret = RTSSL_WANT_READ;
+			ret = SOCK_TRY_AGAIN;
 			if (len > 0) {
 				rc = matrixSslReceivedData(ssl, (int32) len, &sslData,
 						(uint32*) &len);
@@ -62,7 +62,7 @@ int ssl_connect_internal(int socket, const char* szTargetHost,
 				}
 				if (rc == MATRIXSSL_REQUEST_SEND) {
 					status = MATRIXSSL_REQUEST_SEND;
-					ret = RTSSL_WANT_WRITE;
+					ret = SOCK_TRY_AGAIN;
 				}
 				if (rc == MATRIXSSL_HANDSHAKE_COMPLETE) {
 					ret = 0;
@@ -76,30 +76,6 @@ int ssl_connect_internal(int socket, const char* szTargetHost,
 		}
 	} while (len);
 
-	// ret = secure_connect( socket, szTargetHost, ctx->SslContext, &sslData );
-
-	if (ret == RTSSL_WANT_READ) {
-		ret = SOCK_EWOULDBLOCK;
-
-		//SOCKET_DRIVER.ClearStatusBitsForSocket( socket, FALSE );
-	}
-
-	if (ret == RTSSL_WANT_WRITE) {
-		ret = SOCK_TRY_AGAIN;
-
-		//SOCKET_DRIVER.ClearStatusBitsForSocket( socket, TRUE );
-	}
-
-	if (sslData != NULL) {
-		//SOCKET_DRIVER.SetSocketSslData(socket, sslData);
-	}
-	// make sure we call secure_close_socket if we attempted a connect
-	else {
-		//  g_Sockets_Driver.SetSocketSslData(socket, (void*)SSL_SOCKET_ATTEMPTED_CONNECT);
-	}
-
-	//SOCKET_DRIVER.ClearStatusBitsForSocket( socket, FALSE );
-	//SOCKET_DRIVER.ClearStatusBitsForSocket( socket, TRUE );
 
 	g_SSL_Driver.AddSslSocketHandle(sslContextHandle, socket);
 

@@ -30,6 +30,8 @@
                 Resources.GetString(Resources.StringResources.String1));
 
             Debug.Print(Debug.GC(true).ToString());
+            Microsoft.SPOT.Hardware.Utility.SetLocalTime(new DateTime(2012, 4, 20));
+
 
             ExtendedWeakReferences.Run();
             SerialPortExt uart = new SerialPortExt("COM2", 115200);
@@ -59,9 +61,8 @@
 
             SocketServer socketServer = new SocketServer(new HtmlTempDataProvider(tempSens));
 
+            CreateHttpClients();
 
-            new Thread(MyHttpClient.Run).Start();
-            
             while (true)
             {
                 Thread.Sleep(500);
@@ -89,7 +90,16 @@
             }
         }
 
-
+        private static void CreateHttpClients()
+        {
+            string[] urls = { "https://www.google.de", "https://banking.dkb.de/dkb/-?$part=Welcome.login" };
+            foreach (var url in urls)
+            {
+                MyHttpClient myHttpClient = new MyHttpClient { Url = url};
+                new Thread(myHttpClient.Run).Start();
+            }
+            
+        }
 
         static void ToggleThread()
         {

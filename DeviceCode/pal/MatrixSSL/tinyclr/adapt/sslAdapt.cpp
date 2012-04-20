@@ -23,7 +23,9 @@ const char* c_returnValues[] =
 
 const char * GetReturnValues(int returnValue)
 {
+	if(returnValue >=-1 && returnValue < 8)
 		return c_returnValues[returnValue + 1];
+	return "RETURN VALUE NOT DEFINED";
 }
 
 /*
