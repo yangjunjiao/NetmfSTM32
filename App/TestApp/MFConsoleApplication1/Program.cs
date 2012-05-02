@@ -92,7 +92,7 @@
 
         private static void CreateHttpClients()
         {
-            string[] urls = { "https://www.google.de", "https://banking.dkb.de/dkb/-?$part=Welcome.login" };
+            string[] urls = { "https://www.google.de", "https://banking.dkb.de/dkb/-?$part=Welcome.login", "https://epetitionen.bundestag.de/", /*"https://www.elster.de/eon_home.php"*/ };
             foreach (var url in urls)
             {
                 MyHttpClient myHttpClient = new MyHttpClient { Url = url};
