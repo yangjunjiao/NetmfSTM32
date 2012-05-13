@@ -19,6 +19,7 @@
 
         public static void Main()
         {
+            MFTestApp.Mountaineer.Run();
             OutputPort LED = new OutputPort(Pins.GPIO_PIN_B_8, true);
 
 
@@ -57,7 +58,7 @@
                     {                       
                         uart.WriteLine("temperature: " + temperature.ToString());
                     };
-            //tempSens.StartConversion();
+            tempSens.StartConversion();
 
             SocketServer socketServer = new SocketServer(new HtmlTempDataProvider(tempSens));
 

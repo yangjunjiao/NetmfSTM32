@@ -37,6 +37,7 @@
     <Compile Include="HardwareProvider.cs" />
     <Compile Include="HtmlDataProvider.cs" />
     <Compile Include="IHtmlDataProvider.cs" />
+    <Compile Include="Mountaineer.cs" />
     <Compile Include="MyHttpClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
