@@ -93,6 +93,10 @@
 #include "lwip\tcpip.h"
 #define PBUF_POOL_IS_EMPTY() pbuf_pool_is_empty()
 static u8_t pbuf_free_ooseq_queued;
+
+static int nPbufPool;
+static int maxNPbufPool;
+
 /**
  * Attempt to reclaim some memory from queued out-of-sequence TCP segments
  * if we run out of pool pbufs. It's better to give priority to new packets
@@ -217,6 +221,15 @@ pbuf_alloc(pbuf_layer layer, u16_t length, pbuf_type type)
       PBUF_POOL_IS_EMPTY();
       return NULL;
     }
+    else
+    {
+      nPbufPool++;
+      if (nPbufPool > maxNPbufPool)
+      {
+        maxNPbufPool = nPbufPool;
+        LWIP_PLATFORM_DIAG(("N PBUF POOL: %d\r\n", nPbufPool));
+      }
+    }
     p->type = type;
     p->next = NULL;
 
@@ -251,6 +264,15 @@ pbuf_alloc(pbuf_layer layer, u16_t length, pbuf_type type)
         pbuf_free(p);
         /* bail out unsuccesfully */
         return NULL;
+      }
+      else
+      {
+        nPbufPool++;
+        if (nPbufPool > maxNPbufPool)
+        {
+          maxNPbufPool = nPbufPool;
+          //LWIP_PLATFORM_DIAG(("N PBUF POOL: %d\r\n", nPbufPool));
+        }
       }
       q->type = type;
       q->flags = 0;
@@ -573,6 +595,9 @@ pbuf_free(struct pbuf *p)
       /* is this a pbuf from the pool? */
       if (type == PBUF_POOL) {
         memp_free(MEMP_PBUF_POOL, p);
+        
+        nPbufPool--;
+        
       /* is this a ROM or RAM referencing pbuf? */
       } else if (type == PBUF_ROM || type == PBUF_REF) {
         memp_free(MEMP_PBUF, p);

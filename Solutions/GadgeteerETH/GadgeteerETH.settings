@@ -1,0 +1,26 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Author>Ominc</Author>
+    <Description>GadgeteerETH board solution</Description>
+    <Documentation>
+    </Documentation>
+    <PlatformGuid>{00760054-0015-0096-B80F-7D771A637B1E}</PlatformGuid>
+    <INSTRUCTION_SET>THUMB2</INSTRUCTION_SET>
+    <TARGETPLATFORM>GadgeteerETH</TARGETPLATFORM>
+    <PLATFORM>GadgeteerETH</PLATFORM>
+    <IsSolutionWizardVisible>True</IsSolutionWizardVisible>
+    <ENDIANNESS>le</ENDIANNESS>
+    <NO_BOOTLOADER_COMPRESSION>true</NO_BOOTLOADER_COMPRESSION>
+    <!-- PSC 2011.10.11: added for lwip support -->
+    <TCP_IP_STACK>LWIP</TCP_IP_STACK>
+    <!-- /PSC 2011.10.11 -->
+  </PropertyGroup>
+ <ItemGroup>
+    <TinyCLR_Defines Include="PLATFORM_NO_CLR_TRACE=1" />
+    <TinyCLR_Defines Include="TINYCLR_NO_IL_INLINE=1" />
+  </ItemGroup>   
+  <ItemGroup>
+    <IncludePaths Include="Solutions\GadgeteerETH" />
+  </ItemGroup>
+  <Import Project="$(SPOCLIENT)\devicecode\Targets\Native\STM32F2\STM32F4.settings" />
+</Project>

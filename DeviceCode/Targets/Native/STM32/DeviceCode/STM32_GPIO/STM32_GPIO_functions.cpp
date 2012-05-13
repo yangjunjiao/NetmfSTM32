@@ -301,7 +301,12 @@ BOOL CPU_GPIO_ReservePin( GPIO_PIN pin, BOOL fReserve )
     if (pin >= STM32_Gpio_MaxPins) return FALSE;
     int port = pin >> 4, bit = 1 << (pin & 0x0F);
     GLOBAL_LOCK(irq);
-    if (fReserve) g_pinReserved[port] |= bit; else g_pinReserved[port] &= ~bit;
+    if (fReserve) {
+        if (g_pinReserved[port] & bit) return FALSE; // already reserved
+        g_pinReserved[port] |= bit;
+    } else {
+        g_pinReserved[port] &= ~bit;
+    }
     return TRUE;
 }
 

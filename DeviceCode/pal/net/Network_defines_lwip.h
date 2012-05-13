@@ -22,7 +22,7 @@
 #include <lwip_selector.h>
 #endif
 
-#if !defined(NETWORK_MEMORY_PROFILE_LWIP__small) && !defined(NETWORK_MEMORY_PROFILE_LWIP__medium) && !defined(NETWORK_MEMORY_PROFILE_LWIP__large)
+#if !defined(NETWORK_MEMORY_PROFILE_LWIP__small) && !defined(NETWORK_MEMORY_PROFILE_LWIP__medium) && !defined(NETWORK_MEMORY_PROFILE_LWIP__large) && !defined(NETWORK_MEMORY_PROFILE_LWIP__custom)
 #error You must define a NETWORK_MEMORY_PROFILE_LWIP_xxx for this platform
 #endif
 
@@ -33,7 +33,7 @@ been taken from lwiopts.small.h, lwipopts.h and lwipopts.big.h */
 
 /* MEM_SIZE: the size of the heap memory. If the application will send
 a lot of data that needs to be copied, this should be set high. */
-#define MEM_SIZE__min                       (16*1024)  
+#define MEM_SIZE__min                       (16*1024)
 #define MEM_SIZE__default                   (64*1024)
 #define MEM_SIZE__max                       (1024*1024)  // TODO - this seems a bit extreme
 
@@ -180,6 +180,25 @@ a lot of data that needs to be copied, this should be set high. */
     #define PLATFORM_DEPENDENT__TCP_SND_QUEUELEN                TCP_SND_QUEUELEN__max
     #define PLATFORM_DEPENDENT__TCP_WND                         TCP_WND__max
     #define PLATFORM_DEPENDENT__TCP_SNDLOWAT                    TCP_SNDLOWAT__max
+#endif
+
+#ifdef NETWORK_MEMORY_PROFILE_LWIP__custom
+    #define PLATFORM_DEPENDENT__MEM_SIZE                        MEM_SIZE__custom
+    #define PLATFORM_DEPENDENT__MEMP_NUM_PBUF                   MEMP_NUM_PBUF__custom
+    #define PLATFORM_DEPENDENT__MEMP_NUM_UDP_PCB                MEMP_NUM_UDP_PCB__custom
+    #define PLATFORM_DEPENDENT__MEMP_NUM_TCP_PCB                MEMP_NUM_TCP_PCB__custom
+    #define PLATFORM_DEPENDENT__MEMP_NUM_TCP_PCB_LISTEN         MEMP_NUM_TCP_PCB_LISTEN__custom
+    #define PLATFORM_DEPENDENT__MEMP_NUM_TCP_SEG                MEMP_NUM_TCP_SEG__custom
+    #define PLATFORM_DEPENDENT__MEMP_NUM_SYS_TIMEOUT            MEMP_NUM_SYS_TIMEOUT__custom
+    #define PLATFORM_DEPENDENT__MEMP_NUM_NETBUF                 MEMP_NUM_NETBUF__custom
+    #define PLATFORM_DEPENDENT__MEMP_NUM_NETCONN                MEMP_NUM_NETCONN__custom
+    #define PLATFORM_DEPENDENT__PBUF_POOL_SIZE                  PBUF_POOL_SIZE__custom
+    #define PLATFORM_DEPENDENT__PBUF_POOL_BUFSIZE               PBUF_POOL_BUFSIZE__custom
+    #define PLATFORM_DEPENDENT__TCP_MSS                         TCP_MSS__custom
+    #define PLATFORM_DEPENDENT__TCP_SND_BUF                     TCP_SND_BUF__custom
+    #define PLATFORM_DEPENDENT__TCP_SND_QUEUELEN                TCP_SND_QUEUELEN__custom
+    #define PLATFORM_DEPENDENT__TCP_WND                         TCP_WND__custom
+    #define PLATFORM_DEPENDENT__TCP_SNDLOWAT                    TCP_SNDLOWAT__custom
 #endif
 
 #define PLATFORM_DEPENDENT__SOCKETS_MAX_COUNT                   (PLATFORM_DEPENDENT__MEMP_NUM_UDP_PCB + PLATFORM_DEPENDENT__MEMP_NUM_TCP_PCB)                                     

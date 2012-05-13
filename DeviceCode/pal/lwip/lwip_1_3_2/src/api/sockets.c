@@ -616,7 +616,8 @@ lwip_recvfrom(int s, void *mem, size_t len, int flags,
         ip_addr_debug_print(SOCKETS_DEBUG, addr);
         LWIP_DEBUGF(SOCKETS_DEBUG, (" port=%"U16_F" len=%"U16_F"\n", port, off));
       } else {
-  #if SOCKETS_DEBUG
+  /* [CSA] DHCP lease timeout is unexpectedly decreased every couple of frames */
+  #if SOCKETS_DEBUG && (LWIP_DBG_MIN_LEVEL <= LWIP_DBG_LEVEL_ALL)
         struct sockaddr_in sin;
 
         if (netconn_type(sock->conn) == NETCONN_TCP) {
