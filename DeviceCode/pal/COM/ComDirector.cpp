@@ -238,18 +238,24 @@ void CPU_UninitializeCommunication()
 
     // if USB is not defined, the STUB_USB will be set
     // Do not uninitialize the USB on soft reboot if USB is our debugger link
-    // Close all streams on USB controller 0 except debugger (if it uses a USB stream)
-    for( int stream = 0; stream < USB_MAX_QUEUES; stream++ )
-    {
-        // discard output data
-        USB_DiscardData(stream, TRUE);
-        
-        if(!COM_IsUsb(HalSystemConfig.DebuggerPorts[0]) || (ConvertCOM_UsbStream(HalSystemConfig.DebuggerPorts[0]) != stream))
-        {
-            USB_CloseStream(stream);        // OK for unopen streams
-        }
-    }
-    USB_Uninitialize(0);        // USB_Uninitialize will only stop USB controller 0 if it has no open streams
+    // Close all streams on USB controllers except debugger (if it uses a USB stream)
+    for( int ctrl = 0; ctrl < TOTAL_USB_CONTROLLER; ctrl++ )
+	{
+		for( int queue = 0; queue < USB_MAX_QUEUES; queue++ )
+		{
+			int stream = (ctrl << USB_CONTROLLER_SHIFT) + queue;
+
+			// discard output data
+			USB_DiscardData(stream, TRUE);
+	        
+			if(!COM_IsUsb(HalSystemConfig.DebuggerPorts[0]) || (ConvertCOM_UsbStream(HalSystemConfig.DebuggerPorts[0]) != stream))
+			{
+				USB_CloseStream(stream);        // OK for unopen streams
+			}
+		}
+		USB_Uninitialize(ctrl);      // USB_Uninitialize will only stop USB controller if it has no open streams
+		USB_Configure(ctrl, NULL);   // remove dynamic configuration if present
+	}
     
     Network_Uninitialize();
 }

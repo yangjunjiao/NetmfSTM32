@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <SubDirectories Include="AddDevices"/>
-    <SubDirectories Include="STM32F2"/>
+    <SubDirectories Include="STM32F4"/>
 
   </ItemGroup>
 

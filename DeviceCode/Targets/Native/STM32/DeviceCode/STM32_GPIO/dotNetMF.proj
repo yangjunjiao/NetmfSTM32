@@ -27,7 +27,7 @@
           <Build>0</Build>
           <Extra />
           <Date>2009-04-30</Date>
-          <Author>Ominc</Author>
+          <Author>Oberon microsystems, Inc.</Author>
         </VersionDependency>
         <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">LibraryCategory</ComponentType>
       </MFComponent>
@@ -41,7 +41,7 @@
           <Build>0</Build>
           <Extra />
           <Date>2009-04-30</Date>
-          <Author>Ominc</Author>
+          <Author>Oberon microsystems, Inc.</Author>
         </VersionDependency>
         <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">Processor</ComponentType>
       </MFComponent>

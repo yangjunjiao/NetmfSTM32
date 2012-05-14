@@ -304,6 +304,14 @@ int USB_Driver::Configure( int Controller, const USB_DYNAMIC_CONFIGURATION* Conf
     if( err != USB_CONFIG_ERR_OK )
         return err;
 
+    //
+    // Free the old configuration (UsbDefaultConfiguration is a global variable so do not free it)
+    //
+    if(State->Configuration != &UsbDefaultConfiguration)
+    {
+        private_free((void*)State->Configuration);
+    }
+
     // only save non default configurations
     if(Config != &UsbDefaultConfiguration)
     {
@@ -318,16 +326,8 @@ int USB_Driver::Configure( int Controller, const USB_DYNAMIC_CONFIGURATION* Conf
         Length += sizeof(USB_DESCRIPTOR_HEADER);    // Don't forget to include the ending header
 
         // Write the default USB configuration to the Flash config sector
-        HAL_CONFIG_BLOCK::UpdateBlockWithName(configName, (void *)Config, Length, TRUE);
+//        HAL_CONFIG_BLOCK::UpdateBlockWithName(configName, (void *)Config, Length, TRUE);
 
-
-        //
-        // Free the old configuration (UsbDefaultConfiguration is a global variable so do not free it)
-        //
-        if(State->Configuration != &UsbDefaultConfiguration)
-        {
-            private_free((void*)State->Configuration);
-        }
 
         //
         // Make sure that we allocate the native configuration buffer, the one passed in will be garbage collected
@@ -849,7 +849,7 @@ UINT32 USB_Driver::ClearEvent( int Controller, UINT32 Event )
 
     State->Event &= ~Event;
 
-    if( State->Event == 0 )
+    if( State->Event == 0 && OldEvent != 0 )
     {
         Events_Clear( SYSTEM_EVENT_FLAG_USB_IN );
     }
@@ -1284,7 +1284,10 @@ UINT8 USB_HandleConfigurationRequests( USB_CONTROLLER_STATE* State, USB_SETUP_PA
 
     if(State->Expected == 0)
     {
-        return USB_STATE_DONE;
+        // just return an empty Status packet
+        State->ResidualCount = 0;
+        State->DataCallback  = USB_DataCallback;
+        return USB_STATE_DATA;
     }
 
     //

@@ -16,7 +16,7 @@
 //--//
 
 //string descriptor
-#define     MANUFACTURER_NAME_SIZE  5   /* "Ominc" */
+#define     MANUFACTURER_NAME_SIZE 19   /* "Oberon microsystems" */
 // NOTE: Having more than (probably) 32 characters causes the MFUSB KERNEL driver
 // to *CRASH* which, of course, causes Windows to crash
 #define     PRODUCT_NAME_SIZE      15   /* "STM32 .Net Test" */
@@ -29,8 +29,8 @@
 #define     PRODUCT_NAME_INDEX      2
 #define     SERIAL_NUMBER_INDEX     0
 // device descriptor
-#define     VENDOR_ID          0xBAD1  // Illegal Vid !
-#define     PRODUCT_ID         0xADD1  // Illegal Pid !
+#define     VENDOR_ID          0x0483  // STM32F4 Test VID
+#define     PRODUCT_ID         0xA08F  // STM32F4 Test PID
 #define     MAX_EP0_SIZE            8
 //configuration descriptor
 #define     USB_MAX_CURRENT     (100/USB_CURRENT_UNIT)
@@ -162,7 +162,7 @@ const struct USB_DYNAMIC_CONFIGURATION UsbDefaultConfiguration =
         USB_STRING_DESCRIPTOR_HEADER_LENGTH + (sizeof(USB_STRING_CHAR) * MANUFACTURER_NAME_SIZE),
         USB_STRING_DESCRIPTOR_TYPE
     },
-    { 'O', 'm', 'i', 'n', 'c' },
+    { 'O', 'b', 'e', 'r', 'o', 'n', ' ', 'm', 'i', 'c', 'r', 'o', 's', 'y', 's', 't', 'e', 'm', 's' },
 
     // Product name string descriptor
     {

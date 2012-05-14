@@ -79,8 +79,12 @@
   <PropertyGroup>
     <!--Common flags for Assembler/CC/CPP  -->
 
-    <!-- ONLY USE CPU specification for platform specific code (HAL) -->
-    <ARM_TYPE_FLAGS Condition="'$(DEVICE_TYPE)'!=''">$(SWTC)cpu $(DEVICE_TYPE)</ARM_TYPE_FLAGS>
+    <!-- Find out whether DEVICE_TYPE is an old style ('device' option) name -->
+    <OLD_STYLE_DEVICE_TYPE_NAME Condition="'$(DEVICE_TYPE)'=='DARMAD' OR '$(DEVICE_TYPE)'=='DARMAT' OR '$(DEVICE_TYPE)'=='DARMATS' OR '$(DEVICE_TYPE)'=='DARMMAC7' OR '$(DEVICE_TYPE)'=='DARMO' OR '$(DEVICE_TYPE)'=='DARMP' OR '$(DEVICE_TYPE)'=='DARMS' OR '$(DEVICE_TYPE)'=='DARMSH' OR '$(DEVICE_TYPE)'=='DARMSSC' OR '$(DEVICE_TYPE)'=='DARMST' OR '$(DEVICE_TYPE)'=='DARMTMS' OR '$(DEVICE_TYPE)'=='DARMSSC9' OR '$(DEVICE_TYPE)'=='DARMATS9' OR '$(DEVICE_TYPE)'=='DARMO9' OR '$(DEVICE_TYPE)'=='DARMP3' OR '$(DEVICE_TYPE)'=='DARMP9' OR '$(DEVICE_TYPE)'=='DARMSS9' OR '$(DEVICE_TYPE)'=='DARMST9' OR '$(DEVICE_TYPE)'=='DARMCM1' OR '$(DEVICE_TYPE)'=='DARMCP3' OR '$(DEVICE_TYPE)'=='DLM' OR '$(DEVICE_TYPE)'=='DARMSTM' OR '$(DEVICE_TYPE)'=='DARMSAM3' OR '$(DEVICE_TYPE)'=='DARMP1' OR '$(DEVICE_TYPE)'=='DARMT3' OR '$(DEVICE_TYPE)'=='DARMP0' OR '$(DEVICE_TYPE)'=='DARMTMS5'">true</OLD_STYLE_DEVICE_TYPE_NAME>
+
+    <!-- Use 'cpu' or 'device' option depending on the given name -->
+    <ARM_TYPE_FLAGS Condition="'$(OLD_STYLE_DEVICE_TYPE_NAME)'!='true' AND '$(DEVICE_TYPE)'!=''">$(SWTC)cpu $(DEVICE_TYPE)</ARM_TYPE_FLAGS>
+    <ARM_TYPE_FLAGS Condition="'$(OLD_STYLE_DEVICE_TYPE_NAME)'=='true'">$(SWTC)device $(DEVICE_TYPE)</ARM_TYPE_FLAGS>
 
     <!-- Use default fpu specification for Cortex-M4F -->
     <FLOATING_POINT_FLAG Condition="'$(PLATFORM_EMULATED_FLOATINGPOINT)'!='true' AND '$(DEVICE_TYPE)'!='Cortex-M4.fp'"> $(SWTC)fpu softvfp </FLOATING_POINT_FLAG>

@@ -16,6 +16,9 @@
     <TARGETCODEBASE>STM32</TARGETCODEBASE>
     <TARGETCODEBASETYPE>Native</TARGETCODEBASETYPE>
   </PropertyGroup>
+  <PropertyGroup>
+    <OEMSystemInfoString>Copyright Oberon microsystems, Inc.</OEMSystemInfoString>
+  </PropertyGroup>
 
   <PropertyGroup Condition="'$(COMPILER_TOOL)'=='RVDS'">
     <DEVICE_TYPE Condition="'$(DEVICE_TYPE)' == ''">Cortex-M3</DEVICE_TYPE>

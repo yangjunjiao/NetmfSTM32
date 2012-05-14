@@ -28,7 +28,7 @@
   <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
   <PropertyGroup />
   <ItemGroup>
-    <HFiles Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\stm32f4xx.h" />
+    <HFiles Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\stm32f4xx.h" />
     <Compile Include="IO_Init.cpp" />
   </ItemGroup>
   <ItemGroup />

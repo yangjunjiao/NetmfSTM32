@@ -51,8 +51,8 @@
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Drivers\Stubs\Processor\stubs_PreStackInit\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_bootstrap.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\STM32F2_Bootstrap\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_bootstrap.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_Bootstrap\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
     <DriverLibs Include="cpu_cache_stubs.$(LIB_EXT)" />
@@ -63,36 +63,36 @@
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Drivers\stubs\processor\stubs_EBIU\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_GPIO.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\STM32F2_GPIO\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_GPIO.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_GPIO\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_INTC.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\STM32F2_INTC\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_INTC.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_INTC\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
     <DriverLibs Include="cpu_mmu_stubs.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Drivers\stubs\processor\stubs_MMU\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_Power.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\STM32F2_power\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_Power.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_power\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_time.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\STM32F2_time\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_time.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_time\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_SPI.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\STM32F2_spi\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_SPI.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_spi\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_USART.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\STM32F2_USART\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_USART.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_USART\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_USB.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\STM32F2_USB\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_USB.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_USB\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
     <DriverLibs Include="cpu_watchdog_stubs.$(LIB_EXT)" />
@@ -219,12 +219,12 @@
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Drivers\stubs\processor\stubs_lcd\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_Flash.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F2\DeviceCode\STM32F2_Flash\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_Flash.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_Flash\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
-    <DriverLibs Include="STM32F2_blconfig_Discovery4.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\Solutions\Discovery4\DeviceCode\Blockstorage\STM32F2\dotNetMF.proj" />
+    <DriverLibs Include="STM32F4_blconfig_Discovery4.$(LIB_EXT)" />
+    <RequiredProjects Include="$(SPOCLIENT)\Solutions\Discovery4\DeviceCode\Blockstorage\STM32F4\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
     <DriverLibs Include="BlockStorage_AddDevices_Discovery4.$(LIB_EXT)" />

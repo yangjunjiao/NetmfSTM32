@@ -10,13 +10,13 @@
     <Set Name="RAM_Start"           Value="0x20000000"/>
 
     <!-- Custom heap used for interrupt handler table only -->
-    <Set Name="Custom_Heap_Begin"       Value="0x20005E00"/>
-    <Set Name="Custom_Heap_End"         Value="0x20005FF8"/>
+    <Set Name="Custom_Heap_Begin"       Value="0x20002E00"/>
+    <Set Name="Custom_Heap_End"         Value="0x20002FF8"/>
 
-    <Set Name="Stack_Bottom"            Value="0x20006000"/>
-    <Set Name="Stack_Top"               Value="0x20007FF8"/>
+    <Set Name="Stack_Bottom"            Value="0x20003000"/>
+    <Set Name="Stack_Top"               Value="0x20004FF8"/>
 
-    <Set Name="Heap_Begin"              Value="0x20008000"/>
+    <Set Name="Heap_Begin"              Value="0x20005000"/>
     <Set Name="Heap_End"                Value="0x2000FFF8"/>
 
     <IfDefined Name="PROFILE_BUILD">

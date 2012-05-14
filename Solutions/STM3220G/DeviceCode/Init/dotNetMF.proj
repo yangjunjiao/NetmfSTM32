@@ -1,0 +1,36 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectPath>$(SPOCLIENT)\Solutions\STM3220G\DeviceCode\Init\dotnetmf.proj</ProjectPath>
+    <AssemblyName>IO_Init_STM3220G</AssemblyName>
+    <Size>
+    </Size>
+    <ProjectGuid>{007100C9-0048-00D1-8EA5-6DBC2D298572}</ProjectGuid>
+    <Description>IO port initialization for STM3220G solution</Description>
+    <Level>HAL</Level>
+    <LibraryFile>IO_Init_STM3220G.$(LIB_EXT)</LibraryFile>
+    <ManifestFile>IO_Init_STM3220G.$(LIB_EXT).manifest</ManifestFile>
+    <Groups>Solutions\STM3220G</Groups>
+    <LibraryCategory>
+    </LibraryCategory>
+    <Documentation>
+    </Documentation>
+    <PlatformIndependent>False</PlatformIndependent>
+    <CustomSpecific>
+    </CustomSpecific>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <IsStub>False</IsStub>
+    <Directory>Solutions\STM3220G\DeviceCode\Init</Directory>
+    <OutputType>Library</OutputType>
+    <PlatformIndependentBuild>false</PlatformIndependentBuild>
+    <Version>4.0.0.0</Version>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup />
+  <ItemGroup>
+    <HFiles Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\stm32f2xx.h" />
+    <Compile Include="IO_Init.cpp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>

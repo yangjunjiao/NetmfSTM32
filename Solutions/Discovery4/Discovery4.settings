@@ -1,6 +1,6 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Author>Ominc</Author>
+    <Author>Oberon microsystems, Inc.</Author>
     <Description>Discovery4 board solution</Description>
     <Documentation>
     </Documentation>
@@ -12,12 +12,12 @@
     <ENDIANNESS>le</ENDIANNESS>
     <NO_BOOTLOADER_COMPRESSION>true</NO_BOOTLOADER_COMPRESSION>
   </PropertyGroup>
- <ItemGroup>
+  <ItemGroup>
     <TinyCLR_Defines Include="PLATFORM_NO_CLR_TRACE=1" />
     <TinyCLR_Defines Include="TINYCLR_NO_IL_INLINE=1" />
   </ItemGroup>   
   <ItemGroup>
     <IncludePaths Include="Solutions\Discovery4" />
   </ItemGroup>
-  <Import Project="$(SPOCLIENT)\devicecode\Targets\Native\STM32F2\STM32F4.settings" />
+  <Import Project="$(SPOCLIENT)\devicecode\Targets\Native\STM32F4\STM32F4.settings" />
 </Project>
