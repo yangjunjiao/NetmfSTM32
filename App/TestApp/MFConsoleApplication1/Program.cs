@@ -19,7 +19,7 @@
 
         public static void Main()
         {
-            MFTestApp.Mountaineer.Run();
+           // MFTestApp.Mountaineer.Run();
             OutputPort LED = new OutputPort(Pins.GPIO_PIN_B_8, true);
 
 

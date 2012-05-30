@@ -125,7 +125,18 @@ BOOL ssl_generic_init_internal(int sslMode, int sslVerify,
 	}
 	else
 	{
-		//TODO Server
+		// Server
+		rc = matrixSslNewServerSession(&ssl, g_pSslKeys, NULL);
+		if (rc != PS_SUCCESS) {
+					MATRIXSSL_PERROR("New Server Session Failed: %d.  Exiting\n", rc);
+					return FALSE;
+				}
+		g_SSL_Driver.CreateSslContext(sslCtxIndex, ssl);
+
+
+				sslContextHandle = sslCtxIndex;
+				return TRUE;
+
 	}
 	return FALSE;
 }

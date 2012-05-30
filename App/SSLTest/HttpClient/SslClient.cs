@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using Microsoft.SPOT.Net;
 using Microsoft.SPOT.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 
 
 

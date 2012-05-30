@@ -5,8 +5,7 @@
 
 #define SSL_SOCKET_ATTEMPTED_CONNECT -1
 
-#define RTSSL_WANT_WRITE 33
-#define RTSSL_WANT_READ 44
+
 int ssl_connect_internal(int socket, const char* szTargetHost,
 		int sslContextHandle) {
 	static int status = MATRIXSSL_REQUEST_SEND;
@@ -38,15 +37,15 @@ int ssl_connect_internal(int socket, const char* szTargetHost,
 	do {
 		if (len > 0) //(status == MATRIXSSL_REQUEST_SEND )
 				{
-			//int len = matrixSslGetOutdata(ssl, &sslData);
-			if (len > 0) {
+
 				ret = SOCK_TRY_AGAIN;
 				sent = SOCK_send(socket, (const char *) sslData, len, 0);
+				//TODO check if sent
 				rc = matrixSslSentData(ssl, sent);
 				done = 1;
 				if (rc == MATRIXSSL_SUCCESS) {
 					status = MATRIXSSL_REQUEST_RECV;
-				}
+
 			}
 		} else //if(status == MATRIXSSL_REQUEST_RECV && done == 0)
 		{

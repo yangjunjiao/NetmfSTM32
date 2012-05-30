@@ -8,6 +8,7 @@ using Microsoft.SPOT.Net;
 using Microsoft.SPOT.Net.Security;
 
 using Microsoft.SPOT.Net.NetworkInformation;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace Microsoft.SPOT.Platform.Tests
@@ -88,7 +89,7 @@ namespace Microsoft.SPOT.Platform.Tests
                 //Log.Comment("Connected!");
 
                 // Get a stream object for reading and writing
-                sslStream = new SslStream(client);
+                 sslStream = new SslStream(client);          //SK call of SSL_ServerInit in CLR-Code
 
                 sslStream.AuthenticateAsServer(certificate, ca, clientCertificateRequired, enabledSslProtocols);
 

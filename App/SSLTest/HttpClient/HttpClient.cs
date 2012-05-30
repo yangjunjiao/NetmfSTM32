@@ -17,6 +17,7 @@ namespace HttpClientSample
 {
     using Microsoft.SPOT.Net.NetworkInformation;
     using Microsoft.SPOT.Platform.Tests;
+    using System.Security.Cryptography.X509Certificates;
 
     public static class MyHttpClient
     {
@@ -85,7 +86,15 @@ namespace HttpClientSample
             SslServer sslServer = new SslServer(new X509Certificate(CertificatesAndCAs.device), new X509Certificate[] {  }, SslVerification.NoVerification, new SslProtocols[] { SslProtocols.Default }, false);
             while (true)
             {
-                sslServer.RunServer();
+                try
+                {
+                    sslServer.RunServer();
+                }
+                catch (Exception ex)
+                {
+                    Debug.Print(ex.Message);
+                   // throw;
+                }
             }
             
         }

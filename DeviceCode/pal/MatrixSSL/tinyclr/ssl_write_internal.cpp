@@ -26,7 +26,7 @@ int ssl_write_internal(int socket, const char* data, size_t size) {
 	requested = min(requested, available);
 	TINYCLR_SSL_MEMCPY(sslData, data, requested);
 	rc = matrixSslEncodeWritebuf(ssl, requested);
-	PRINT_RETURN_VALUE(rc);
+	//PRINT_RETURN_VALUE(rc); //if > 0 number of bytes encoded
 	if (rc < 0) {
 		PRINT_UNEXPECTED_RETURN_VALUE(rc);
 		return SOCK_SOCKET_ERROR;
