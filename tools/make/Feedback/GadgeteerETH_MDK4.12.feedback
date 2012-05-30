@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 644]: Last Updated: Sun May 13 21:31:54 2012
+;#<FEEDBACK># ARM Linker, 4.1 [Build 644]: Last Updated: Mon May 14 12:36:07 2012
 ;VERSION 0.2
 ;FILE Aborts.obj
 HARD_Breakpoint_Handler <= USED 0
@@ -19,7 +19,6 @@ SUPPORT_StubForARMEmulatorInterface <= USED 0
 ;FILE ComDirector.obj
 _Z29CPU_ProtectCommunicationGPIOsj <= USED 0
 ;FILE ConfigHelper.obj
-_ZN16HAL_CONFIG_BLOCK11ApplyConfigEPKcPvjPS2_ <= USED 0
 _ZN16HAL_CONFIG_BLOCK23InvalidateBlockWithNameEPKcj <= USED 0
 ;FILE CorLib_fastcompile.obj
 _ZN38Library_corlib_native_System_Exception13GetStackTraceEP16CLR_RT_HeapBlockRj <= USED 0
@@ -178,12 +177,10 @@ _Znaj <= USED 0
 _Znwj <= USED 0
 ;FILE api_lib.obj
 netconn_close <= USED 0
-netconn_disconnect <= USED 0
 netconn_join_leave_group <= USED 0
 netconn_sendto <= USED 0
 ;FILE api_msg.obj
 do_close <= USED 0
-do_disconnect <= USED 0
 do_join_leave_group <= USED 0
 ;FILE asyncproccall_fastcompile.obj
 ;FILE blockstoragelist.obj
@@ -399,6 +396,7 @@ _ZNK25CLR_GFX_FontDescriptionEx16GetAntiAliasSizeEv <= USED 0
 _Z20I2C_XAction_GetStateP15I2C_HAL_XACTION <= USED 0
 ;FILE icmp.obj
 ;FILE igmp.obj
+igmp_dump_group_list <= USED 0
 igmp_stop_timer <= USED 0
 ;FILE inet.obj
 inet_ntoa <= USED 0
@@ -510,7 +508,6 @@ _Z19Verify_RAMConstantsPv <= USED 0
 _Z24HAL_AddSoftRebootHandlerPFvvE <= USED 0
 _Z47KEEP_THE_LINKER_HAPPY_SINCE_KEEP_IS_NOT_WORKINGv <= USED 0
 ;FILE udp.obj
-udp_disconnect <= USED 0
 ;FILE usart.obj
 _Z10COM1_writePcj <= USED 0
 _Z10COM2_writePcj <= USED 0
