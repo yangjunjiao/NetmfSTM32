@@ -35,3 +35,6 @@ output/
 DeviceCode/pal/MatrixSSL/matrixssl-3-3-open/matrixssl.opensdf
 DeviceCode/pal/MatrixSSL/matrixssl-3-3-open/*.sdf
 workspace/.metadata/
+Keil/TynybooterDebug.uvgui.*
+Keil/tinyclrDebug.uvgui.*
+workspace/.metadata/.*

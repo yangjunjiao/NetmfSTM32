@@ -152,6 +152,53 @@
           <Name>-UV2074MBE -O206 -S0 -C0 -N00("ARM CoreSight SW-DP") -D00(1BA01477) -L00(0) -TO19 -TC50000000 -TP21 -TDS8027 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F10x_1024 -FS08000000 -FL0100000</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
+      <Breakpoint>
+        <Bp>
+          <Number>0</Number>
+          <Type>0</Type>
+          <LineNumber>128</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134540682</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>MatrixSSL.cpp</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>75</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134304722</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename></Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\tinyclr\MatrixSSL\75</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>77</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134280474</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename></Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\tinyclr\ssl_read_internal\77</Expression>
+        </Bp>
+      </Breakpoint>
       <WatchWindow2>
         <Ww>
           <count>0</count>
@@ -164,6 +211,27 @@
           <ItemText>g_SSL_Driver</ItemText>
         </Ww>
       </WatchWindow2>
+      <MemoryWindow1>
+        <Mm>
+          <WinNumber>1</WinNumber>
+          <SubType>8</SubType>
+          <ItemText>certificate</ItemText>
+        </Mm>
+      </MemoryWindow1>
+      <MemoryWindow2>
+        <Mm>
+          <WinNumber>2</WinNumber>
+          <SubType>8</SubType>
+          <ItemText>szPwd</ItemText>
+        </Mm>
+      </MemoryWindow2>
+      <MemoryWindow3>
+        <Mm>
+          <WinNumber>3</WinNumber>
+          <SubType>8</SubType>
+          <ItemText>g_pcCertSrv</ItemText>
+        </Mm>
+      </MemoryWindow3>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
@@ -192,13 +260,6 @@
       </DebugFlag>
       <LintExecutable></LintExecutable>
       <LintConfigFile></LintConfigFile>
-      <LogicAnalyzers>
-        <Wi>
-          <IntNumber>0</IntNumber>
-          <FirstString>\\tinyclr\C</FirstString>
-          <SecondString>FF000000000000000000E0C10000C0FFFFFFDF41010000000000000000000000000000005C5C74696E79636C725C430000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000900000000000000000000000000000000000000000000000000000000000000000000001C000008</SecondString>
-        </Wi>
-      </LogicAnalyzers>
     </TargetOption>
   </Target>
 
@@ -215,8 +276,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>34</TopLine>
-      <CurrentLine>49</CurrentLine>
+      <TopLine>103</TopLine>
+      <CurrentLine>107</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\COM\sockets\MatrixSSL\MatrixSSL.cpp</PathWithFileName>
       <FilenameWithoutPath>MatrixSSL.cpp</FilenameWithoutPath>
@@ -255,10 +316,10 @@
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>2</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>41</TopLine>
-      <CurrentLine>44</CurrentLine>
+      <TopLine>242</TopLine>
+      <CurrentLine>245</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\COM\sockets_lwip\sockets_lwip.cpp</PathWithFileName>
       <FilenameWithoutPath>sockets_lwip.cpp</FilenameWithoutPath>
@@ -299,8 +360,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_accept_internal.cpp</PathWithFileName>
       <FilenameWithoutPath>ssl_accept_internal.cpp</FilenameWithoutPath>
@@ -383,8 +444,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_generic_init_internal.cpp</PathWithFileName>
       <FilenameWithoutPath>ssl_generic_init_internal.cpp</FilenameWithoutPath>
@@ -397,8 +458,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>25</TopLine>
-      <CurrentLine>40</CurrentLine>
+      <TopLine>32</TopLine>
+      <CurrentLine>44</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_initialize_internal.cpp</PathWithFileName>
       <FilenameWithoutPath>ssl_initialize_internal.cpp</FilenameWithoutPath>
@@ -439,8 +500,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>73</TopLine>
+      <CurrentLine>77</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_read_internal.cpp</PathWithFileName>
       <FilenameWithoutPath>ssl_read_internal.cpp</FilenameWithoutPath>
@@ -493,10 +554,10 @@
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>20</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>9</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\MatrixSSL\tinyclr\adapt\certSrv.cpp</PathWithFileName>
       <FilenameWithoutPath>certSrv.cpp</FilenameWithoutPath>
@@ -507,10 +568,10 @@
       <FileType>8</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>20</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>9</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\MatrixSSL\tinyclr\adapt\privkeySrv.cpp</PathWithFileName>
       <FilenameWithoutPath>privkeySrv.cpp</FilenameWithoutPath>
@@ -523,8 +584,8 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>26</TopLine>
+      <CurrentLine>41</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\DeviceCode\pal\MatrixSSL\tinyclr\adapt\sslAdapt.cpp</PathWithFileName>
       <FilenameWithoutPath>sslAdapt.cpp</FilenameWithoutPath>
@@ -642,5 +703,268 @@
       <FilenameWithoutPath>tls.c</FilenameWithoutPath>
     </File>
   </Group>
+
+  <AlienFiles>
+    <PathWithFilename>D:\MicroFrameworkPK_v4_2\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_Power\STM32_Power_functions.cpp</PathWithFilename>
+    <TopLine>62</TopLine>
+    <CurrentLine>66</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>D:\MicroFrameworkPK_v4_2\DeviceCode\pal\COM\sockets\matrixssl\Matrixssl.h</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>1</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>D:\MicroFrameworkPK_v4_2\DeviceCode\PAL\COM\usb\usb.cpp</PathWithFilename>
+    <TopLine>74</TopLine>
+    <CurrentLine>83</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>D:\MicroFrameworkPK_v4_2\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_SPI\STM32_SPI_functions.cpp</PathWithFilename>
+    <TopLine>223</TopLine>
+    <CurrentLine>227</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>D:\MicroFrameworkPK_v4_2\CLR\libraries\spot_net_security\spot_net_security_native_Microsoft_SPOT_Net_Security_SslNative.cpp</PathWithFilename>
+    <TopLine>487</TopLine>
+    <CurrentLine>491</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>D:\MicroFrameworkPK_v4_2\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_GPIO\STM32_GPIO_functions.cpp</PathWithFilename>
+    <TopLine>228</TopLine>
+    <CurrentLine>232</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <MDIGroups>
+    <Orientation>1</Orientation>
+    <ActiveMDIGroup>0</ActiveMDIGroup>
+    <MDIGroup>
+      <Size>100</Size>
+      <ActiveTab>3</ActiveTab>
+      <Documents>
+        <Doc>
+          <Name>D:\MicroFrameworkPK_v4_2\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_GPIO\STM32_GPIO_functions.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>228</TopLine>
+          <CurrentLine>232</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>D:\MicroFrameworkPK_v4_2\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_Power\STM32_Power_functions.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>62</TopLine>
+          <CurrentLine>66</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>D:\MicroFrameworkPK_v4_2\CLR\libraries\spot_net_security\spot_net_security_native_Microsoft_SPOT_Net_Security_SslNative.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>487</TopLine>
+          <CurrentLine>491</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_read_internal.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>73</TopLine>
+          <CurrentLine>77</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\MatrixSSL\tinyclr\adapt\sslAdapt.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>26</TopLine>
+          <CurrentLine>41</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>D:\MicroFrameworkPK_v4_2\DeviceCode\Targets\Native\STM32\DeviceCode\STM32_SPI\STM32_SPI_functions.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>223</TopLine>
+          <CurrentLine>227</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\matrixssl\matrixssl.c</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>362</TopLine>
+          <CurrentLine>377</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\COM\sockets\MatrixSSL\MatrixSSL.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>103</TopLine>
+          <CurrentLine>107</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_generic_init_internal.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_initialize_internal.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>32</TopLine>
+          <CurrentLine>44</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\MatrixSSL\tinyclr\ssl_accept_internal.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>D:\MicroFrameworkPK_v4_2\DeviceCode\pal\COM\sockets\matrixssl\Matrixssl.h</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\MatrixSSL\tinyclr\adapt\certSrv.cpp</Name>
+          <ColumnNumber>20</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>9</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\MatrixSSL\tinyclr\adapt\privkeySrv.cpp</Name>
+          <ColumnNumber>20</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>9</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\DeviceCode\pal\COM\sockets_lwip\sockets_lwip.cpp</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>242</TopLine>
+          <CurrentLine>245</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>D:\MicroFrameworkPK_v4_2\DeviceCode\PAL\COM\usb\usb.cpp</Name>
+          <ColumnNumber>30</ColumnNumber>
+          <TopLine>74</TopLine>
+          <CurrentLine>83</CurrentLine>
+        </Doc>
+      </Documents>
+    </MDIGroup>
+  </MDIGroups>
 
 </ProjectOpt>

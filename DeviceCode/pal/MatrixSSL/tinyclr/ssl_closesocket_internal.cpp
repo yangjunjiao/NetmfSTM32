@@ -43,7 +43,7 @@ int ssl_closesocket_internal(int socket) {
 		return SOCK_SOCKET_ERROR;
 	}
 */
-	MATRIXSSL_PDEBUG("Closing socket\n")
+	MATRIXSSL_PDEBUG("Closing socket: Socket: %i\n", socket)
 	return SOCK_close(socket);
 }
 

@@ -16,7 +16,7 @@ namespace Microsoft.SPOT.Platform.Tests
     public class SslClient
     {
         // The message that is used for verification.
-        public const string TERMINATOR = "<EOF>";
+        public const string TERMINATOR = "\r\n\r\n"; //"<EOF>";
         public bool runOnce = true;
         public String messageSent = null;
         public String messageReceived = null;

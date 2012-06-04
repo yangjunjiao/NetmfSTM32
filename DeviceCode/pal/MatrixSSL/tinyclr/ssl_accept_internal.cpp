@@ -11,7 +11,7 @@ int ssl_accept_internal(int socket, int sslContextHandle) {
 	//int done = 0;
 	SSL *ssl = NULL;
 
-	MATRIXSSL_PDEBUG_ALL("------------- called ----------------:\n");
+	MATRIXSSL_PDEBUG_ALL("------------- called ----------------: Socket: %i, SSL: %i\n", socket, sslContextHandle);
 	SSL_Conext* sslContext = g_SSL_Driver.GetSSLContextBySslIndex(
 			sslContextHandle);
 	if (sslContext != NULL && sslContext->SslContext != NULL) {

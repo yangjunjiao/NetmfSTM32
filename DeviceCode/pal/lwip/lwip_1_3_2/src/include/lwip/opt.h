@@ -1609,7 +1609,7 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * messages are written.
  */
 #ifndef LWIP_DBG_MIN_LEVEL
-#define LWIP_DBG_MIN_LEVEL              LWIP_DBG_LEVEL_SERIOUS //SK LWIP_DBG_LEVEL_SERIOUS
+#define LWIP_DBG_MIN_LEVEL              LWIP_DBG_LEVEL_SEVERE //SK LWIP_DBG_LEVEL_SERIOUS
 #endif
 
 /**
@@ -1624,7 +1624,7 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * ETHARP_DEBUG: Enable debugging in etharp.c.
  */
 #ifndef ETHARP_DEBUG
-#define ETHARP_DEBUG                    LWIP_DBG_ON
+#define ETHARP_DEBUG                    LWIP_DBG_OFF
 #endif
 
 /**
@@ -1729,14 +1729,14 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * TCP_DEBUG: Enable debugging for TCP.
  */
 #ifndef TCP_DEBUG
-#define TCP_DEBUG                       LWIP_DBG_ON
+#define TCP_DEBUG                       LWIP_DBG_OFF
 #endif
 
 /**
  * TCP_INPUT_DEBUG: Enable debugging in tcp_in.c for incoming debug.
  */
 #ifndef TCP_INPUT_DEBUG
-#define TCP_INPUT_DEBUG                 LWIP_DBG_ON
+#define TCP_INPUT_DEBUG                 LWIP_DBG_OFF
 #endif
 
 /**
@@ -1793,7 +1793,7 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * UDP_DEBUG: Enable debugging in UDP.
  */
 #ifndef UDP_DEBUG
-#define UDP_DEBUG                       LWIP_DBG_ON
+#define UDP_DEBUG                       LWIP_DBG_OFF
 #endif
 
 /**
@@ -1821,7 +1821,7 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * DHCP_DEBUG: Enable debugging in dhcp.c.
  */
 #ifndef DHCP_DEBUG
-#define DHCP_DEBUG                      LWIP_DBG_ON
+#define DHCP_DEBUG                      LWIP_DBG_OFF
 #endif
 
 /**
@@ -1849,7 +1849,7 @@ extern void* private_realloc(void* ptr, unsigned int size);
  * DNS_DEBUG: Enable debugging for DNS.
  */
 #ifndef DNS_DEBUG
-#define DNS_DEBUG                       LWIP_DBG_ON
+#define DNS_DEBUG                       LWIP_DBG_OFF
 #endif
 
 #endif /* __LWIP_OPT_H__ */

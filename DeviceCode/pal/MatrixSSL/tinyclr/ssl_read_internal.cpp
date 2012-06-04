@@ -3,6 +3,11 @@
 
 #define USE_BUFFER
 
+int handleRequestSend(SSL_Conext*& sslContext);
+int handleBufferdData(SSL_Conext* sslContext, char* data, size_t size);
+int handleAppData(size_t size, int len, char* data, unsigned char* sslData,
+		SSL_Conext* sslContext);
+
 int handleBufferdData(SSL_Conext* sslContext, char* data, size_t size) {
 	if (sslContext->SslBuffer.DataAvailable()) {
 		MATRIXSSL_PDEBUG_ALL("oldData: %i\n", sslContext->SslBuffer.Count);
@@ -15,11 +20,16 @@ int handleBufferdData(SSL_Conext* sslContext, char* data, size_t size) {
 			PRINT_RETURN_VALUE(rc);
 			//MATRIXSSL_PDEBUG(" oldData processed: %i\n", cpylen);
 			if (rc == MATRIXSSL_APP_DATA) {
-				MATRIXSSL_PDEBUG_ALL("oldData processed, still data available\n");
+				MATRIXSSL_PDEBUG_ALL(
+						"oldData processed, still data available\n");
 				sslContext->SslBuffer.Update();
-			}
-			else if(rc != MATRIXSSL_REQUEST_RECV && rc != MATRIXSSL_SUCCESS)
-			{
+			} else if (rc == MATRIXSSL_REQUEST_SEND) {
+				int rc = handleRequestSend(sslContext);
+				if (rc != MATRIXSSL_SUCCESS) {
+					PRINT_UNEXPECTED_RETURN_VALUE(rc);
+					return 0;
+				}
+			} else if (rc != MATRIXSSL_REQUEST_RECV && rc != MATRIXSSL_SUCCESS) {
 				PRINT_UNEXPECTED_RETURN_VALUE(rc);
 			}
 		}
@@ -42,8 +52,7 @@ int handleAppData(size_t size, int len, char* data, unsigned char* sslData,
 		sslContext->SslBuffer.Count = len - cpylen;
 		sslContext->SslBuffer.BaseBuffer = sslData;
 		sslContext->SslBuffer.Length = len;
-		MATRIXSSL_PDEBUG_ALL("Bytes rec: %i, returned %i\n", len,
-				cpylen);
+		MATRIXSSL_PDEBUG_ALL("Bytes rec: %i, returned %i\n", len, cpylen);
 	} else {
 		rc = matrixSslProcessedData(sslContext->SslContext, &sslData,
 				(uint32*) &len);
@@ -51,9 +60,7 @@ int handleAppData(size_t size, int len, char* data, unsigned char* sslData,
 		if (rc == MATRIXSSL_APP_DATA) {
 			sslContext->SslBuffer.Init(sslData, len);
 			MATRIXSSL_PDEBUG_ALL("oldData count: %i,\n", len);
-		}
-		else if(rc != MATRIXSSL_REQUEST_RECV && rc != MATRIXSSL_SUCCESS)
-		{
+		} else if (rc != MATRIXSSL_REQUEST_RECV && rc != MATRIXSSL_SUCCESS) {
 			PRINT_UNEXPECTED_RETURN_VALUE(rc);
 			return SOCK_SOCKET_ERROR;
 		}
@@ -61,13 +68,21 @@ int handleAppData(size_t size, int len, char* data, unsigned char* sslData,
 	return cpylen;
 }
 
-int handleRequestSend(SSL* ssl, unsigned char*& sslData,
-		SSL_Conext*& sslContext, int rc) {
-	int len = matrixSslGetOutdata(ssl, &sslData);
+int handleRequestSend(SSL_Conext*& sslContext) {
+	unsigned char *sslData;
+	int len = matrixSslGetOutdata(sslContext->SslContext, &sslData);
 	int sent = SOCK_send(sslContext->SocketHandle, (const char*) (sslData), len,
 			0);
-	rc = matrixSslSentData(sslContext->SslContext, sent);
-	PRINT_UNEXPECTED_RETURN_VALUE(rc); //should not be called during normal communication
+	int rc = matrixSslSentData(sslContext->SslContext, sent);
+	if (rc == MATRIXSSL_REQUEST_CLOSE || rc == MATRIXSSL_SUCCESS) {
+		return MATRIXSSL_SUCCESS;
+	}
+	if (rc == MATRIXSSL_REQUEST_SEND) {
+		MATRIXSSL_PDEBUG("WARNING: Untested function call\n");
+		//TODO
+		return handleRequestSend(sslContext);
+	}
+	PRINT_UNEXPECTED_RETURN_VALUE(rc);
 	return rc;
 }
 
@@ -98,7 +113,8 @@ int ssl_read_internal(int socket, char* data, size_t size) {
 	if (rec == 0) {
 		return rec;
 	}
-	rc = matrixSslReceivedData(sslContext->SslContext, (int32) rec, &sslData, (uint32*) &len);
+	rc = matrixSslReceivedData(sslContext->SslContext, (int32) rec, &sslData,
+			(uint32*) &len);
 	PRINT_RETURN_VALUE(rc);
 	if (rc < 0) {
 		PRINT_UNEXPECTED_RETURN_VALUE(rc);
@@ -116,15 +132,14 @@ int ssl_read_internal(int socket, char* data, size_t size) {
 			unsigned char alertLevel = sslData[0];
 			unsigned char alertDescription = sslData[1];
 			MATRIXSSL_PDEBUG(
-					"Alert: Level %i, Description: %i\n",
-					alertLevel, alertDescription);
+					"Alert: Level %i, Description: %i\n", alertLevel, alertDescription);
 			if (alertDescription == SSL_ALERT_CLOSE_NOTIFY) {
 				return 0;
 			}
 		}
 		return SOCK_SOCKET_ERROR;
 	} else if (rc == MATRIXSSL_REQUEST_SEND) {
-		int rc = handleRequestSend(ssl, sslData, sslContext, rc);
+		int rc = handleRequestSend(sslContext);
 		if (rc == MATRIXSSL_SUCCESS) {
 			return 0;
 		}

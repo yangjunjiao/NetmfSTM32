@@ -13,6 +13,8 @@ int ssl_write_internal(int socket, const char* data, size_t size) {
 	} else {
 		return SOCK_SOCKET_ERROR;
 	}
+
+	MATRIXSSL_PDEBUG_ALL("------------- called ----------------: Socket: %i\n", socket);
 /*
 	SSL* ssl = (SSL*) g_SSL_Driver.m_sslContextArray[0].SslContext;
 	if (ssl == NULL) {

@@ -25,7 +25,7 @@ namespace Microsoft.SPOT.Platform.Tests
         
         //Socket configuration information.
         IPAddress ipAddress = null;
-        int port = 11155;
+        int port = 443;
 
         //The Socket thats used as an Ssl Server.
         Socket sslServer = null;
@@ -96,10 +96,18 @@ namespace Microsoft.SPOT.Platform.Tests
                 sslStream.ReadTimeout = 5000;
                 sslStream.WriteTimeout = 5000;
                 int i = -1;
-               // do
+                do
                 {
                     // Loop to receive all the data sent by the client.
-                    i = sslStream.Read(bytes, 0, bytes.Length);
+                    try
+                    {
+                        i = sslStream.Read(bytes, 0, bytes.Length);
+                    }
+                    catch (Exception)
+                    {
+                        
+                        //throw;
+                    }
                    
 
                     // Translate data bytes to a string.
@@ -109,16 +117,25 @@ namespace Microsoft.SPOT.Platform.Tests
 
                     data += newStr;
 
-                    //if (data.IndexOf(SslClient.TERMINATOR) != -1)
-                    //    break;
-                } //while (i != 0);
+                    if (data.IndexOf(SslClient.TERMINATOR) != -1)
+                        break;
+                } while (i != 0);
 
                 // Send back a response.
                 //sslStream.Write(bytes, 0, i);
                 // Return a static HTML document to the client.
                 String s =
                     "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n\r\n<html><head><title>.NET Micro Framework Web Server</title></head>" +
-                   "<body><bold><a href=\"http://www.microsoft.com/netmf/\">Learn more about the .NET Micro Framework by clicking here</a></bold></body></html>";
+                   "<body>";
+                sslStream.Write(Encoding.UTF8.GetBytes(s), 0, Encoding.UTF8.GetBytes(s).Length);
+
+                for(int j = 0; j < 1000; j++)
+                {
+                    s = "<p><bold><a href=\"http://www.microsoft.com/netmf/\">Learn more about the .NET Micro Framework by clicking here</a></bold></p>";
+                    sslStream.Write(Encoding.UTF8.GetBytes(s), 0, Encoding.UTF8.GetBytes(s).Length);
+                }
+
+                s = "</body></html>";
                 sslStream.Write(Encoding.UTF8.GetBytes(s), 0, Encoding.UTF8.GetBytes(s).Length);
                 //Log.Comment("Sent:     " + data);
 
