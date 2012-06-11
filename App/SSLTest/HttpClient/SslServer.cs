@@ -62,8 +62,8 @@ namespace Microsoft.SPOT.Platform.Tests
 
                     sslServer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-                    //sslServer.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ExclusiveAddressUse, false);
-                    //sslServer.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Linger, new byte[] { 0, 0, 0, 0 });
+                    sslServer.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ExclusiveAddressUse, false);
+                    sslServer.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Linger, new byte[] { 0, 0, 0, 0 });
 
 
                     sslServer.Bind(localEndPoint);

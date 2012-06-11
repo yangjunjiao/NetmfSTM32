@@ -2,6 +2,7 @@
 #include "adapt/adapt.h"
 
 
+//TODO check if called in server mode
 BOOL ssl_exit_context_internal(int sslContextHandle )
 {
 	MATRIXSSL_PDEBUG("sslContext: %i\n", sslContextHandle);

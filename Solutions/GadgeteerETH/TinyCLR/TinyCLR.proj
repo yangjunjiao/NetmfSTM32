@@ -75,6 +75,7 @@
   <Import Project="$(SPOCLIENT)\Framework\Features\SD.featureproj" />
 -->
 
+ <Import  Condition="'$(SSL)'=='MATRIX_SSL'" Project="$(SPOCLIENT)\Framework\Features\SSL_Matrix.featureproj" /> <!-- SK 2012-06-05 -->
   <ItemGroup>
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\drivers\LargeBuffer\stubs\dotnetmf.proj"/>
     <DriverLibs Include="LargeBuffer_hal_stubs.$(LIB_EXT)"/>
@@ -485,4 +486,29 @@
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Drivers\stubs\processor\stubs_perfcounter\dotNetMF.proj" />
   </ItemGroup>
   <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+  
+   <!--  MatrixSSL   -->
+  <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\COM\sockets\MatrixSSL\dotnetmf.proj" />
+    <DriverLibs Include="matrixssl_pal.$(LIB_EXT)" />
+	 </ItemGroup>
+
+    <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\Crypto\dotNetMF.proj" />
+    <DriverLibs Include="Crypto_MatrixSSL.$(LIB_EXT)" />
+  </ItemGroup>
+    <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\matrixssl-3-3-open\dotNetMF.proj" />
+    <DriverLibs Include="libssl_matrixssl.$(LIB_EXT)" />
+  </ItemGroup>
+
+   <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\MatrixSSL\tinyclr\dotNetMF.proj" />
+    <DriverLibs Include="ssl_types.$(LIB_EXT)" />
+  </ItemGroup>
+  
+   <ItemGroup Condition="'$(SSL)'=='MATRIX_SSL'">
+    <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\PAL\PKCS11\Tokens\stubs\dotNetMF.proj" />
+    <DriverLibs Include="PKCS11_Token_stub.$(LIB_EXT)" />
+  </ItemGroup>
 </Project>

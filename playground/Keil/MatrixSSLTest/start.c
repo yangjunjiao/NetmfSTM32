@@ -82,7 +82,7 @@ int main(void)
   /* GPIOA_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; */
   GPIO_Init(GPIOA, &GPIOA_InitStructure);
 
-  matrixSslLoadRsaKeysMemTest();
+  //matrixSslLoadRsaKeysMemTest();
   mainSSLTest();
   
   while (1)

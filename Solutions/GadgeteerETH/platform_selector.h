@@ -69,10 +69,15 @@
 #define USART_DEFAULT_PORT              COM1
 #define USART_DEFAULT_BAUDRATE          115200
 
-#define DEBUG_TEXT_PORT                 USB1
+/*#define DEBUG_TEXT_PORT                 USB1
 #define STDIO                           USB1
 #define DEBUGGER_PORT                   USB1
 #define MESSAGING_PORT                  USB1
+*/
+#define DEBUG_TEXT_PORT                 COM1
+#define STDIO                           COM1
+#define DEBUGGER_PORT                   COM1
+#define MESSAGING_PORT                  COM1
 
 #define TOTAL_USB_CONTROLLER            1
 #define USB_MAX_QUEUES                  4  // 4 endpoints (EP0 + 3)

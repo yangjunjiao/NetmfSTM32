@@ -58,7 +58,7 @@ namespace HttpClientSample
             HttpWebRequest.DefaultWebProxy =
                 new WebProxy("itgproxy.dns.microsoft.com", true);*/
 
-                new Thread(runSSLServer).Start();
+             //   new Thread(runSSLServer).Start();
                 //runSSLServer();
                 
             
@@ -74,8 +74,8 @@ namespace HttpClientSample
 
                 // Test SSL connection with no certificate verification
                 //PrintHttpData("https://www.google.com/accounts/ManageAccount/");
-                PrintHttpData("https://www.google.de");
-                PrintHttpData("https://banking.dkb.de/dkb/-?$part=Welcome.login");
+                //PrintHttpData("https://www.google.de");
+                //PrintHttpData("https://banking.dkb.de/dkb/-?$part=Welcome.login");
 
                 // Read from secure webpages by using the Verisign Root CA 
                 // certificate that is stored in the Resource1.resx file.

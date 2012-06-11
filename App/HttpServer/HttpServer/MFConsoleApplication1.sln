@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFConsoleApplication1", "MFConsoleApplication1\MFConsoleApplication1.csproj", "{B4C83F73-09E5-4E88-B161-AC2922BEE399}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4C83F73-09E5-4E88-B161-AC2922BEE399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C83F73-09E5-4E88-B161-AC2922BEE399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C83F73-09E5-4E88-B161-AC2922BEE399}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B4C83F73-09E5-4E88-B161-AC2922BEE399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C83F73-09E5-4E88-B161-AC2922BEE399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C83F73-09E5-4E88-B161-AC2922BEE399}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

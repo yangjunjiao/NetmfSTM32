@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 644]: Last Updated: Mon May 14 12:36:07 2012
+;#<FEEDBACK># ARM Linker, 4.1 [Build 644]: Last Updated: Tue Jun 05 15:56:51 2012
 ;VERSION 0.2
 ;FILE Aborts.obj
 HARD_Breakpoint_Handler <= USED 0
@@ -480,7 +480,6 @@ sys_msleep <= USED 0
 ;FILE sys__tinyclr.obj
 sys_jiffies <= USED 0
 ;FILE tcp.obj
-tcp_debug_print_pcbs <= USED 0
 tcp_debug_state_str <= USED 0
 tcp_setprio <= USED 0
 ;FILE tcp_in.obj
