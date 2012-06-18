@@ -129,7 +129,7 @@ namespace Microsoft.SPOT.Platform.Tests
                    "<body>";
                 sslStream.Write(Encoding.UTF8.GetBytes(s), 0, Encoding.UTF8.GetBytes(s).Length);
 
-                for(int j = 0; j < 1000; j++)
+                for(int j = 0; j < 1; j++)
                 {
                     s = "<p><bold><a href=\"http://www.microsoft.com/netmf/\">Learn more about the .NET Micro Framework by clicking here</a></bold></p>";
                     sslStream.Write(Encoding.UTF8.GetBytes(s), 0, Encoding.UTF8.GetBytes(s).Length);

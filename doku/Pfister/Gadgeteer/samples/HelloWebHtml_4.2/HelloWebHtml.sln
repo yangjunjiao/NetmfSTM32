@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWebHtml", "HelloWebHtml\HelloWebHtml.csproj", "{BB83DB5C-F17A-454C-ADB2-6F3CD05E2DAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB83DB5C-F17A-454C-ADB2-6F3CD05E2DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB83DB5C-F17A-454C-ADB2-6F3CD05E2DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB83DB5C-F17A-454C-ADB2-6F3CD05E2DAF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BB83DB5C-F17A-454C-ADB2-6F3CD05E2DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB83DB5C-F17A-454C-ADB2-6F3CD05E2DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB83DB5C-F17A-454C-ADB2-6F3CD05E2DAF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

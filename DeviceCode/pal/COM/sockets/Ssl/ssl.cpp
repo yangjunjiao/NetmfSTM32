@@ -199,7 +199,8 @@ BOOL SSL_AddCertificateAuthority( int sslContextHandle, const char* certificate,
 void SSL_ClearCertificateAuthority( int sslContextHandle )
 {
     NATIVE_PROFILE_PAL_COM();
-
+
+
     if((sslContextHandle >= ARRAYSIZE(g_SSL_Driver.m_sslContextArray)) || (sslContextHandle < 0))
     {
         return;
@@ -213,7 +214,8 @@ BOOL SSL_ExitContext( INT32 sslContextHandle )
 { 
     NATIVE_PROFILE_PAL_COM();
     BOOL ret;
-    
+    
+
     if((sslContextHandle >= ARRAYSIZE(g_SSL_Driver.m_sslContextArray)) || (sslContextHandle < 0) || (g_SSL_Driver.m_sslContextArray[sslContextHandle].SslContext == NULL))
     {
         return FALSE;

@@ -117,6 +117,10 @@ PSPUBLIC void		psCoreClose(void);
 PSPUBLIC void		psBurnStack(uint32 len);
 
 
+PSPUBLIC int32 psBase64decode(const unsigned char *in, uint32 len, 
+					unsigned char *out, uint32 *outlen); //SK
+
+
 /******************************************************************************/
 /*
 	Public interface to OS-dependant core functionality

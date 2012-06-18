@@ -38,3 +38,6 @@ workspace/.metadata/
 Keil/TynybooterDebug.uvgui.*
 Keil/tinyclrDebug.uvgui.*
 workspace/.metadata/.*
+
+*.ipch
+*.feedback
